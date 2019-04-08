@@ -1,0 +1,15 @@
+D:\HTX GameTech\1B\Programmering\Projekter\Skrome Bank\Skrome Bank\bin\Debug\Skrome Bank.exe.config
+D:\HTX GameTech\1B\Programmering\Projekter\Skrome Bank\Skrome Bank\bin\Debug\Skrome Bank.exe
+D:\HTX GameTech\1B\Programmering\Projekter\Skrome Bank\Skrome Bank\bin\Debug\Skrome Bank.pdb
+D:\HTX GameTech\1B\Programmering\Projekter\Skrome Bank\Skrome Bank\obj\Debug\Skrome Bank.csprojResolveAssemblyReference.cache
+D:\HTX GameTech\1B\Programmering\Projekter\Skrome Bank\Skrome Bank\obj\Debug\Skrome_Bank.Form1.resources
+D:\HTX GameTech\1B\Programmering\Projekter\Skrome Bank\Skrome Bank\obj\Debug\Skrome_Bank.Properties.Resources.resources
+D:\HTX GameTech\1B\Programmering\Projekter\Skrome Bank\Skrome Bank\obj\Debug\Skrome Bank.csproj.GenerateResource.Cache
+D:\HTX GameTech\1B\Programmering\Projekter\Skrome Bank\Skrome Bank\obj\Debug\Skrome Bank.exe
+D:\HTX GameTech\1B\Programmering\Projekter\Skrome Bank\Skrome Bank\obj\Debug\Skrome Bank.pdb
+D:\HTX GameTech\1B\Programmering\Projekter\Skrome Bank\Skrome Bank\obj\Debug\Skrome_Bank.Dashboard.resources
+D:\HTX GameTech\1B\Programmering\Projekter\Skrome Bank\Skrome Bank\obj\Debug\Skrome_Bank.Admin.resources
+D:\HTX GameTech\1B\Programmering\Projekter\Skrome Bank\Skrome Bank\obj\Debug\Skrome_Bank.Account.resources
+D:\HTX GameTech\1B\Programmering\Projekter\Skrome Bank\Skrome Bank\obj\Debug\Skrome_Bank.Settings.resources
+D:\HTX GameTech\1B\Programmering\Projekter\Skrome Bank\Skrome Bank\obj\Debug\Skrome_Bank.Sign_up.resources
+D:\HTX GameTech\1B\Programmering\Projekter\Skrome Bank\Skrome Bank\obj\Debug\Skrome_Bank.Log_in.resources
