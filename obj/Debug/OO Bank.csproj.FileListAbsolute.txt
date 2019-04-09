@@ -1,0 +1,18 @@
+D:\HTX GameTech\1B\Programmering\Projekter\OO Bank\obj\Debug\OO_Bank.Form1.resources
+D:\HTX GameTech\1B\Programmering\Projekter\OO Bank\obj\Debug\OO_Bank.Properties.Resources.resources
+D:\HTX GameTech\1B\Programmering\Projekter\OO Bank\obj\Debug\OO Bank.csproj.GenerateResource.cache
+D:\HTX GameTech\1B\Programmering\Projekter\OO Bank\bin\Debug\OO Bank.exe.config
+D:\HTX GameTech\1B\Programmering\Projekter\OO Bank\bin\Debug\OO Bank.exe
+D:\HTX GameTech\1B\Programmering\Projekter\OO Bank\bin\Debug\OO Bank.pdb
+D:\HTX GameTech\1B\Programmering\Projekter\OO Bank\bin\Debug\Newtonsoft.Json.dll
+D:\HTX GameTech\1B\Programmering\Projekter\OO Bank\bin\Debug\Newtonsoft.Json.pdb
+D:\HTX GameTech\1B\Programmering\Projekter\OO Bank\bin\Debug\Newtonsoft.Json.xml
+D:\HTX GameTech\1B\Programmering\Projekter\OO Bank\obj\Debug\OO Bank.exe
+D:\HTX GameTech\1B\Programmering\Projekter\OO Bank\obj\Debug\OO Bank.pdb
+D:\HTX GameTech\1B\Programmering\Projekter\OO Bank\obj\Debug\OO Bank.csprojAssemblyReference.cache
+D:\HTX GameTech\1B\Programmering\Projekter\OO Bank\obj\Debug\OO Bank.csproj.CoreCompileInputs.cache
+D:\HTX GameTech\1B\Programmering\Projekter\OO Bank\obj\Debug\OO Bank.csproj.CopyComplete
+D:\HTX GameTech\1B\Programmering\Projekter\OO Bank\obj\Debug\OO_Bank.User_Controls.OverviewUC.resources
+D:\HTX GameTech\1B\Programmering\Projekter\OO Bank\obj\Debug\OO_Bank.User_Controls.Expenses_and_BudgetUC.resources
+D:\HTX GameTech\1B\Programmering\Projekter\OO Bank\obj\Debug\OO_Bank.User_Controls.My_AccountUC.resources
+D:\HTX GameTech\1B\Programmering\Projekter\OO Bank\obj\Debug\OO_Bank.User_Controls.Pay_and_TransferUC.resources
