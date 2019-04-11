@@ -16,3 +16,5 @@ D:\HTX GameTech\1B\Programmering\Projekter\OO Bank\obj\Debug\OO_Bank.User_Contro
 D:\HTX GameTech\1B\Programmering\Projekter\OO Bank\obj\Debug\OO_Bank.User_Controls.Expenses_and_BudgetUC.resources
 D:\HTX GameTech\1B\Programmering\Projekter\OO Bank\obj\Debug\OO_Bank.User_Controls.My_AccountUC.resources
 D:\HTX GameTech\1B\Programmering\Projekter\OO Bank\obj\Debug\OO_Bank.User_Controls.Pay_and_TransferUC.resources
+D:\HTX GameTech\1B\Programmering\Projekter\OO Bank\obj\Debug\OO_Bank.User_Controls.Sign_up.resources
+D:\HTX GameTech\1B\Programmering\Projekter\OO Bank\obj\Debug\OO_Bank.LoginForm.resources

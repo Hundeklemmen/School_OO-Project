@@ -13,10 +13,43 @@ using System.Windows.Forms;
 namespace OO_Bank {
     public partial class Form1 : Form {
 
-        public Form1() {
-            //kalder vores function som ville lave alle vores filer.
-            generateFiles();
+        /*
+        Plans:
+        User:
+            - Can check balance
+            - Deposit and withdraw
+            - Request new credit card or new pin
+            - Settings:
+                - Change password
+                - Create account for kids
+                - Create savings account
 
+        Accounts:
+            - Account Number
+            - Account Nickname
+            - Account Owner ID
+            - Card:
+                - Card Number
+                - Expiry date
+                - The 3 security numbers on the back
+                - Card holder
+                - Expire date
+                - Account Number
+
+        Admins:
+            - Create new accounts
+            - Modify all accounts
+        
+        File:
+            - Saving as .JSON
+        
+            
+            
+        */
+
+        public Form1() {
+            //Kalder vores function som ville lave alle vores filer.
+            generateFiles();
             InitializeComponent();
         }
 
@@ -26,7 +59,7 @@ namespace OO_Bank {
             //Vores skrivebord
             desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
 
-            //Specifere vores OO projekt fil placering
+            //Specificere vores OO projekt fil placering
             OOProjekt = desktopPath + "/OOProjekt";
             
             //Hvis vores projekt mappe ikke findes, så opretter vi den
@@ -46,34 +79,14 @@ namespace OO_Bank {
         int formMoveX;
         int formMoveY;
 
-        /*
-        Plans:
-        User:
-            - Can check balance
-            - Deposit and withdraw
-            - Request new credit card or new pin
-            - Settings:
-                - Change password
-                - Create account for kids
-                - Create savings account
-
-        Admins:
-            - Create new accounts
-            - Modify all accounts
-        
-        File:
-            - Saving as .JSON
-        
-            
-            
-        */
-
-
         private void Form1_Load(object sender, EventArgs e) {
-            User user = new User("{ID: 'test', Name: 'ree', Password: 'REEADSA', Email: 'Reee', Suspended: false, Accounts: ['test']}");
+            //User user = new User("{ID: 'ID test', Name: 'Name test', Password: 'Password test', Email: 'Email test', Suspended: false, Accounts: ['test']}");
+            //User user2 = new User("").get("ID HER");
+            User user = Utils.getUserByID(1232132321);
             user.save();
             //Makes sure first page is Overview
-            overviewUC1.BringToFront();
+            LoginForm loginForm = new LoginForm();
+            loginForm.ShowDialog();
         }
 
         private void PnlLogo_MouseDown(object sender, MouseEventArgs e) {

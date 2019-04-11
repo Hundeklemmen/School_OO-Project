@@ -13,5 +13,11 @@ namespace OO_Bank.User_Controls {
         public OverviewUC() {
             InitializeComponent();
         }
+
+        private void BtnSignUp_Click_1(object sender, EventArgs e) {
+        }
+
+        private void BtnLogIn_Click(object sender, EventArgs e) {
+        }
     }
 }

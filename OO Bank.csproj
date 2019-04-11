@@ -50,12 +50,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Account.cs" />
+    <Compile Include="Classes\Card.cs" />
     <Compile Include="Classes\User.cs" />
+    <Compile Include="Classes\Utils.cs" />
+    <Compile Include="Exceptions\UserException.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -83,8 +92,17 @@
     <Compile Include="User Controls\Pay and TransferUC.Designer.cs">
       <DependentUpon>Pay and TransferUC.cs</DependentUpon>
     </Compile>
+    <Compile Include="User Controls\Forms\Sign up.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User Controls\Forms\Sign up.Designer.cs">
+      <DependentUpon>Sign up.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -97,6 +115,9 @@
     </Compile>
     <EmbeddedResource Include="User Controls\Expenses and BudgetUC.resx">
       <DependentUpon>Expenses and BudgetUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\Forms\Sign up.resx">
+      <DependentUpon>Sign up.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User Controls\My AccountUC.resx">
       <DependentUpon>My AccountUC.cs</DependentUpon>

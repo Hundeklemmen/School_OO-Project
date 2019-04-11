@@ -9,9 +9,9 @@ using System.Windows.Forms;
 namespace OO_Bank.Classes {
     class Account {
         
-        public Account(String json, User user) {
-            MessageBox.Show(json);
-            MessageBox.Show(user.ID);
+        public Account(int accountNumber, String accountNickName, int accountOwnerID, Card accountCard) {
+           // MessageBox.Show(json);
+           //MessageBox.Show(user.ID);
         }
 
         public JObject getAsJson() {

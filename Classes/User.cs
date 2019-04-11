@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using OO_Bank.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -11,7 +12,7 @@ using System.Windows.Forms;
 namespace OO_Bank.Classes {
     class User {
 
-        public String ID { get; set; }
+        public int ID { get; set; }
         public String Name { get; set; }
         public String Password { get; set; }
         public String Email { get; set; }
@@ -20,7 +21,7 @@ namespace OO_Bank.Classes {
 
         public User(String json) {
             JObject obj = JObject.Parse(@json);
-            ID = (String)obj["ID"];
+            ID = (int)obj["ID"];
             Name = (String)obj["Name"];
             Password = (String)obj["Password"];
             Email = (String)obj["Email"];
@@ -29,8 +30,18 @@ namespace OO_Bank.Classes {
             JArray accs = (JArray)obj["Accounts"];
 
             Accounts = new List<Account>();
-            foreach (String acc in accs) {
-                Accounts.Add(new Account(acc, this));
+            foreach (JObject acc in accs) {
+                //Account(int accountNumber, String accountNickName, int accountOwnerID, Card accountCard) {
+                int accountNumber = (int)acc["Number"];
+                String accountNickName = (String) acc["NickName"];
+                int accountOwnerID = this.ID;
+
+                Card accountCard = null; //Lige nu indtil videre?..
+
+                Accounts.Add(new Account(accountNumber, accountNickName, accountOwnerID, accountCard));
+
+                //Skal ændres når vi ved hvad en konto skal indeholde :) Ligenu tager den bare og laver objektet om til en string så programmet ikke brokker sig.
+                // Accounts.Add(new Account(acc.ToString(Newtonsoft.Json.Formatting.None), this));
             }
         }
 
