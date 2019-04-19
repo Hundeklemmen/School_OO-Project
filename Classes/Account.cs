@@ -7,14 +7,30 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace OO_Bank.Classes {
-    class Account {
-        
-        public Account(int accountNumber, String accountNickName, int accountOwnerID, Card accountCard) {
-           // MessageBox.Show(json);
-           //MessageBox.Show(user.ID);
+    public class Account {
+        int Number;
+        String NickName;
+        decimal balance;
+        long OwnerId;
+        Card Card;
+
+
+        public Account(int accountNumber, String accountNickName, decimal balance, long accountOwnerId, Card accountCard) {
+            this.Number = accountNumber;
+            this.NickName = accountNickName;
+            this.balance = balance;
+            this.OwnerId = accountOwnerId;
+            this.Card = accountCard;
         }
 
-        public JObject getAsJson() {
+        public void AddMoney(decimal Amount) {
+            this.balance =+ Amount;
+        }
+        public void RemoveMoney(decimal Amount) {
+            this.balance =- Amount;
+        }
+
+        public JObject GetAsJson() {
             return new JObject();
         }
     }

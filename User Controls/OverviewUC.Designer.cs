@@ -33,9 +33,9 @@
             this.lblLoggedInOverview.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
             this.lblLoggedInOverview.Location = new System.Drawing.Point(3, 0);
             this.lblLoggedInOverview.Name = "lblLoggedInOverview";
-            this.lblLoggedInOverview.Size = new System.Drawing.Size(367, 73);
+            this.lblLoggedInOverview.Size = new System.Drawing.Size(299, 73);
             this.lblLoggedInOverview.TabIndex = 3;
-            this.lblLoggedInOverview.Text = "My Account";
+            this.lblLoggedInOverview.Text = "Overview";
             // 
             // OverviewUC
             // 
