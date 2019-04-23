@@ -29,11 +29,11 @@
             // lblLoggedInOverview
             // 
             this.lblLoggedInOverview.AutoSize = true;
-            this.lblLoggedInOverview.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLoggedInOverview.Font = new System.Drawing.Font("Century Gothic", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLoggedInOverview.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
             this.lblLoggedInOverview.Location = new System.Drawing.Point(3, 0);
             this.lblLoggedInOverview.Name = "lblLoggedInOverview";
-            this.lblLoggedInOverview.Size = new System.Drawing.Size(367, 73);
+            this.lblLoggedInOverview.Size = new System.Drawing.Size(412, 78);
             this.lblLoggedInOverview.TabIndex = 2;
             this.lblLoggedInOverview.Text = "My Account";
             // 

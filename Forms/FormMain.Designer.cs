@@ -25,6 +25,7 @@
         private void InitializeComponent() {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.pnlSideBar = new System.Windows.Forms.Panel();
+            this.btnLogOut = new System.Windows.Forms.Button();
             this.pnlCurrentPage = new System.Windows.Forms.Panel();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnAccount = new System.Windows.Forms.Button();
@@ -34,10 +35,10 @@
             this.pnlLogo = new System.Windows.Forms.Panel();
             this.lblOOBankLogo = new System.Windows.Forms.Label();
             this.pnlMain = new System.Windows.Forms.Panel();
-            this.overviewUC1 = new OO_Bank.User_Controls.OverviewUC();
             this.expenses_and_BudgetUC1 = new OO_Bank.User_Controls.Expenses_and_BudgetUC();
             this.pay_and_TransferUC1 = new OO_Bank.User_Controls.Pay_and_TransferUC();
             this.my_AccountUC1 = new OO_Bank.User_Controls.My_AccountUC();
+            this.overviewUC1 = new OO_Bank.User_Controls.OverviewUC();
             this.pnlSideBar.SuspendLayout();
             this.pnlLogo.SuspendLayout();
             this.pnlMain.SuspendLayout();
@@ -46,6 +47,7 @@
             // pnlSideBar
             // 
             this.pnlSideBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(39)))), ((int)(((byte)(42)))));
+            this.pnlSideBar.Controls.Add(this.btnLogOut);
             this.pnlSideBar.Controls.Add(this.pnlCurrentPage);
             this.pnlSideBar.Controls.Add(this.btnExit);
             this.pnlSideBar.Controls.Add(this.btnAccount);
@@ -58,6 +60,22 @@
             this.pnlSideBar.Name = "pnlSideBar";
             this.pnlSideBar.Size = new System.Drawing.Size(200, 650);
             this.pnlSideBar.TabIndex = 0;
+            // 
+            // btnLogOut
+            // 
+            this.btnLogOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(39)))), ((int)(((byte)(42)))));
+            this.btnLogOut.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLogOut.FlatAppearance.BorderSize = 0;
+            this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogOut.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogOut.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
+            this.btnLogOut.Location = new System.Drawing.Point(34, 543);
+            this.btnLogOut.Name = "btnLogOut";
+            this.btnLogOut.Size = new System.Drawing.Size(128, 45);
+            this.btnLogOut.TabIndex = 5;
+            this.btnLogOut.Text = "Log Out";
+            this.btnLogOut.UseVisualStyleBackColor = false;
+            this.btnLogOut.Click += new System.EventHandler(this.BtnLogOut_Click);
             // 
             // pnlCurrentPage
             // 
@@ -73,11 +91,11 @@
             this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExit.FlatAppearance.BorderSize = 0;
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnExit.Location = new System.Drawing.Point(54, 559);
+            this.btnExit.Location = new System.Drawing.Point(53, 596);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(88, 63);
+            this.btnExit.Size = new System.Drawing.Size(88, 45);
             this.btnExit.TabIndex = 3;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = false;
@@ -188,15 +206,6 @@
             this.pnlMain.Size = new System.Drawing.Size(900, 650);
             this.pnlMain.TabIndex = 1;
             // 
-            // overviewUC1
-            // 
-            this.overviewUC1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
-            this.overviewUC1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.overviewUC1.Location = new System.Drawing.Point(0, 0);
-            this.overviewUC1.Name = "overviewUC1";
-            this.overviewUC1.Size = new System.Drawing.Size(900, 650);
-            this.overviewUC1.TabIndex = 4;
-            // 
             // expenses_and_BudgetUC1
             // 
             this.expenses_and_BudgetUC1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
@@ -223,6 +232,15 @@
             this.my_AccountUC1.Name = "my_AccountUC1";
             this.my_AccountUC1.Size = new System.Drawing.Size(900, 650);
             this.my_AccountUC1.TabIndex = 3;
+            // 
+            // overviewUC1
+            // 
+            this.overviewUC1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
+            this.overviewUC1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.overviewUC1.Location = new System.Drawing.Point(0, 0);
+            this.overviewUC1.Name = "overviewUC1";
+            this.overviewUC1.Size = new System.Drawing.Size(900, 650);
+            this.overviewUC1.TabIndex = 3;
             // 
             // FormMain
             // 
@@ -265,6 +283,7 @@
         private User_Controls.Pay_and_TransferUC pay_and_TransferUC1;
         private System.Windows.Forms.Label lblOOBankLogo;
         private User_Controls.OverviewUC overviewUC1;
+        private System.Windows.Forms.Button btnLogOut;
     }
 }
 

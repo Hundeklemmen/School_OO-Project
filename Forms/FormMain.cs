@@ -1,4 +1,5 @@
 ﻿using OO_Bank.Classes;
+using OO_Bank.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -7,6 +8,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -18,7 +20,8 @@ namespace OO_Bank {
 
         /*
         Get/Set our user with Settings.CurrentUser = (User object here)
-
+        Todo:
+        -Check if card number already exist
 
         Plans:
         User:
@@ -129,6 +132,18 @@ namespace OO_Bank {
         private void BtnAccount_Click(object sender, EventArgs e) {
             MoveBar(btnAccount);
             VisibleUC(false, false, false, true);
+        }
+
+        private void BtnLogOut_Click(object sender, EventArgs e) {
+            FormYesNo customMessage = new FormYesNo("Would you like to log out?");
+            if (customMessage.DialogResult == DialogResult.Yes) {
+                var t = new Thread(() => Application.Run(new FormLogSign()));
+                t.Start();
+                Application.OpenForms["FormMain"].Close();
+
+            } else if (customMessage.DialogResult == DialogResult.No) {
+                customMessage.Hide();
+            }
         }
     }
 }

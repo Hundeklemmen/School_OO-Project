@@ -110,11 +110,11 @@
             // 
             this.txtPasswordInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
             this.txtPasswordInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPasswordInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F);
+            this.txtPasswordInput.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPasswordInput.ForeColor = System.Drawing.Color.Gray;
             this.txtPasswordInput.Location = new System.Drawing.Point(68, 160);
             this.txtPasswordInput.Name = "txtPasswordInput";
-            this.txtPasswordInput.Size = new System.Drawing.Size(250, 31);
+            this.txtPasswordInput.Size = new System.Drawing.Size(250, 34);
             this.txtPasswordInput.TabIndex = 21;
             this.txtPasswordInput.Text = "Password";
             this.txtPasswordInput.MouseClick += new System.Windows.Forms.MouseEventHandler(this.TxtPasswordInput_MouseClick);
@@ -144,11 +144,11 @@
             // 
             this.txtAccountIDInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
             this.txtAccountIDInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtAccountIDInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F);
+            this.txtAccountIDInput.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAccountIDInput.ForeColor = System.Drawing.Color.Gray;
             this.txtAccountIDInput.Location = new System.Drawing.Point(68, 107);
             this.txtAccountIDInput.Name = "txtAccountIDInput";
-            this.txtAccountIDInput.Size = new System.Drawing.Size(250, 31);
+            this.txtAccountIDInput.Size = new System.Drawing.Size(250, 34);
             this.txtAccountIDInput.TabIndex = 17;
             this.txtAccountIDInput.Text = "Account ID";
             this.txtAccountIDInput.MouseClick += new System.Windows.Forms.MouseEventHandler(this.TxtAccountIDInput_MouseClick);
@@ -159,11 +159,11 @@
             // 
             this.lblLogIn.AutoSize = true;
             this.lblLogIn.Cursor = System.Windows.Forms.Cursors.SizeAll;
-            this.lblLogIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLogIn.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLogIn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
             this.lblLogIn.Location = new System.Drawing.Point(95, 20);
             this.lblLogIn.Name = "lblLogIn";
-            this.lblLogIn.Size = new System.Drawing.Size(155, 55);
+            this.lblLogIn.Size = new System.Drawing.Size(161, 58);
             this.lblLogIn.TabIndex = 18;
             this.lblLogIn.Text = "Log in";
             this.lblLogIn.MouseDown += new System.Windows.Forms.MouseEventHandler(this.LblLogIn_MouseDown);

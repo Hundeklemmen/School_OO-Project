@@ -26,6 +26,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogSign));
             this.lblWelcome = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnTesting = new System.Windows.Forms.Button();
             this.btnSignUp = new System.Windows.Forms.Button();
             this.btnLogIn = new System.Windows.Forms.Button();
             this.lblExit = new System.Windows.Forms.Label();
@@ -36,11 +37,11 @@
             // 
             this.lblWelcome.AutoSize = true;
             this.lblWelcome.Cursor = System.Windows.Forms.Cursors.SizeAll;
-            this.lblWelcome.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWelcome.Font = new System.Drawing.Font("Century", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblWelcome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
-            this.lblWelcome.Location = new System.Drawing.Point(34, 35);
+            this.lblWelcome.Location = new System.Drawing.Point(29, 34);
             this.lblWelcome.Name = "lblWelcome";
-            this.lblWelcome.Size = new System.Drawing.Size(651, 73);
+            this.lblWelcome.Size = new System.Drawing.Size(667, 77);
             this.lblWelcome.TabIndex = 4;
             this.lblWelcome.Text = "Welcome to OO Bank";
             this.lblWelcome.MouseDown += new System.Windows.Forms.MouseEventHandler(this.LblWelcome_MouseDown);
@@ -50,6 +51,7 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.btnTesting);
             this.panel1.Controls.Add(this.btnSignUp);
             this.panel1.Controls.Add(this.btnLogIn);
             this.panel1.Controls.Add(this.lblExit);
@@ -59,6 +61,23 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(718, 339);
             this.panel1.TabIndex = 7;
+            // 
+            // btnTesting
+            // 
+            this.btnTesting.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(39)))), ((int)(((byte)(42)))));
+            this.btnTesting.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnTesting.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
+            this.btnTesting.FlatAppearance.BorderSize = 3;
+            this.btnTesting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTesting.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTesting.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
+            this.btnTesting.Location = new System.Drawing.Point(269, 294);
+            this.btnTesting.Name = "btnTesting";
+            this.btnTesting.Size = new System.Drawing.Size(185, 32);
+            this.btnTesting.TabIndex = 31;
+            this.btnTesting.Text = "Instant log in (for testing)";
+            this.btnTesting.UseVisualStyleBackColor = false;
+            this.btnTesting.Click += new System.EventHandler(this.BtnTesting_Click);
             // 
             // btnSignUp
             // 
@@ -132,5 +151,6 @@
         private System.Windows.Forms.Label lblExit;
         private System.Windows.Forms.Button btnLogIn;
         private System.Windows.Forms.Button btnSignUp;
+        private System.Windows.Forms.Button btnTesting;
     }
 }

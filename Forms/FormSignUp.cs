@@ -140,7 +140,7 @@ namespace OO_Bank.User_Controls {
             Boolean Admin = chkAdmin.Checked;
             DateTime Birth = dtpBirthdate.Value;
             long ree = Birth.ToBinary();
-            MessageBox.Show(ree + "");
+            //MessageBox.Show(ree + "");
             signSuccess = true;
             if (!Utils.IsValidEmail(Email)) {
                 pnlEmail.BackColor = Color.FromArgb(255, 0, 0);
@@ -166,7 +166,7 @@ namespace OO_Bank.User_Controls {
             if (signSuccess) {
                 User user = new User(Utils.GenerateID(), FullName, Password, Email, Mobile, false, Admin, new List<Account>()); //Her laver vi et nyt user objekt til vores nye bruger
                 user.Save(); //Her gemmer vi vores nye bruger i vores system så han ikke mister sin bruger
-                FormCustomMessage customMessage = new FormCustomMessage("Your account was created successfully!\nYour ID is: " + user.ID + ", write this down!\nVery important - You need it to login!\n\n\nWould you like to be logged in?");
+                FormYesNo customMessage = new FormYesNo("Your account was created successfully!\nYour ID is: " + user.ID + ", write this down!\nVery important - You need it to login!\n\n\nWould you like to be logged in?");
                 if (customMessage.DialogResult == DialogResult.Yes) {
                     Settings.CurrentUser = user;
                     var t = new Thread(() => Application.Run(new FormMain()));

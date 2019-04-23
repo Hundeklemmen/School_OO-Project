@@ -55,11 +55,11 @@
             // 
             this.lblSignUp.AutoSize = true;
             this.lblSignUp.Cursor = System.Windows.Forms.Cursors.SizeAll;
-            this.lblSignUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSignUp.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSignUp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
             this.lblSignUp.Location = new System.Drawing.Point(77, 20);
             this.lblSignUp.Name = "lblSignUp";
-            this.lblSignUp.Size = new System.Drawing.Size(195, 55);
+            this.lblSignUp.Size = new System.Drawing.Size(195, 58);
             this.lblSignUp.TabIndex = 4;
             this.lblSignUp.Text = "Sign Up";
             this.lblSignUp.MouseDown += new System.Windows.Forms.MouseEventHandler(this.LblSignUp_MouseDown);
@@ -146,11 +146,11 @@
             // 
             this.txtMobileInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
             this.txtMobileInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtMobileInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F);
+            this.txtMobileInput.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMobileInput.ForeColor = System.Drawing.Color.Gray;
             this.txtMobileInput.Location = new System.Drawing.Point(67, 262);
             this.txtMobileInput.Name = "txtMobileInput";
-            this.txtMobileInput.Size = new System.Drawing.Size(250, 31);
+            this.txtMobileInput.Size = new System.Drawing.Size(250, 34);
             this.txtMobileInput.TabIndex = 3;
             this.txtMobileInput.Text = "Mobile";
             this.txtMobileInput.MouseClick += new System.Windows.Forms.MouseEventHandler(this.TxtMobileInput_MouseClick);
@@ -197,11 +197,11 @@
             // 
             this.txtEmailInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
             this.txtEmailInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtEmailInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F);
+            this.txtEmailInput.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmailInput.ForeColor = System.Drawing.Color.Gray;
             this.txtEmailInput.Location = new System.Drawing.Point(67, 213);
             this.txtEmailInput.Name = "txtEmailInput";
-            this.txtEmailInput.Size = new System.Drawing.Size(250, 31);
+            this.txtEmailInput.Size = new System.Drawing.Size(250, 34);
             this.txtEmailInput.TabIndex = 2;
             this.txtEmailInput.Text = "Email";
             this.txtEmailInput.MouseClick += new System.Windows.Forms.MouseEventHandler(this.TxtEmailInput_MouseClick);
@@ -244,11 +244,11 @@
             // 
             this.txtPasswordInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
             this.txtPasswordInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPasswordInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F);
+            this.txtPasswordInput.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPasswordInput.ForeColor = System.Drawing.Color.Gray;
             this.txtPasswordInput.Location = new System.Drawing.Point(67, 159);
             this.txtPasswordInput.Name = "txtPasswordInput";
-            this.txtPasswordInput.Size = new System.Drawing.Size(250, 31);
+            this.txtPasswordInput.Size = new System.Drawing.Size(250, 34);
             this.txtPasswordInput.TabIndex = 1;
             this.txtPasswordInput.Text = "Password";
             this.txtPasswordInput.MouseClick += new System.Windows.Forms.MouseEventHandler(this.TxtPasswordInput_MouseClick);
@@ -278,11 +278,11 @@
             // 
             this.txtFullNameInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
             this.txtFullNameInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtFullNameInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F);
+            this.txtFullNameInput.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFullNameInput.ForeColor = System.Drawing.Color.Gray;
             this.txtFullNameInput.Location = new System.Drawing.Point(67, 106);
             this.txtFullNameInput.Name = "txtFullNameInput";
-            this.txtFullNameInput.Size = new System.Drawing.Size(250, 31);
+            this.txtFullNameInput.Size = new System.Drawing.Size(250, 34);
             this.txtFullNameInput.TabIndex = 0;
             this.txtFullNameInput.Text = "Full name";
             this.txtFullNameInput.MouseClick += new System.Windows.Forms.MouseEventHandler(this.TxtFullNameInput_MouseClick);

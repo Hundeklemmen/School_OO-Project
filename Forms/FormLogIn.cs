@@ -92,7 +92,7 @@ namespace OO_Bank.User_Controls.Forms {
             String Password = txtPasswordInput.Text;
             logSuccess = true;
 
-            if (txtAccountIDInput.Text.Length != 4 || txtAccountIDInput.Text == "Account ID") {
+            if (txtAccountIDInput.Text.Length != 6 || txtAccountIDInput.Text == "Account ID") {
                 pnlAccountID.BackColor = Color.FromArgb(255, 0, 0);
                 goingToShake = true;
             }
