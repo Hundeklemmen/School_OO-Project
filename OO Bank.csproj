@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="Classes\Account.cs" />
     <Compile Include="Classes\Card.cs" />
+    <Compile Include="Classes\Transaction.cs" />
     <Compile Include="Classes\User.cs" />
     <Compile Include="Classes\Utils.cs" />
     <Compile Include="Exceptions\UserException.cs" />

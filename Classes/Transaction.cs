@@ -23,10 +23,16 @@ namespace OO_Bank.Classes {
             String FromName = "Someone";
             try {
                 FromName = Utils.GetUserByID(From.OwnerId).Name;
-            } catch(UserException e) {
+            } catch (UserException e) {
                 //Idk? Nyby, lav en custom alert box til hvis der opstår en fejl?
             }
-            return null;
+            String ToName = "Someone";
+            try {
+                ToName = Utils.GetUserByID(To.OwnerId).Name;
+            } catch (UserException e) {
+                //Idk? Nyby, lav en custom alert box til hvis der opstår en fejl?
+            }
+            return FromName + " sended $" + Amount + " to " + ToName;
         }
 
     }
