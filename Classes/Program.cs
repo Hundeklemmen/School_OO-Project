@@ -44,6 +44,11 @@ namespace OO_Bank {
                 Directory.CreateDirectory(@Settings.UsersPath);
             }
 
+            Settings.TransactionsPath = Settings.OOProjekt + "/transactions";
+            if (!Directory.Exists(@Settings.TransactionsPath)) {
+                Directory.CreateDirectory(@Settings.TransactionsPath);
+            }
+
         }
 
     }
@@ -52,6 +57,7 @@ namespace OO_Bank {
         public static String DesktopPath { get; set; }
         public static String OOProjekt { get; set; }
         public static String UsersPath { get; set; }
+        public static String TransactionsPath { get; set; }
         public static OverviewUC overviewUC { get; set; }
     }
 }

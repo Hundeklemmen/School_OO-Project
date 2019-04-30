@@ -24,10 +24,10 @@ namespace OO_Bank.Classes {
         }
 
         public void AddMoney(decimal Amount) {
-            this.balance =+ Amount;
+            this.balance = this.balance + Amount;
         }
         public void RemoveMoney(decimal Amount) {
-            this.balance =- Amount;
+            this.balance = this.balance - Amount;
         }
 
         public JObject GetAsJson() {

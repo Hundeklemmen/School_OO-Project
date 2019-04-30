@@ -32,8 +32,9 @@
             this.lstTransactions = new System.Windows.Forms.ListBox();
             this.pnlInfo = new System.Windows.Forms.Panel();
             this.pnlCard = new System.Windows.Forms.Panel();
-            this.noCard1 = new OO_Bank.User_Controls.Overview.NoCard();
             this.hasCard1 = new OO_Bank.User_Controls.Overview.HasCard();
+            this.noCard1 = new OO_Bank.User_Controls.Overview.NoCard();
+            this.button1 = new System.Windows.Forms.Button();
             this.pnlInfo.SuspendLayout();
             this.pnlCard.SuspendLayout();
             this.SuspendLayout();
@@ -101,13 +102,13 @@
             // 
             this.lstTransactions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(39)))), ((int)(((byte)(42)))));
             this.lstTransactions.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lstTransactions.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lstTransactions.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstTransactions.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
             this.lstTransactions.FormattingEnabled = true;
-            this.lstTransactions.ItemHeight = 24;
+            this.lstTransactions.ItemHeight = 21;
             this.lstTransactions.Location = new System.Drawing.Point(465, 106);
             this.lstTransactions.Name = "lstTransactions";
-            this.lstTransactions.Size = new System.Drawing.Size(421, 530);
+            this.lstTransactions.Size = new System.Drawing.Size(421, 527);
             this.lstTransactions.TabIndex = 9;
             // 
             // pnlInfo
@@ -131,20 +132,6 @@
             this.pnlCard.Size = new System.Drawing.Size(405, 302);
             this.pnlCard.TabIndex = 8;
             // 
-            // noCard1
-            // 
-            this.noCard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
-            this.noCard1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.noCard1.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.noCard1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
-            this.noCard1.Location = new System.Drawing.Point(0, 0);
-            this.noCard1.Margin = new System.Windows.Forms.Padding(5);
-            this.noCard1.MaximumSize = new System.Drawing.Size(405, 302);
-            this.noCard1.MinimumSize = new System.Drawing.Size(405, 302);
-            this.noCard1.Name = "noCard1";
-            this.noCard1.Size = new System.Drawing.Size(405, 302);
-            this.noCard1.TabIndex = 1;
-            // 
             // hasCard1
             // 
             this.hasCard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
@@ -159,11 +146,36 @@
             this.hasCard1.Size = new System.Drawing.Size(405, 302);
             this.hasCard1.TabIndex = 0;
             // 
+            // noCard1
+            // 
+            this.noCard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
+            this.noCard1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.noCard1.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.noCard1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
+            this.noCard1.Location = new System.Drawing.Point(0, 0);
+            this.noCard1.Margin = new System.Windows.Forms.Padding(5);
+            this.noCard1.MaximumSize = new System.Drawing.Size(405, 302);
+            this.noCard1.MinimumSize = new System.Drawing.Size(405, 302);
+            this.noCard1.Name = "noCard1";
+            this.noCard1.Size = new System.Drawing.Size(405, 302);
+            this.noCard1.TabIndex = 1;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(796, 626);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(101, 23);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "TestTransaction";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
+            // 
             // OverviewUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.pnlInfo);
             this.Controls.Add(this.lstTransactions);
             this.Controls.Add(this.cmbChooseAccount);
@@ -190,5 +202,6 @@
         private System.Windows.Forms.Panel pnlCard;
         private Overview.NoCard noCard1;
         private Overview.HasCard hasCard1;
+        private System.Windows.Forms.Button button1;
     }
 }

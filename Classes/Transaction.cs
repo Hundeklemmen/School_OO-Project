@@ -1,6 +1,8 @@
-﻿using OO_Bank.Exceptions;
+﻿using Newtonsoft.Json.Linq;
+using OO_Bank.Exceptions;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,6 +21,21 @@ namespace OO_Bank.Classes {
             this.Time = Time;
         }
 
+
+        public void Transfer() {
+            From.RemoveMoney(this.Amount);
+            To.AddMoney(this.Amount);
+            this.Save();
+        }
+
+        public Boolean CanTransfer() {
+            if (From.balance - this.Amount >= 0) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
         public String GetFormatted() {
             String FromName = "Someone";
             try {
@@ -32,7 +49,46 @@ namespace OO_Bank.Classes {
             } catch (UserException e) {
                 //Idk? Nyby, lav en custom alert box til hvis der opstår en fejl?
             }
-            return FromName + " sended $" + Amount + " to " + ToName;
+            return FromName + " sent $" + Amount + " to " + ToName;
+        }
+
+        public String GetFormattedAsSender() {
+            String ToName = "Someone";
+            try {
+                ToName = Utils.GetUserByID(To.OwnerId).Name;
+            } catch (UserException e) {
+                //Idk? Nyby, lav en custom alert box til hvis der opstår en fejl?
+            }
+            return "[" + this.Time.ToString("MM/dd/yyyy HH:mm") + "] " + "You have sent $" + Amount + " to " + ToName;
+        }
+        public String GetFormattedAsReciever() {
+            String FromName = "Someone";
+            try {
+                FromName = Utils.GetUserByID(From.OwnerId).Name;
+            } catch (UserException e) {
+                //Idk? Nyby, lav en custom alert box til hvis der opstår en fejl?
+            }
+            return "[" + this.Time.ToString("MM/dd/yyyy HH:mm") + "] " + FromName + " have sent you $" + Amount;
+        }
+
+
+        public void Save() {
+            String FromPath = Settings.TransactionsPath + "/" + From.Number + ".txt";
+            //if (!File.Exists(@FromPath)) {
+            //    File.Create(@FromPath);
+            //}
+            //
+            String ToPath = Settings.TransactionsPath + "/" + To.Number + ".txt";
+            //if (!File.Exists(@ToPath)) {
+           //     File.Create(@ToPath);
+            //}
+
+            using (StreamWriter sw = File.AppendText(@FromPath)) {
+                sw.WriteLine(this.GetFormattedAsSender());
+            }
+            using (StreamWriter sw = File.AppendText(ToPath)) {
+                sw.WriteLine(this.GetFormattedAsReciever());
+            }
         }
 
     }

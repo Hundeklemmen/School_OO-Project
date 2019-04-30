@@ -55,6 +55,12 @@
     <Compile Include="Classes\User.cs" />
     <Compile Include="Classes\Utils.cs" />
     <Compile Include="Exceptions\UserException.cs" />
+    <Compile Include="Forms\Custom Messages\FormMultiTextInput.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Custom Messages\FormMultiTextInput.Designer.cs">
+      <DependentUpon>FormMultiTextInput.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Custom Messages\FormTextInput.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +135,9 @@
     <Compile Include="Forms\FormSignUp.Designer.cs">
       <DependentUpon>FormSignUp.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Forms\Custom Messages\FormMultiTextInput.resx">
+      <DependentUpon>FormMultiTextInput.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Custom Messages\FormTextInput.resx">
       <DependentUpon>FormTextInput.cs</DependentUpon>
     </EmbeddedResource>

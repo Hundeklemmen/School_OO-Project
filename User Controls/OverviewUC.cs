@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using OO_Bank.Classes;
 using OO_Bank.Forms.Custom_Messages;
+using System.IO;
 
 namespace OO_Bank.User_Controls {
     public partial class OverviewUC : UserControl {
@@ -116,10 +117,55 @@ namespace OO_Bank.User_Controls {
                 hasCard1.Visible = false;
                 noCard1.Visible = true;
             }
+
+            //Clear vores Transactionslist fra UI
+            lstTransactions.Items.Clear();
+
+            //Tjek om der findes en Transactions fil
+            String TransactionPath = Settings.TransactionsPath + "/" + account.Number + ".txt";
+            if (File.Exists(@TransactionPath)) {
+                var TransactionsList = File.ReadLines(@TransactionPath);
+                foreach (var TransactionLine in TransactionsList) {
+                    lstTransactions.Items.Add(TransactionLine);
+                }
+            } else {
+                lstTransactions.Items.Add("No transactions yet!");
+            }
         }
 
         private void OverviewUC_Load(object sender, EventArgs e) {
             UpdateList();
+        }
+
+        private void Button1_Click(object sender, EventArgs e) {
+            FormMultiTextInput customText = new FormMultiTextInput("Transfer Money (Amount, Account)");
+            if (customText.DialogResult == DialogResult.OK) {
+                String amount = customText.Input1;
+                String Account = customText.Input2;
+                decimal amountParsed = decimal.Parse(amount);
+
+                Account toAccount = null;
+                foreach(Account acc in Settings.CurrentUser.Accounts){
+                    if (acc.Number.ToString().Equals(Account)) {
+                        toAccount = acc;
+                    }
+                }
+                if(toAccount != null) {
+                    Transaction TAction = new Transaction(account, toAccount, amountParsed, DateTime.Now);
+                    if(TAction.CanTransfer() == true) {
+                        TAction.Transfer();
+                        Settings.CurrentUser.Save();
+                        this.UpdateAccount();
+                    } else {
+                        MessageBox.Show("Account doesn't contain enough money!");
+                    }
+                } else {
+                    MessageBox.Show("Account not found");
+                }
+                
+
+                //Transaction trans = new Transaction(this.account, )
+            }
         }
     }
 }

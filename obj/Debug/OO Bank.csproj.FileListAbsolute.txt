@@ -70,3 +70,4 @@ C:\Users\xande\Documents\GitHub\School_OO-Project\obj\Debug\OO Bank.csproj.CoreC
 C:\Users\xande\Documents\GitHub\School_OO-Project\obj\Debug\OO Bank.csproj.CopyComplete
 C:\Users\xande\Documents\GitHub\School_OO-Project\obj\Debug\OO Bank.exe
 C:\Users\xande\Documents\GitHub\School_OO-Project\obj\Debug\OO Bank.pdb
+C:\Users\xande\Documents\GitHub\School_OO-Project\obj\Debug\OO_Bank.Forms.Custom_Messages.FormMultiTextInput.resources
