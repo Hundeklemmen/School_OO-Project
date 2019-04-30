@@ -12,6 +12,69 @@ using System.Windows.Forms;
 namespace OO_Bank.Classes {
     class Utils {
 
+        public static Random random = new Random();
+        public static long LongRandom(long min, long max, Random rand) {
+            byte[] buf = new byte[8];
+            rand.NextBytes(buf);
+            long longRand = BitConverter.ToInt64(buf, 0);
+            return (Math.Abs(longRand % (max - min)) + min);
+        }
+
+        public static long GenerateCardNumber() {
+            long randomNumber = LongRandom(100000000000, 1000000000000, random);
+            string randomString = "9352" + randomNumber.ToString();
+            randomNumber = Convert.ToInt64(randomString);
+            return randomNumber;
+            /*
+            String date = DateTime.Now.ToFileTime().ToString();
+            date = date.Remove(0, (date.Length - 12));
+            string stringCard = "9352" + date.ToString();
+            long cardNumber = Convert.ToInt64(stringCard);
+            return cardNumber;
+            */
+        }
+
+        public static int GenerateSecurityNumber() {
+            int randomNumber = random.Next(100, 1000);
+            return randomNumber;
+            /*
+            String date = DateTime.Now.ToFileTime().ToString();
+            date = date.Remove(0, (date.Length - 3));
+            int securityNumber = int.Parse(date);
+            return securityNumber;
+            */
+        }
+
+        public static long GenerateID() {
+            long randomNumber = LongRandom(100000, 1000000, random);
+            return randomNumber;
+            /*
+            int tries = 0;
+            Retry:
+            String date = DateTime.Now.ToFileTime().ToString();
+            date = date.Remove(0, (date.Length - 6));
+            if (tries == 10000) {
+                MessageBox.Show("No more IDs, please contact an administrator");
+                goto Retry;
+            } else if (int.Parse(date) < 100000) {
+                tries++;
+                goto Retry;
+            }
+            else if (File.Exists(Settings.UsersPath + "/" + date + ".json")) {
+                tries++;
+                goto Retry;
+            }
+            else {
+                long Id = Convert.ToInt64(date);
+                return Id;
+            }
+            */
+        }
+
+        public static int GenerateAccountNumber() {
+            int randomNumber = random.Next(100000000, 1000000000);
+            return randomNumber;
+        }
 
         public static User GetUserByID(long ID) {
             String userPath = Settings.UsersPath + "/" + ID + ".json";
@@ -21,13 +84,6 @@ namespace OO_Bank.Classes {
             } else {
                 throw new UserException("User not found!");
             }
-        }
-
-        public static long GenerateID() {
-            String date = DateTime.Now.ToFileTime().ToString();
-            date = date.Remove(0, (date.Length - 4));
-            long Id = Convert.ToInt64(date); 
-            return Id;
         }
 
         public static bool IsValidEmail(string email) {
@@ -55,14 +111,22 @@ namespace OO_Bank.Classes {
             List<Account> Accounts = new List<Account>();
             foreach (JObject acc in accs) {
                 int accountNumber = (int)acc["Number"];
-                String accountNickName = (String)acc["NickName"];
-                decimal accountBalance = (decimal)acc["Balance"];
+                String accountName = (String)acc["Name"];
+                decimal accountBalance = (decimal)acc["balance"];
                 long accountOwnerID = ID;
 
                 //public Card(long Number, DateTime ExpireDate, int SecurityNumber, long Owner, long AccountNumber) {
-                Card accountCard = null; //Lige nu indtil videre?.. fordi card ikke er done
-
-                Accounts.Add(new Account(accountNumber, accountNickName, accountBalance, accountOwnerID, accountCard));
+                Card accountCard = null;
+                if (acc.ContainsKey("Card") == true) {
+                    JObject tmpCard = (JObject)acc["Card"];
+                    long CardNumber = (long)tmpCard["Number"];
+                    DateTime CardExpireDate = (DateTime)tmpCard["ExpireDate"];
+                    int CardSecurityNumber = (int)tmpCard["SecurityNumber"];
+                    long CardOwner = (long)tmpCard["Owner"];
+                    long CardAccountNumber = (long)tmpCard["AccountNumber"];
+                    accountCard = new Card(CardNumber, CardExpireDate, CardSecurityNumber, CardOwner, CardAccountNumber);
+                }
+                Accounts.Add(new Account(accountNumber, accountName, accountBalance, accountOwnerID, accountCard));
             }
             return new User(ID, Name, Password, Email, Mobile, Suspended, Admin, Accounts);
         }

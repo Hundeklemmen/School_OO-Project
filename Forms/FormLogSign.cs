@@ -67,9 +67,11 @@ namespace OO_Bank {
                 MessageBox.Show("Test user 111111 doesn't exist, creating new test user.");
                 List<Account> accounts = new List<Account>();
                 Card testCard = new Card(9352192417248172, DateTime.Now, 421, 111111, 133125312);
-                accounts.Add(new Account(133125312, "Macd penge", 20.0m, 111111, testCard));
-                accounts.Add(new Account(172571252, "Opsparing", 2582858.2952m, 111111, null));
-                accounts.Add(new Account(112522152, "mienkraft", 0.0m, 111111, null));
+                accounts.Add(new Account(1331253125, "Macd penge", 20.0m, 111111, testCard));
+                accounts.Add(new Account(1725712525, "Opsparing", 2582858.2952m, 111111, null));
+                accounts.Add(new Account(1125221525, "mienkraft", 0.0m, 111111, null));
+                accounts.Add(new Account(1125235224, "test 1", 12521.24m, 111111, null));
+                accounts.Add(new Account(1121411522, "test 2", 12345m, 111111, null));
                 User user = new User(111111, "Skrome", "12345678", "skrome@gmail.com", "12345678", false, true, accounts);
                 user.Save();
                 Settings.CurrentUser = user;

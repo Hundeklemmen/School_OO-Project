@@ -124,8 +124,8 @@
             // 
             // pnlCard
             // 
-            this.pnlCard.Controls.Add(this.noCard1);
             this.pnlCard.Controls.Add(this.hasCard1);
+            this.pnlCard.Controls.Add(this.noCard1);
             this.pnlCard.Location = new System.Drawing.Point(19, 208);
             this.pnlCard.Name = "pnlCard";
             this.pnlCard.Size = new System.Drawing.Size(405, 302);

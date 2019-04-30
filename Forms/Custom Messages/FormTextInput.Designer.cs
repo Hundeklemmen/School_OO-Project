@@ -25,27 +25,71 @@
         private void InitializeComponent() {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormTextInput));
             this.pnlBorder = new System.Windows.Forms.Panel();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.pnlPassword = new System.Windows.Forms.Panel();
+            this.txtAccountName = new System.Windows.Forms.TextBox();
             this.btnConfirm = new System.Windows.Forms.Button();
             this.lblExit = new System.Windows.Forms.Label();
             this.lblCustomMessage = new System.Windows.Forms.Label();
-            this.txtAccountIDInput = new System.Windows.Forms.TextBox();
-            this.pnlPassword = new System.Windows.Forms.Panel();
             this.pnlBorder.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlBorder
             // 
             this.pnlBorder.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlBorder.Controls.Add(this.btnCancel);
             this.pnlBorder.Controls.Add(this.pnlPassword);
-            this.pnlBorder.Controls.Add(this.txtAccountIDInput);
+            this.pnlBorder.Controls.Add(this.txtAccountName);
             this.pnlBorder.Controls.Add(this.btnConfirm);
             this.pnlBorder.Controls.Add(this.lblExit);
             this.pnlBorder.Controls.Add(this.lblCustomMessage);
+            this.pnlBorder.Cursor = System.Windows.Forms.Cursors.SizeAll;
             this.pnlBorder.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlBorder.Location = new System.Drawing.Point(0, 0);
             this.pnlBorder.Name = "pnlBorder";
             this.pnlBorder.Size = new System.Drawing.Size(529, 332);
             this.pnlBorder.TabIndex = 7;
+            this.pnlBorder.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormMove_MouseDown);
+            this.pnlBorder.MouseMove += new System.Windows.Forms.MouseEventHandler(this.FormMove_MouseMove);
+            this.pnlBorder.MouseUp += new System.Windows.Forms.MouseEventHandler(this.FormMove_MouseUp);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(39)))), ((int)(((byte)(42)))));
+            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancel.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
+            this.btnCancel.FlatAppearance.BorderSize = 3;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.ForeColor = System.Drawing.Color.White;
+            this.btnCancel.Location = new System.Drawing.Point(276, 231);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(213, 67);
+            this.btnCancel.TabIndex = 26;
+            this.btnCancel.TabStop = false;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
+            // 
+            // pnlPassword
+            // 
+            this.pnlPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
+            this.pnlPassword.ForeColor = System.Drawing.Color.White;
+            this.pnlPassword.Location = new System.Drawing.Point(44, 161);
+            this.pnlPassword.Name = "pnlPassword";
+            this.pnlPassword.Size = new System.Drawing.Size(445, 10);
+            this.pnlPassword.TabIndex = 0;
+            // 
+            // txtAccountName
+            // 
+            this.txtAccountName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
+            this.txtAccountName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtAccountName.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAccountName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
+            this.txtAccountName.Location = new System.Drawing.Point(44, 121);
+            this.txtAccountName.Name = "txtAccountName";
+            this.txtAccountName.Size = new System.Drawing.Size(445, 34);
+            this.txtAccountName.TabIndex = 1;
             // 
             // btnConfirm
             // 
@@ -58,11 +102,12 @@
             this.btnConfirm.ForeColor = System.Drawing.Color.White;
             this.btnConfirm.Location = new System.Drawing.Point(44, 231);
             this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.Size = new System.Drawing.Size(445, 67);
+            this.btnConfirm.Size = new System.Drawing.Size(208, 67);
             this.btnConfirm.TabIndex = 0;
             this.btnConfirm.TabStop = false;
             this.btnConfirm.Text = "Confirm";
             this.btnConfirm.UseVisualStyleBackColor = false;
+            this.btnConfirm.Click += new System.EventHandler(this.BtnConfirm_Click);
             // 
             // lblExit
             // 
@@ -75,6 +120,7 @@
             this.lblExit.Size = new System.Drawing.Size(32, 31);
             this.lblExit.TabIndex = 25;
             this.lblExit.Text = "X";
+            this.lblExit.Click += new System.EventHandler(this.LblExit_Click);
             // 
             // lblCustomMessage
             // 
@@ -87,26 +133,9 @@
             this.lblCustomMessage.Size = new System.Drawing.Size(225, 31);
             this.lblCustomMessage.TabIndex = 0;
             this.lblCustomMessage.Text = "Custom Message";
-            // 
-            // txtAccountIDInput
-            // 
-            this.txtAccountIDInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
-            this.txtAccountIDInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtAccountIDInput.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAccountIDInput.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
-            this.txtAccountIDInput.Location = new System.Drawing.Point(44, 121);
-            this.txtAccountIDInput.Name = "txtAccountIDInput";
-            this.txtAccountIDInput.Size = new System.Drawing.Size(445, 34);
-            this.txtAccountIDInput.TabIndex = 1;
-            // 
-            // pnlPassword
-            // 
-            this.pnlPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
-            this.pnlPassword.ForeColor = System.Drawing.Color.White;
-            this.pnlPassword.Location = new System.Drawing.Point(44, 161);
-            this.pnlPassword.Name = "pnlPassword";
-            this.pnlPassword.Size = new System.Drawing.Size(445, 10);
-            this.pnlPassword.TabIndex = 0;
+            this.lblCustomMessage.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormMove_MouseDown);
+            this.lblCustomMessage.MouseMove += new System.Windows.Forms.MouseEventHandler(this.FormMove_MouseMove);
+            this.lblCustomMessage.MouseUp += new System.Windows.Forms.MouseEventHandler(this.FormMove_MouseUp);
             // 
             // FormTextInput
             // 
@@ -134,7 +163,8 @@
         private System.Windows.Forms.Button btnConfirm;
         private System.Windows.Forms.Label lblExit;
         private System.Windows.Forms.Label lblCustomMessage;
-        private System.Windows.Forms.TextBox txtAccountIDInput;
+        private System.Windows.Forms.TextBox txtAccountName;
         private System.Windows.Forms.Panel pnlPassword;
+        private System.Windows.Forms.Button btnCancel;
     }
 }

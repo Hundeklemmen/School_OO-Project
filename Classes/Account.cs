@@ -8,16 +8,16 @@ using System.Windows.Forms;
 
 namespace OO_Bank.Classes {
     public class Account {
-        int Number;
-        String NickName;
-        decimal balance;
-        long OwnerId;
-        Card Card;
+        public int Number;
+        public String Name;
+        public decimal balance;
+        public long OwnerId;
+        public Card Card;
 
-        //Test1234
-        public Account(int accountNumber, String accountNickName, decimal balance, long accountOwnerId, Card accountCard) {
+
+        public Account(int accountNumber, String accountName, decimal balance, long accountOwnerId, Card accountCard) {
             this.Number = accountNumber;
-            this.NickName = accountNickName;
+            this.Name = accountName;
             this.balance = balance;
             this.OwnerId = accountOwnerId;
             this.Card = accountCard;
@@ -31,7 +31,17 @@ namespace OO_Bank.Classes {
         }
 
         public JObject GetAsJson() {
-            return new JObject();
+            JObject tmpAccount = new JObject {
+                { "Number", this.Number },
+                { "Name", this.Name },
+                { "balance", this.balance },
+                { "OwnerId", this.OwnerId },
+            };
+            if(this.Card != null) {
+                tmpAccount.Add("Card", this.Card.GetAsJson());
+            }
+
+            return tmpAccount;
         }
     }
 }

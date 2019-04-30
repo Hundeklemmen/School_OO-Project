@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,6 +15,7 @@ namespace OO_Bank.Classes {
             - Card holder
             - Account Number
         */
+
         public long Number { get; set; }
         public DateTime ExpireDate { get; set; }
         public int SecurityNumber { get; set; }
@@ -26,6 +28,17 @@ namespace OO_Bank.Classes {
             this.SecurityNumber = SecurityNumber;
             this.Owner = Owner;
             this.AccountNumber = AccountNumber;
+        }
+
+        public JObject GetAsJson() {
+            JObject tmpCard = new JObject {
+                { "Number", this.Number },
+                { "ExpireDate", this.ExpireDate },
+                { "SecurityNumber", this.SecurityNumber },
+                { "Owner", this.Owner },
+                { "AccountNumber", this.AccountNumber }
+            };
+            return tmpCard;
         }
     }
 }

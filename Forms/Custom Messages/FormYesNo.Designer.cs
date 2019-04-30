@@ -43,9 +43,9 @@
             this.lblCustomMessage.Size = new System.Drawing.Size(225, 31);
             this.lblCustomMessage.TabIndex = 5;
             this.lblCustomMessage.Text = "Custom Message";
-            this.lblCustomMessage.MouseDown += new System.Windows.Forms.MouseEventHandler(this.LblCustomMessage_MouseDown);
-            this.lblCustomMessage.MouseMove += new System.Windows.Forms.MouseEventHandler(this.LblCustomMessage_MouseMove);
-            this.lblCustomMessage.MouseUp += new System.Windows.Forms.MouseEventHandler(this.LblCustomMessage_MouseUp);
+            this.lblCustomMessage.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MoveForm_MouseDown);
+            this.lblCustomMessage.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MoveForm_MouseMove);
+            this.lblCustomMessage.MouseUp += new System.Windows.Forms.MouseEventHandler(this.MoveForm_MouseUp);
             // 
             // pnlBorder
             // 
@@ -59,6 +59,9 @@
             this.pnlBorder.Name = "pnlBorder";
             this.pnlBorder.Size = new System.Drawing.Size(529, 332);
             this.pnlBorder.TabIndex = 6;
+            this.pnlBorder.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MoveForm_MouseDown);
+            this.pnlBorder.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MoveForm_MouseMove);
+            this.pnlBorder.MouseUp += new System.Windows.Forms.MouseEventHandler(this.MoveForm_MouseUp);
             // 
             // btnNo
             // 

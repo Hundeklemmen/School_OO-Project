@@ -1,4 +1,5 @@
 ﻿using OO_Bank.Classes;
+using OO_Bank.User_Controls;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -51,5 +52,6 @@ namespace OO_Bank {
         public static String DesktopPath { get; set; }
         public static String OOProjekt { get; set; }
         public static String UsersPath { get; set; }
+        public static OverviewUC overviewUC { get; set; }
     }
 }

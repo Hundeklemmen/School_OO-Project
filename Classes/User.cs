@@ -30,6 +30,7 @@ namespace OO_Bank.Classes {
             this.Suspended = Suspended;
             this.Admin = Admin;
             this.Accounts = Accounts;
+
         }
 
         public JObject GetAsJson() {
