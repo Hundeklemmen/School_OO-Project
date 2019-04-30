@@ -14,7 +14,7 @@ namespace OO_Bank.Classes {
         long OwnerId;
         Card Card;
 
-        //Test123
+        //Test1234
         public Account(int accountNumber, String accountNickName, decimal balance, long accountOwnerId, Card accountCard) {
             this.Number = accountNumber;
             this.NickName = accountNickName;
