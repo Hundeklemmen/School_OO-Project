@@ -27,23 +27,27 @@
             this.pnlBorder = new System.Windows.Forms.Panel();
             this.btnCancel = new System.Windows.Forms.Button();
             this.pnlPassword = new System.Windows.Forms.Panel();
-            this.txtAccountName = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.txtInput1 = new System.Windows.Forms.TextBox();
             this.btnConfirm = new System.Windows.Forms.Button();
             this.lblExit = new System.Windows.Forms.Label();
             this.lblCustomMessage = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.Input2Box = new System.Windows.Forms.RichTextBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.txtInput2 = new System.Windows.Forms.TextBox();
             this.pnlBorder.SuspendLayout();
             this.pnlPassword.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlBorder
             // 
             this.pnlBorder.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlBorder.Controls.Add(this.Input2Box);
+            this.pnlBorder.Controls.Add(this.panel2);
+            this.pnlBorder.Controls.Add(this.txtInput2);
             this.pnlBorder.Controls.Add(this.btnCancel);
             this.pnlBorder.Controls.Add(this.pnlPassword);
-            this.pnlBorder.Controls.Add(this.txtAccountName);
+            this.pnlBorder.Controls.Add(this.txtInput1);
             this.pnlBorder.Controls.Add(this.btnConfirm);
             this.pnlBorder.Controls.Add(this.lblExit);
             this.pnlBorder.Controls.Add(this.lblCustomMessage);
@@ -85,16 +89,25 @@
             this.pnlPassword.Size = new System.Drawing.Size(445, 10);
             this.pnlPassword.TabIndex = 0;
             // 
-            // txtAccountName
+            // panel1
             // 
-            this.txtAccountName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
-            this.txtAccountName.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtAccountName.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAccountName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
-            this.txtAccountName.Location = new System.Drawing.Point(44, 97);
-            this.txtAccountName.Name = "txtAccountName";
-            this.txtAccountName.Size = new System.Drawing.Size(445, 34);
-            this.txtAccountName.TabIndex = 1;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
+            this.panel1.ForeColor = System.Drawing.Color.White;
+            this.panel1.Location = new System.Drawing.Point(0, 50);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(445, 10);
+            this.panel1.TabIndex = 1;
+            // 
+            // txtInput1
+            // 
+            this.txtInput1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
+            this.txtInput1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtInput1.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtInput1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
+            this.txtInput1.Location = new System.Drawing.Point(44, 97);
+            this.txtInput1.Name = "txtInput1";
+            this.txtInput1.Size = new System.Drawing.Size(445, 34);
+            this.txtInput1.TabIndex = 1;
             // 
             // btnConfirm
             // 
@@ -142,22 +155,35 @@
             this.lblCustomMessage.MouseMove += new System.Windows.Forms.MouseEventHandler(this.FormMove_MouseMove);
             this.lblCustomMessage.MouseUp += new System.Windows.Forms.MouseEventHandler(this.FormMove_MouseUp);
             // 
-            // panel1
+            // panel2
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
-            this.panel1.ForeColor = System.Drawing.Color.White;
-            this.panel1.Location = new System.Drawing.Point(0, 50);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(445, 10);
-            this.panel1.TabIndex = 1;
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
+            this.panel2.Controls.Add(this.panel3);
+            this.panel2.ForeColor = System.Drawing.Color.White;
+            this.panel2.Location = new System.Drawing.Point(44, 206);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(445, 10);
+            this.panel2.TabIndex = 2;
             // 
-            // Input2Box
+            // panel3
             // 
-            this.Input2Box.Location = new System.Drawing.Point(44, 171);
-            this.Input2Box.Name = "Input2Box";
-            this.Input2Box.Size = new System.Drawing.Size(444, 39);
-            this.Input2Box.TabIndex = 27;
-            this.Input2Box.Text = "";
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
+            this.panel3.ForeColor = System.Drawing.Color.White;
+            this.panel3.Location = new System.Drawing.Point(0, 50);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(445, 10);
+            this.panel3.TabIndex = 1;
+            // 
+            // txtInput2
+            // 
+            this.txtInput2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
+            this.txtInput2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtInput2.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtInput2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
+            this.txtInput2.Location = new System.Drawing.Point(44, 163);
+            this.txtInput2.Name = "txtInput2";
+            this.txtInput2.Size = new System.Drawing.Size(445, 34);
+            this.txtInput2.TabIndex = 3;
             // 
             // FormMultiTextInput
             // 
@@ -176,6 +202,7 @@
             this.pnlBorder.ResumeLayout(false);
             this.pnlBorder.PerformLayout();
             this.pnlPassword.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -186,10 +213,12 @@
         private System.Windows.Forms.Button btnConfirm;
         private System.Windows.Forms.Label lblExit;
         private System.Windows.Forms.Label lblCustomMessage;
-        private System.Windows.Forms.TextBox txtAccountName;
+        private System.Windows.Forms.TextBox txtInput1;
         private System.Windows.Forms.Panel pnlPassword;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.RichTextBox Input2Box;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.TextBox txtInput2;
     }
 }

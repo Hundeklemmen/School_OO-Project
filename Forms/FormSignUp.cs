@@ -134,7 +134,7 @@ namespace OO_Bank.User_Controls {
 
         private void BtnSignUpConfirm_Click(object sender, EventArgs e) {
             String FullName = txtFullNameInput.Text;
-            String Password = txtPasswordInput.Text;
+            String Password = Utils.CalculateMD5Hash(txtPasswordInput.Text);
             String Email = txtEmailInput.Text;
             String Mobile = txtMobileInput.Text;
             Boolean Admin = chkAdmin.Checked;

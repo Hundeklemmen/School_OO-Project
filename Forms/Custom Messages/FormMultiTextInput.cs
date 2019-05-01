@@ -30,8 +30,8 @@ namespace OO_Bank.Forms.Custom_Messages {
 
         private void BtnConfirm_Click(object sender, EventArgs e) {
             this.DialogResult = DialogResult.OK;
-            this.Input1 = txtAccountName.Text;
-            this.Input2 = Input2Box.Text;
+            this.Input1 = txtInput1.Text;
+            this.Input2 = txtInput2.Text;
         }
 
         private void BtnCancel_Click(object sender, EventArgs e) {

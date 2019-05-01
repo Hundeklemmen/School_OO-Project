@@ -154,7 +154,6 @@ namespace OO_Bank.User_Controls {
                     Transaction TAction = new Transaction(account, toAccount, amountParsed, DateTime.Now);
                     if(TAction.CanTransfer() == true) {
                         TAction.Transfer();
-                        Settings.CurrentUser.Save();
                         this.UpdateAccount();
                     } else {
                         MessageBox.Show("Account doesn't contain enough money!");

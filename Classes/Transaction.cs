@@ -89,6 +89,9 @@ namespace OO_Bank.Classes {
             using (StreamWriter sw = File.AppendText(ToPath)) {
                 sw.WriteLine(this.GetFormattedAsReciever());
             }
+
+            Utils.GetUserByID(From.OwnerId).Save();
+            Utils.GetUserByID(To.OwnerId).Save();
         }
 
     }

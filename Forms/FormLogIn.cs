@@ -89,7 +89,7 @@ namespace OO_Bank.User_Controls.Forms {
 
         private void BtnLogInConfirm_Click(object sender, EventArgs e) {
             long AccountID = Convert.ToInt64(txtAccountIDInput.Text);
-            String Password = txtPasswordInput.Text;
+            String Password = Utils.CalculateMD5Hash(txtPasswordInput.Text);
             logSuccess = true;
 
             if (txtAccountIDInput.Text.Length != 6 || txtAccountIDInput.Text == "Account ID") {
