@@ -71,3 +71,6 @@ C:\Users\xande\Documents\GitHub\School_OO-Project\obj\Debug\OO Bank.csproj.CopyC
 C:\Users\xande\Documents\GitHub\School_OO-Project\obj\Debug\OO Bank.exe
 C:\Users\xande\Documents\GitHub\School_OO-Project\obj\Debug\OO Bank.pdb
 C:\Users\xande\Documents\GitHub\School_OO-Project\obj\Debug\OO_Bank.Forms.Custom_Messages.FormMultiTextInput.resources
+C:\Users\ander\OneDrive - IT Center Nord -81338807 - Tech college\Documents\GitHub\School_OO-Project\bin\Debug\OO Bank.exe.config
+C:\Users\ander\OneDrive - IT Center Nord -81338807 - Tech college\Documents\GitHub\School_OO-Project\obj\Debug\OO Bank.exe
+C:\Users\ander\OneDrive - IT Center Nord -81338807 - Tech college\Documents\GitHub\School_OO-Project\obj\Debug\OO Bank.pdb

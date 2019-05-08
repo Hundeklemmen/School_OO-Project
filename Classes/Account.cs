@@ -6,6 +6,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
+
+
+
+//hellloooooo i endgame sker der ting med ting :) og ting
+
+
+
+
+
+
+
 namespace OO_Bank.Classes {
     public class Account {
         public int Number;
