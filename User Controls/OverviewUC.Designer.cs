@@ -34,7 +34,7 @@
             this.pnlCard = new System.Windows.Forms.Panel();
             this.hasCard1 = new OO_Bank.User_Controls.Overview.HasCard();
             this.noCard1 = new OO_Bank.User_Controls.Overview.NoCard();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnTestTransaction = new System.Windows.Forms.Button();
             this.pnlInfo.SuspendLayout();
             this.pnlCard.SuspendLayout();
             this.SuspendLayout();
@@ -42,7 +42,7 @@
             // lblOverview
             // 
             this.lblOverview.AutoSize = true;
-            this.lblOverview.Font = new System.Drawing.Font("Century Gothic", 32.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOverview.Font = new System.Drawing.Font("Century Gothic", 32.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblOverview.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
             this.lblOverview.Location = new System.Drawing.Point(28, 21);
             this.lblOverview.Name = "lblOverview";
@@ -160,22 +160,22 @@
             this.noCard1.Size = new System.Drawing.Size(405, 302);
             this.noCard1.TabIndex = 1;
             // 
-            // button1
+            // btnTestTransaction
             // 
-            this.button1.Location = new System.Drawing.Point(796, 626);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(101, 23);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "TestTransaction";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Button1_Click);
+            this.btnTestTransaction.Location = new System.Drawing.Point(796, 626);
+            this.btnTestTransaction.Name = "btnTestTransaction";
+            this.btnTestTransaction.Size = new System.Drawing.Size(101, 23);
+            this.btnTestTransaction.TabIndex = 11;
+            this.btnTestTransaction.Text = "TestTransaction";
+            this.btnTestTransaction.UseVisualStyleBackColor = true;
+            this.btnTestTransaction.Click += new System.EventHandler(this.BtnTestTransaction_Click);
             // 
             // OverviewUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnTestTransaction);
             this.Controls.Add(this.pnlInfo);
             this.Controls.Add(this.lstTransactions);
             this.Controls.Add(this.cmbChooseAccount);
@@ -202,6 +202,6 @@
         private System.Windows.Forms.Panel pnlCard;
         private Overview.NoCard noCard1;
         private Overview.HasCard hasCard1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnTestTransaction;
     }
 }

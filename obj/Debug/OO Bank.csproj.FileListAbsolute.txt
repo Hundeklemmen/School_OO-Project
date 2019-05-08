@@ -74,3 +74,26 @@ C:\Users\xande\Documents\GitHub\School_OO-Project\obj\Debug\OO_Bank.Forms.Custom
 C:\Users\ander\OneDrive - IT Center Nord -81338807 - Tech college\Documents\GitHub\School_OO-Project\bin\Debug\OO Bank.exe.config
 C:\Users\ander\OneDrive - IT Center Nord -81338807 - Tech college\Documents\GitHub\School_OO-Project\obj\Debug\OO Bank.exe
 C:\Users\ander\OneDrive - IT Center Nord -81338807 - Tech college\Documents\GitHub\School_OO-Project\obj\Debug\OO Bank.pdb
+C:\Users\ander\OneDrive - IT Center Nord -81338807 - Tech college\Documents\GitHub\School_OO-Project\obj\Debug\OO Bank.csprojAssemblyReference.cache
+C:\Users\ander\OneDrive - IT Center Nord -81338807 - Tech college\Documents\GitHub\School_OO-Project\obj\Debug\OO_Bank.Forms.Custom_Messages.FormMultiTextInput.resources
+C:\Users\ander\OneDrive - IT Center Nord -81338807 - Tech college\Documents\GitHub\School_OO-Project\obj\Debug\OO_Bank.Forms.Custom_Messages.FormTextInput.resources
+C:\Users\ander\OneDrive - IT Center Nord -81338807 - Tech college\Documents\GitHub\School_OO-Project\obj\Debug\OO_Bank.Forms.FormYesNo.resources
+C:\Users\ander\OneDrive - IT Center Nord -81338807 - Tech college\Documents\GitHub\School_OO-Project\obj\Debug\OO_Bank.FormMain.resources
+C:\Users\ander\OneDrive - IT Center Nord -81338807 - Tech college\Documents\GitHub\School_OO-Project\obj\Debug\OO_Bank.User_Controls.Forms.FormLogIn.resources
+C:\Users\ander\OneDrive - IT Center Nord -81338807 - Tech college\Documents\GitHub\School_OO-Project\obj\Debug\OO_Bank.FormLogSign.resources
+C:\Users\ander\OneDrive - IT Center Nord -81338807 - Tech college\Documents\GitHub\School_OO-Project\obj\Debug\OO_Bank.Properties.Resources.resources
+C:\Users\ander\OneDrive - IT Center Nord -81338807 - Tech college\Documents\GitHub\School_OO-Project\obj\Debug\OO_Bank.User_Controls.Expenses_and_BudgetUC.resources
+C:\Users\ander\OneDrive - IT Center Nord -81338807 - Tech college\Documents\GitHub\School_OO-Project\obj\Debug\OO_Bank.User_Controls.FormSignUp.resources
+C:\Users\ander\OneDrive - IT Center Nord -81338807 - Tech college\Documents\GitHub\School_OO-Project\obj\Debug\OO_Bank.User_Controls.My_AccountUC.resources
+C:\Users\ander\OneDrive - IT Center Nord -81338807 - Tech college\Documents\GitHub\School_OO-Project\obj\Debug\OO_Bank.User_Controls.OverviewUC.resources
+C:\Users\ander\OneDrive - IT Center Nord -81338807 - Tech college\Documents\GitHub\School_OO-Project\obj\Debug\OO_Bank.User_Controls.Overview.HasCard.resources
+C:\Users\ander\OneDrive - IT Center Nord -81338807 - Tech college\Documents\GitHub\School_OO-Project\obj\Debug\OO_Bank.User_Controls.Overview.NoCard.resources
+C:\Users\ander\OneDrive - IT Center Nord -81338807 - Tech college\Documents\GitHub\School_OO-Project\obj\Debug\OO_Bank.User_Controls.Pay_and_TransferUC.resources
+C:\Users\ander\OneDrive - IT Center Nord -81338807 - Tech college\Documents\GitHub\School_OO-Project\obj\Debug\OO Bank.csproj.GenerateResource.cache
+C:\Users\ander\OneDrive - IT Center Nord -81338807 - Tech college\Documents\GitHub\School_OO-Project\obj\Debug\OO Bank.csproj.CoreCompileInputs.cache
+C:\Users\ander\OneDrive - IT Center Nord -81338807 - Tech college\Documents\GitHub\School_OO-Project\bin\Debug\OO Bank.exe
+C:\Users\ander\OneDrive - IT Center Nord -81338807 - Tech college\Documents\GitHub\School_OO-Project\bin\Debug\OO Bank.pdb
+C:\Users\ander\OneDrive - IT Center Nord -81338807 - Tech college\Documents\GitHub\School_OO-Project\bin\Debug\Newtonsoft.Json.dll
+C:\Users\ander\OneDrive - IT Center Nord -81338807 - Tech college\Documents\GitHub\School_OO-Project\bin\Debug\Newtonsoft.Json.pdb
+C:\Users\ander\OneDrive - IT Center Nord -81338807 - Tech college\Documents\GitHub\School_OO-Project\bin\Debug\Newtonsoft.Json.xml
+C:\Users\ander\OneDrive - IT Center Nord -81338807 - Tech college\Documents\GitHub\School_OO-Project\obj\Debug\OO Bank.csproj.CopyComplete

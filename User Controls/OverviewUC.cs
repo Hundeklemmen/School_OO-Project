@@ -137,7 +137,7 @@ namespace OO_Bank.User_Controls {
             UpdateList();
         }
 
-        private void Button1_Click(object sender, EventArgs e) {
+        private void BtnTestTransaction_Click(object sender, EventArgs e) {
             FormMultiTextInput customText = new FormMultiTextInput("Transfer Money (Amount, Account)");
             if (customText.DialogResult == DialogResult.OK) {
                 String amount = customText.Input1;
