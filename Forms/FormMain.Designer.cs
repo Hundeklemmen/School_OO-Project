@@ -257,7 +257,7 @@
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(1100, 650);
             this.Name = "FormMain";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "OO Bank";
             this.pnlSideBar.ResumeLayout(false);
             this.pnlLogo.ResumeLayout(false);

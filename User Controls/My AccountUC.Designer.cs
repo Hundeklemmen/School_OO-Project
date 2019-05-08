@@ -32,6 +32,7 @@
             this.lblOverallBalance = new System.Windows.Forms.Label();
             this.btnDeleteAccount = new System.Windows.Forms.Button();
             this.lblClickToUpdate = new System.Windows.Forms.Label();
+            this.btnCollectAccInfo = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblID
@@ -64,9 +65,9 @@
             this.lblName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
             this.lblName.Location = new System.Drawing.Point(180, 294);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(104, 33);
+            this.lblName.Size = new System.Drawing.Size(193, 33);
             this.lblName.TabIndex = 5;
-            this.lblName.Text = "Name:";
+            this.lblName.Text = "Name: Name";
             this.lblName.Click += new System.EventHandler(this.LblName_Click);
             // 
             // lblPassword
@@ -90,9 +91,9 @@
             this.lblEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
             this.lblEmail.Location = new System.Drawing.Point(192, 392);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(92, 33);
+            this.lblEmail.Size = new System.Drawing.Size(169, 33);
             this.lblEmail.TabIndex = 7;
-            this.lblEmail.Text = "Email:";
+            this.lblEmail.Text = "Email: Email";
             this.lblEmail.Click += new System.EventHandler(this.LblEmail_Click);
             // 
             // lblMobile
@@ -103,9 +104,9 @@
             this.lblMobile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
             this.lblMobile.Location = new System.Drawing.Point(171, 440);
             this.lblMobile.Name = "lblMobile";
-            this.lblMobile.Size = new System.Drawing.Size(113, 33);
+            this.lblMobile.Size = new System.Drawing.Size(211, 33);
             this.lblMobile.TabIndex = 8;
-            this.lblMobile.Text = "Mobile:";
+            this.lblMobile.Text = "Mobile: Mobile";
             this.lblMobile.Click += new System.EventHandler(this.LblMobile_Click);
             // 
             // lblOverallBalance
@@ -127,13 +128,13 @@
             this.btnDeleteAccount.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
             this.btnDeleteAccount.FlatAppearance.BorderSize = 3;
             this.btnDeleteAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeleteAccount.Font = new System.Drawing.Font("Century Gothic", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteAccount.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeleteAccount.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteAccount.Location = new System.Drawing.Point(38, 503);
+            this.btnDeleteAccount.Location = new System.Drawing.Point(31, 550);
             this.btnDeleteAccount.Name = "btnDeleteAccount";
-            this.btnDeleteAccount.Size = new System.Drawing.Size(246, 113);
+            this.btnDeleteAccount.Size = new System.Drawing.Size(125, 70);
             this.btnDeleteAccount.TabIndex = 29;
-            this.btnDeleteAccount.Text = "Delete account";
+            this.btnDeleteAccount.Text = "Delete Account";
             this.btnDeleteAccount.UseVisualStyleBackColor = false;
             this.btnDeleteAccount.Click += new System.EventHandler(this.BtnDeleteAccount_Click);
             // 
@@ -148,11 +149,29 @@
             this.lblClickToUpdate.TabIndex = 30;
             this.lblClickToUpdate.Text = "Click The Desired Information To Update It";
             // 
+            // btnCollectAccInfo
+            // 
+            this.btnCollectAccInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(39)))), ((int)(((byte)(42)))));
+            this.btnCollectAccInfo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCollectAccInfo.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
+            this.btnCollectAccInfo.FlatAppearance.BorderSize = 3;
+            this.btnCollectAccInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCollectAccInfo.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCollectAccInfo.ForeColor = System.Drawing.Color.White;
+            this.btnCollectAccInfo.Location = new System.Drawing.Point(172, 550);
+            this.btnCollectAccInfo.Name = "btnCollectAccInfo";
+            this.btnCollectAccInfo.Size = new System.Drawing.Size(209, 70);
+            this.btnCollectAccInfo.TabIndex = 31;
+            this.btnCollectAccInfo.Text = "Collect Account Information";
+            this.btnCollectAccInfo.UseVisualStyleBackColor = false;
+            this.btnCollectAccInfo.Click += new System.EventHandler(this.BtnCollectAccInfo_Click);
+            // 
             // My_AccountUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
+            this.Controls.Add(this.btnCollectAccInfo);
             this.Controls.Add(this.lblClickToUpdate);
             this.Controls.Add(this.btnDeleteAccount);
             this.Controls.Add(this.lblOverallBalance);
@@ -181,5 +200,6 @@
         private System.Windows.Forms.Label lblOverallBalance;
         private System.Windows.Forms.Button btnDeleteAccount;
         private System.Windows.Forms.Label lblClickToUpdate;
+        private System.Windows.Forms.Button btnCollectAccInfo;
     }
 }

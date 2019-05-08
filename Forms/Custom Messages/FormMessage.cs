@@ -15,5 +15,9 @@ namespace OO_Bank.Forms.Custom_Messages {
             lblCustomMessage.Text = message;
             ShowDialog();
         }
+
+        private void BtnOk_Click(object sender, EventArgs e) {
+            this.Hide();
+        }
     }
 }

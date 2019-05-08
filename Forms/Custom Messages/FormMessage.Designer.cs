@@ -51,13 +51,14 @@
             this.btnOk.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOk.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOk.ForeColor = System.Drawing.Color.White;
-            this.btnOk.Location = new System.Drawing.Point(7, 209);
+            this.btnOk.Location = new System.Drawing.Point(13, 209);
             this.btnOk.Name = "btnOk";
-            this.btnOk.Size = new System.Drawing.Size(489, 67);
+            this.btnOk.Size = new System.Drawing.Size(483, 67);
             this.btnOk.TabIndex = 2;
             this.btnOk.TabStop = false;
             this.btnOk.Text = "Ok";
             this.btnOk.UseVisualStyleBackColor = false;
+            this.btnOk.Click += new System.EventHandler(this.BtnOk_Click);
             // 
             // panel1
             // 
@@ -80,8 +81,9 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormMessage";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormMessage";
+            this.TopMost = true;
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

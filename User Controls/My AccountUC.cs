@@ -9,12 +9,16 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using OO_Bank.Classes;
 using OO_Bank.Forms.Custom_Messages;
+using System.Threading;
+using OO_Bank.Forms;
+using System.IO;
 
 namespace OO_Bank.User_Controls {
     public partial class My_AccountUC : UserControl {
         public My_AccountUC() {
             InitializeComponent();
         }
+
 
         private void My_AccountUC_Load(object sender, EventArgs e) {
             try {
@@ -97,7 +101,35 @@ namespace OO_Bank.User_Controls {
         }
 
         private void BtnDeleteAccount_Click(object sender, EventArgs e) {
-            
+            FormYesNo ConfirmDelete = new FormYesNo("Confirm deletion of account");
+            if (ConfirmDelete.DialogResult == DialogResult.Yes) {
+                FormMessage InfoMessage = new FormMessage("You've successfully deleted your account!");
+                File.Delete(Settings.UsersPath + "/" + Settings.CurrentUser.ID + ".json");
+                var t = new Thread(() => Application.Run(new FormLogSign()));
+                t.Start();
+                Application.OpenForms["FormMain"].Close();
+            }
+        }
+
+        private void BtnCollectAccInfo_Click(object sender, EventArgs e) {
+            var t = new Thread((ThreadStart)(() => {
+                FolderBrowserDialog fbd = new FolderBrowserDialog
+                {
+                    RootFolder = System.Environment.SpecialFolder.MyComputer,
+                    ShowNewFolderButton = true
+                };
+                if (fbd.ShowDialog() == DialogResult.Cancel)
+                    return;
+                try {
+                    File.Copy(@Settings.UsersPath + "/" + Settings.CurrentUser.ID + ".json", @fbd.SelectedPath + "/Account info for ID " + Settings.CurrentUser.ID + ".json");
+                    MessageBox.Show("File has been copied to specified location!");
+                } catch (Exception) {
+                    MessageBox.Show("Something went wrong while trying to save file at your specified location!");
+                }
+            }));
+
+            t.SetApartmentState(ApartmentState.STA);
+            t.Start();
         }
     }
 }

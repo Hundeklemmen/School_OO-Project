@@ -1,4 +1,5 @@
 ﻿using OO_Bank.Classes;
+using OO_Bank.Forms.Custom_Messages;
 using OO_Bank.User_Controls;
 using System;
 using System.Collections.Generic;
@@ -59,5 +60,10 @@ namespace OO_Bank {
         public static String UsersPath { get; set; }
         public static String TransactionsPath { get; set; }
         public static OverviewUC overviewUC { get; set; }
+
+        public static void ShowMessage(String Message) {
+            FormMessage InfoMessage = new FormMessage(Message);
+            InfoMessage.BringToFront();
+        }
     }
 }
