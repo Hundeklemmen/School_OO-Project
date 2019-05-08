@@ -48,10 +48,14 @@ namespace OO_Bank.User_Controls {
         }
 
         private void LblPassword_Click(object sender, EventArgs e) {
-            FormTextInput inputBox = new FormTextInput("Enter new password: ");
+            changePassword("Enter new password: ");
+        }
+        private void changePassword(String title) {
+            FormTextInput inputBox = new FormTextInput(title);
             if (inputBox.DialogResult == DialogResult.OK) {
                 if (inputBox.Message.Length < 8 || inputBox.Message == "Password") {
-                    Utils.Shake();
+                    inputBox.Hide();
+                    changePassword("Please try again");
                 } else {
                     Settings.CurrentUser.Password = Utils.CalculateMD5Hash(inputBox.Message);
                     Settings.CurrentUser.Save();
