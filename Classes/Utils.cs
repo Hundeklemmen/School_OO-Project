@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json.Linq;
 using OO_Bank.Exceptions;
+using OO_Bank.User_Controls;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -133,6 +134,16 @@ namespace OO_Bank.Classes {
         }
 
         public static void Shake(Form form) {
+            var original = form.Location;
+            var rnd = new Random(1337);
+            const int shake_amp = 10;
+            for (int i = 0; i < 10; i++) {
+                form.Location = new Point(original.X + rnd.Next(-shake_amp, shake_amp), original.Y + rnd.Next(-shake_amp, shake_amp));
+                System.Threading.Thread.Sleep(20);
+            }
+            form.Location = original;
+        }
+        public static void Shake(UserControl form) {
             var original = form.Location;
             var rnd = new Random(1337);
             const int shake_amp = 10;

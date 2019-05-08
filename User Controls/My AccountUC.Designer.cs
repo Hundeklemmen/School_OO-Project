@@ -62,7 +62,7 @@
             this.lblName.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblName.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
-            this.lblName.Location = new System.Drawing.Point(180, 241);
+            this.lblName.Location = new System.Drawing.Point(180, 294);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(104, 33);
             this.lblName.TabIndex = 5;
@@ -75,7 +75,7 @@
             this.lblPassword.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblPassword.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
-            this.lblPassword.Location = new System.Drawing.Point(139, 290);
+            this.lblPassword.Location = new System.Drawing.Point(139, 343);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(251, 33);
             this.lblPassword.TabIndex = 6;
@@ -88,7 +88,7 @@
             this.lblEmail.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblEmail.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
-            this.lblEmail.Location = new System.Drawing.Point(192, 339);
+            this.lblEmail.Location = new System.Drawing.Point(192, 392);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(92, 33);
             this.lblEmail.TabIndex = 7;
@@ -101,7 +101,7 @@
             this.lblMobile.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblMobile.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMobile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
-            this.lblMobile.Location = new System.Drawing.Point(171, 387);
+            this.lblMobile.Location = new System.Drawing.Point(171, 440);
             this.lblMobile.Name = "lblMobile";
             this.lblMobile.Size = new System.Drawing.Size(113, 33);
             this.lblMobile.TabIndex = 8;
@@ -114,12 +114,11 @@
             this.lblOverallBalance.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblOverallBalance.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblOverallBalance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
-            this.lblOverallBalance.Location = new System.Drawing.Point(50, 431);
+            this.lblOverallBalance.Location = new System.Drawing.Point(32, 158);
             this.lblOverallBalance.Name = "lblOverallBalance";
             this.lblOverallBalance.Size = new System.Drawing.Size(234, 33);
             this.lblOverallBalance.TabIndex = 9;
             this.lblOverallBalance.Text = "Overall Balance:";
-            this.lblOverallBalance.Click += new System.EventHandler(this.LblOverallBalance_Click);
             // 
             // btnDeleteAccount
             // 
@@ -143,7 +142,7 @@
             this.lblClickToUpdate.AutoSize = true;
             this.lblClickToUpdate.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblClickToUpdate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
-            this.lblClickToUpdate.Location = new System.Drawing.Point(32, 188);
+            this.lblClickToUpdate.Location = new System.Drawing.Point(32, 241);
             this.lblClickToUpdate.Name = "lblClickToUpdate";
             this.lblClickToUpdate.Size = new System.Drawing.Size(561, 33);
             this.lblClickToUpdate.TabIndex = 30;
