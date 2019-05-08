@@ -9,10 +9,10 @@ using System.Threading.Tasks;
 
 namespace OO_Bank.Classes {
     class Transaction {
-        Account From;
-        Account To;
-        decimal Amount;
-        DateTime Time;
+        private Account From;
+        private Account To;
+        private decimal Amount;
+        private DateTime Time;
 
         public Transaction(Account From, Account To, decimal Amount, DateTime Time) {
             this.From = From;
@@ -40,13 +40,13 @@ namespace OO_Bank.Classes {
             String FromName = "Someone";
             try {
                 FromName = Utils.GetUserByID(From.OwnerId).Name;
-            } catch (UserException e) {
+            } catch (UserException) {
                 //Idk? Nyby, lav en custom alert box til hvis der opstår en fejl?
             }
             String ToName = "Someone";
             try {
                 ToName = Utils.GetUserByID(To.OwnerId).Name;
-            } catch (UserException e) {
+            } catch (UserException) {
                 //Idk? Nyby, lav en custom alert box til hvis der opstår en fejl?
             }
             return FromName + " sent $" + Amount + " to " + ToName;
@@ -56,7 +56,7 @@ namespace OO_Bank.Classes {
             String ToName = "Someone";
             try {
                 ToName = Utils.GetUserByID(To.OwnerId).Name;
-            } catch (UserException e) {
+            } catch (UserException) {
                 //Idk? Nyby, lav en custom alert box til hvis der opstår en fejl?
             }
             return "[" + this.Time.ToString("MM/dd/yyyy HH:mm") + "] " + "You have sent $" + Amount + " to " + ToName;
@@ -65,7 +65,7 @@ namespace OO_Bank.Classes {
             String FromName = "Someone";
             try {
                 FromName = Utils.GetUserByID(From.OwnerId).Name;
-            } catch (UserException e) {
+            } catch (UserException) {
                 //Idk? Nyby, lav en custom alert box til hvis der opstår en fejl?
             }
             return "[" + this.Time.ToString("MM/dd/yyyy HH:mm") + "] " + FromName + " have sent you $" + Amount;

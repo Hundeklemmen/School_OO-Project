@@ -25,6 +25,9 @@
         private void InitializeComponent() {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMultiTextInput));
             this.pnlBorder = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.txtInput2 = new System.Windows.Forms.TextBox();
             this.btnCancel = new System.Windows.Forms.Button();
             this.pnlPassword = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -32,12 +35,9 @@
             this.btnConfirm = new System.Windows.Forms.Button();
             this.lblExit = new System.Windows.Forms.Label();
             this.lblCustomMessage = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.txtInput2 = new System.Windows.Forms.TextBox();
             this.pnlBorder.SuspendLayout();
-            this.pnlPassword.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.pnlPassword.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlBorder
@@ -60,6 +60,36 @@
             this.pnlBorder.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormMove_MouseDown);
             this.pnlBorder.MouseMove += new System.Windows.Forms.MouseEventHandler(this.FormMove_MouseMove);
             this.pnlBorder.MouseUp += new System.Windows.Forms.MouseEventHandler(this.FormMove_MouseUp);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
+            this.panel2.Controls.Add(this.panel3);
+            this.panel2.ForeColor = System.Drawing.Color.White;
+            this.panel2.Location = new System.Drawing.Point(44, 206);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(445, 10);
+            this.panel2.TabIndex = 2;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
+            this.panel3.ForeColor = System.Drawing.Color.White;
+            this.panel3.Location = new System.Drawing.Point(0, 50);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(445, 10);
+            this.panel3.TabIndex = 1;
+            // 
+            // txtInput2
+            // 
+            this.txtInput2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
+            this.txtInput2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtInput2.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtInput2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
+            this.txtInput2.Location = new System.Drawing.Point(44, 163);
+            this.txtInput2.Name = "txtInput2";
+            this.txtInput2.Size = new System.Drawing.Size(445, 34);
+            this.txtInput2.TabIndex = 3;
             // 
             // btnCancel
             // 
@@ -155,36 +185,6 @@
             this.lblCustomMessage.MouseMove += new System.Windows.Forms.MouseEventHandler(this.FormMove_MouseMove);
             this.lblCustomMessage.MouseUp += new System.Windows.Forms.MouseEventHandler(this.FormMove_MouseUp);
             // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
-            this.panel2.Controls.Add(this.panel3);
-            this.panel2.ForeColor = System.Drawing.Color.White;
-            this.panel2.Location = new System.Drawing.Point(44, 206);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(445, 10);
-            this.panel2.TabIndex = 2;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
-            this.panel3.ForeColor = System.Drawing.Color.White;
-            this.panel3.Location = new System.Drawing.Point(0, 50);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(445, 10);
-            this.panel3.TabIndex = 1;
-            // 
-            // txtInput2
-            // 
-            this.txtInput2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
-            this.txtInput2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtInput2.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtInput2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
-            this.txtInput2.Location = new System.Drawing.Point(44, 163);
-            this.txtInput2.Name = "txtInput2";
-            this.txtInput2.Size = new System.Drawing.Size(445, 34);
-            this.txtInput2.TabIndex = 3;
-            // 
             // FormMultiTextInput
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
@@ -197,12 +197,12 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "FormMultiTextInput";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FormMultiTextInput";
             this.pnlBorder.ResumeLayout(false);
             this.pnlBorder.PerformLayout();
-            this.pnlPassword.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            this.pnlPassword.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
