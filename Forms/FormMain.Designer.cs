@@ -35,10 +35,10 @@
             this.pnlLogo = new System.Windows.Forms.Panel();
             this.lblOOBankLogo = new System.Windows.Forms.Label();
             this.pnlMain = new System.Windows.Forms.Panel();
+            this.overviewUC1 = new OO_Bank.User_Controls.OverviewUC();
             this.expenses_and_BudgetUC1 = new OO_Bank.User_Controls.Expenses_and_BudgetUC();
             this.pay_and_TransferUC1 = new OO_Bank.User_Controls.Pay_and_TransferUC();
             this.my_AccountUC1 = new OO_Bank.User_Controls.My_AccountUC();
-            this.overviewUC1 = new OO_Bank.User_Controls.OverviewUC();
             this.pnlSideBar.SuspendLayout();
             this.pnlLogo.SuspendLayout();
             this.pnlMain.SuspendLayout();
@@ -206,6 +206,15 @@
             this.pnlMain.Size = new System.Drawing.Size(900, 650);
             this.pnlMain.TabIndex = 1;
             // 
+            // overviewUC1
+            // 
+            this.overviewUC1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
+            this.overviewUC1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.overviewUC1.Location = new System.Drawing.Point(0, 0);
+            this.overviewUC1.Name = "overviewUC1";
+            this.overviewUC1.Size = new System.Drawing.Size(900, 650);
+            this.overviewUC1.TabIndex = 3;
+            // 
             // expenses_and_BudgetUC1
             // 
             this.expenses_and_BudgetUC1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
@@ -233,15 +242,6 @@
             this.my_AccountUC1.Size = new System.Drawing.Size(900, 650);
             this.my_AccountUC1.TabIndex = 3;
             // 
-            // overviewUC1
-            // 
-            this.overviewUC1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
-            this.overviewUC1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.overviewUC1.Location = new System.Drawing.Point(0, 0);
-            this.overviewUC1.Name = "overviewUC1";
-            this.overviewUC1.Size = new System.Drawing.Size(900, 650);
-            this.overviewUC1.TabIndex = 3;
-            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -257,7 +257,7 @@
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(1100, 650);
             this.Name = "FormMain";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "OO Bank";
             this.pnlSideBar.ResumeLayout(false);
             this.pnlLogo.ResumeLayout(false);

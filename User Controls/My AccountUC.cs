@@ -41,26 +41,30 @@ namespace OO_Bank.User_Controls {
         private void LblName_Click(object sender, EventArgs e) {
             FormTextInput inputBox = new FormTextInput("Enter new name: ");
             if(inputBox.DialogResult == DialogResult.OK) {
-                Settings.CurrentUser.Name = inputBox.Message;
-                Settings.CurrentUser.Save();
-                UpdateInfo();
+                if (inputBox.Message.Length == 0 || inputBox.Message == "Full name") {
+
+                } else {
+                    Settings.CurrentUser.Name = inputBox.Message;
+                    Settings.CurrentUser.Save();
+                    UpdateInfo();
+                }
             }
         }
 
         private void LblPassword_Click(object sender, EventArgs e) {
-            changePassword("Enter new password: ");
+            ChangePassword("Enter new password: ");
         }
-        private void changePassword(String title) {
+        private void ChangePassword(String title) {
             FormTextInput inputBox = new FormTextInput(title);
             if (inputBox.DialogResult == DialogResult.OK) {
                 if (inputBox.Message.Length < 8 || inputBox.Message == "Password") {
-                    inputBox.Hide();
-                    changePassword("Please try again");
+                    inputBox.Hide(); 
+                    ChangePassword("Enter new password: Please try again");
                 } else {
                     Settings.CurrentUser.Password = Utils.CalculateMD5Hash(inputBox.Message);
                     Settings.CurrentUser.Save();
                     UpdateInfo();
-                    MessageBox.Show("TEST: GEMT");
+                    FormMessage formMessage = new FormMessage("Your password has been changed!");
                 }
             }
         }
@@ -81,9 +85,14 @@ namespace OO_Bank.User_Controls {
         private void LblMobile_Click(object sender, EventArgs e) {
             FormTextInput inputBox = new FormTextInput("Enter new mobile: ");
             if (inputBox.DialogResult == DialogResult.OK) {
-                Settings.CurrentUser.Mobile = inputBox.Message;
-                Settings.CurrentUser.Save();
-                UpdateInfo();
+                if (inputBox.Message.Length != 8 || inputBox.Message == "Mobile" || !inputBox.Message.All(char.IsDigit)) {
+
+                } else {
+                    Settings.CurrentUser.Mobile = inputBox.Message;
+                    Settings.CurrentUser.Save();
+                    UpdateInfo();
+
+                }
             }
         }
 
