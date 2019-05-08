@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 
 
-//hellloooooo i endgame sker der ting med ting :) og ting
+//hellloooooo i endgame sker der ting med ting :) og ting :D
 
 
 
