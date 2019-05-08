@@ -64,7 +64,7 @@ namespace OO_Bank.User_Controls {
                     Settings.CurrentUser.Password = Utils.CalculateMD5Hash(inputBox.Message);
                     Settings.CurrentUser.Save();
                     UpdateInfo();
-                    FormMessage formMessage = new FormMessage("Your password has been changed!");
+                    _ = new FormMessage("Your password has been changed!");
                 }
             }
         }
