@@ -19,7 +19,7 @@ namespace OO_Bank.User_Controls {
 
         public OverviewUC() {
             InitializeComponent();
-            Settings.overviewUC = this;
+            Settings.OverviewUC = this;
         }
 
         private void CmbChooseAccount_SelectedIndexChanged(object sender, EventArgs e) {

@@ -14,7 +14,6 @@ namespace OO_Bank.Forms.Custom_Messages {
     public partial class FormMultiTextInput : Form {
 
         public String Message;
-
         public String Input1;
         public String Input2;
 

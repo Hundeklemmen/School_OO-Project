@@ -112,24 +112,20 @@ namespace OO_Bank.User_Controls {
         }
 
         private void BtnCollectAccInfo_Click(object sender, EventArgs e) {
-            var t = new Thread((ThreadStart)(() => {
-                FolderBrowserDialog fbd = new FolderBrowserDialog
-                {
-                    RootFolder = System.Environment.SpecialFolder.MyComputer,
-                    ShowNewFolderButton = true
-                };
-                if (fbd.ShowDialog() == DialogResult.Cancel)
-                    return;
+            FormYesNo confirmCollection = new FormYesNo("Would you like to save all\naccount information?");
+            if(confirmCollection.DialogResult == DialogResult.Yes) {
                 try {
-                    File.Copy(@Settings.UsersPath + "/" + Settings.CurrentUser.ID + ".json", @fbd.SelectedPath + "/Account info for ID " + Settings.CurrentUser.ID + ".json");
-                    MessageBox.Show("File has been copied to specified location!");
+                    //Checking if file exists..
+                    if(File.Exists(@Settings.AccountInfoPath + "/Account info for ID " + Settings.CurrentUser.ID + ".json")) {
+                        //Delete if it does so we can "overwrite" it.
+                        File.Delete(@Settings.AccountInfoPath + "/Account info for ID " + Settings.CurrentUser.ID + ".json");
+                    }
+                    File.Copy(@Settings.UsersPath + "/" + Settings.CurrentUser.ID + ".json", @Settings.AccountInfoPath + "/Account info for ID " + Settings.CurrentUser.ID + ".json");
+                    new FormMessage("File has been saved in the\nOOProject file");
                 } catch (Exception) {
-                    MessageBox.Show("Something went wrong while trying to save file at your specified location!");
+                    new FormMessage("Something went wrong whilst\ntrying to save the file");
                 }
-            }));
-
-            t.SetApartmentState(ApartmentState.STA);
-            t.Start();
+            }
         }
     }
 }

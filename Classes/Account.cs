@@ -26,7 +26,6 @@ namespace OO_Bank.Classes {
         public long OwnerId;
         public Card Card;
 
-
         public Account(int accountNumber, String accountName, decimal balance, long accountOwnerId, Card accountCard) {
             this.Number = accountNumber;
             this.Name = accountName;
@@ -36,10 +35,10 @@ namespace OO_Bank.Classes {
         }
 
         public void AddMoney(decimal Amount) {
-            this.balance = this.balance + Amount;
+            this.balance += Amount;
         }
         public void RemoveMoney(decimal Amount) {
-            this.balance = this.balance - Amount;
+            this.balance -= Amount;
         }
 
         public JObject GetAsJson() {

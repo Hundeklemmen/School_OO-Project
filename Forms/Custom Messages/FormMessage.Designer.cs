@@ -27,6 +27,7 @@
             this.lblCustomMessage = new System.Windows.Forms.Label();
             this.btnOk = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblExit = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -41,6 +42,9 @@
             this.lblCustomMessage.Size = new System.Drawing.Size(225, 31);
             this.lblCustomMessage.TabIndex = 1;
             this.lblCustomMessage.Text = "Custom Message";
+            this.lblCustomMessage.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormMove_MouseDown);
+            this.lblCustomMessage.MouseMove += new System.Windows.Forms.MouseEventHandler(this.FormMove_MouseMove);
+            this.lblCustomMessage.MouseUp += new System.Windows.Forms.MouseEventHandler(this.FormMove_MouseUp);
             // 
             // btnOk
             // 
@@ -63,6 +67,7 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.lblExit);
             this.panel1.Controls.Add(this.btnOk);
             this.panel1.Controls.Add(this.lblCustomMessage);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -70,6 +75,19 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(513, 293);
             this.panel1.TabIndex = 3;
+            // 
+            // lblExit
+            // 
+            this.lblExit.AutoSize = true;
+            this.lblExit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblExit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
+            this.lblExit.Location = new System.Drawing.Point(480, -1);
+            this.lblExit.Name = "lblExit";
+            this.lblExit.Size = new System.Drawing.Size(32, 31);
+            this.lblExit.TabIndex = 26;
+            this.lblExit.Text = "X";
+            this.lblExit.Click += new System.EventHandler(this.LblExit_Click);
             // 
             // FormMessage
             // 
@@ -84,6 +102,9 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormMessage";
             this.TopMost = true;
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormMove_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.FormMove_MouseMove);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.FormMove_MouseUp);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -95,5 +116,6 @@
         private System.Windows.Forms.Label lblCustomMessage;
         private System.Windows.Forms.Button btnOk;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lblExit;
     }
 }

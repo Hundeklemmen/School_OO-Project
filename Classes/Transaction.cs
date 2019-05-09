@@ -9,10 +9,10 @@ using System.Threading.Tasks;
 
 namespace OO_Bank.Classes {
     class Transaction {
-        private Account From;
-        private Account To;
-        private decimal Amount;
-        private DateTime Time;
+        public Account From;
+        public Account To;
+        public decimal Amount;
+        public DateTime Time;
 
         public Transaction(Account From, Account To, decimal Amount, DateTime Time) {
             this.From = From;
@@ -74,14 +74,7 @@ namespace OO_Bank.Classes {
 
         public void Save() {
             String FromPath = Settings.TransactionsPath + "/" + From.Number + ".txt";
-            //if (!File.Exists(@FromPath)) {
-            //    File.Create(@FromPath);
-            //}
-            //
             String ToPath = Settings.TransactionsPath + "/" + To.Number + ".txt";
-            //if (!File.Exists(@ToPath)) {
-           //     File.Create(@ToPath);
-            //}
 
             using (StreamWriter sw = File.AppendText(@FromPath)) {
                 sw.WriteLine(this.GetFormattedAsSender());

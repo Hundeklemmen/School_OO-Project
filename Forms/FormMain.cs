@@ -14,10 +14,6 @@ using System.Windows.Forms;
 
 namespace OO_Bank {
     public partial class FormMain : Form {
-
-        private bool mouseDown;
-        private Point lastLocation;
-
         /*
         Get/Set our user with Settings.CurrentUser = (User object here)
         Todo:
@@ -69,22 +65,22 @@ namespace OO_Bank {
         My Account:
             - View details of your account
             - Change details (Settings)
-
         */
 
         public FormMain() {
             InitializeComponent();
+
         }
 
+        private bool mouseDown;
+        private Point lastLocation;
         private void PnlLogo_MouseDown(object sender, MouseEventArgs e) {
             mouseDown = true;
             lastLocation = e.Location;
         }
-
         private void PnlLogo_MouseUp(object sender, MouseEventArgs e) {
             mouseDown = false;
         }
-
         private void PnlLogo_MouseMove(object sender, MouseEventArgs e) {
             if (mouseDown) {
                 this.Location = new Point(

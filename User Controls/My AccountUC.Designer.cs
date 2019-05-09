@@ -33,6 +33,7 @@
             this.btnDeleteAccount = new System.Windows.Forms.Button();
             this.lblClickToUpdate = new System.Windows.Forms.Label();
             this.btnCollectAccInfo = new System.Windows.Forms.Button();
+            this.fbd = new System.Windows.Forms.FolderBrowserDialog();
             this.SuspendLayout();
             // 
             // lblID
@@ -166,6 +167,10 @@
             this.btnCollectAccInfo.UseVisualStyleBackColor = false;
             this.btnCollectAccInfo.Click += new System.EventHandler(this.BtnCollectAccInfo_Click);
             // 
+            // fbd
+            // 
+            this.fbd.Description = "Choose destination";
+            // 
             // My_AccountUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -201,5 +206,6 @@
         private System.Windows.Forms.Button btnDeleteAccount;
         private System.Windows.Forms.Label lblClickToUpdate;
         private System.Windows.Forms.Button btnCollectAccInfo;
+        public System.Windows.Forms.FolderBrowserDialog fbd;
     }
 }
