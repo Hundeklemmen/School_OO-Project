@@ -47,6 +47,10 @@ namespace OO_Bank.Classes {
             */
         }
 
+        public static String BalanceFormatted(decimal balance) {
+            return String.Format("{0:n}", balance) + " DKK";
+        }
+
         public static long GenerateID() {
             long randomNumber = LongRandom(100000, 1000000, random);
             return randomNumber;

@@ -102,13 +102,13 @@
             // 
             this.lstTransactions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(39)))), ((int)(((byte)(42)))));
             this.lstTransactions.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lstTransactions.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lstTransactions.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstTransactions.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
             this.lstTransactions.FormattingEnabled = true;
-            this.lstTransactions.ItemHeight = 21;
+            this.lstTransactions.ItemHeight = 17;
             this.lstTransactions.Location = new System.Drawing.Point(465, 106);
             this.lstTransactions.Name = "lstTransactions";
-            this.lstTransactions.Size = new System.Drawing.Size(421, 527);
+            this.lstTransactions.Size = new System.Drawing.Size(421, 512);
             this.lstTransactions.TabIndex = 9;
             // 
             // pnlInfo

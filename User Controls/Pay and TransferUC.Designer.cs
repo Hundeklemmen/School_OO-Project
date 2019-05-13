@@ -41,6 +41,8 @@
             this.pnlRecipient = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.txtRecipient = new System.Windows.Forms.TextBox();
+            this.btnConfirm1 = new System.Windows.Forms.Button();
+            this.btnConfirm2 = new System.Windows.Forms.Button();
             this.pnlAmountOwn.SuspendLayout();
             this.pnlAmountOther.SuspendLayout();
             this.pnlRecipient.SuspendLayout();
@@ -51,7 +53,7 @@
             this.lblPayAndTransfer.AutoSize = true;
             this.lblPayAndTransfer.Font = new System.Drawing.Font("Century Gothic", 32.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPayAndTransfer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
-            this.lblPayAndTransfer.Location = new System.Drawing.Point(3, 0);
+            this.lblPayAndTransfer.Location = new System.Drawing.Point(17, 17);
             this.lblPayAndTransfer.Name = "lblPayAndTransfer";
             this.lblPayAndTransfer.Size = new System.Drawing.Size(366, 52);
             this.lblPayAndTransfer.TabIndex = 4;
@@ -65,11 +67,14 @@
             this.cmbFromAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmbFromAccount.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbFromAccount.FormattingEnabled = true;
+            this.cmbFromAccount.Items.AddRange(new object[] {
+            "From"});
             this.cmbFromAccount.Location = new System.Drawing.Point(26, 173);
             this.cmbFromAccount.Name = "cmbFromAccount";
             this.cmbFromAccount.Size = new System.Drawing.Size(161, 29);
             this.cmbFromAccount.TabIndex = 5;
             this.cmbFromAccount.TabStop = false;
+            this.cmbFromAccount.SelectedIndexChanged += new System.EventHandler(this.CmbFromAccount_SelectedIndexChanged);
             // 
             // cmbToAccount
             // 
@@ -79,11 +84,14 @@
             this.cmbToAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmbToAccount.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbToAccount.FormattingEnabled = true;
+            this.cmbToAccount.Items.AddRange(new object[] {
+            "To"});
             this.cmbToAccount.Location = new System.Drawing.Point(222, 173);
             this.cmbToAccount.Name = "cmbToAccount";
             this.cmbToAccount.Size = new System.Drawing.Size(161, 29);
             this.cmbToAccount.TabIndex = 6;
             this.cmbToAccount.TabStop = false;
+            this.cmbToAccount.SelectedIndexChanged += new System.EventHandler(this.CmbToAccount_SelectedIndexChanged);
             // 
             // txtAmountOwn
             // 
@@ -144,9 +152,9 @@
             this.lblFromOther.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
             this.lblFromOther.Location = new System.Drawing.Point(515, 210);
             this.lblFromOther.Name = "lblFromOther";
-            this.lblFromOther.Size = new System.Drawing.Size(124, 24);
+            this.lblFromOther.Size = new System.Drawing.Size(153, 24);
             this.lblFromOther.TabIndex = 15;
-            this.lblFromOther.Text = "To Balance";
+            this.lblFromOther.Text = "From Balance";
             // 
             // pnlAmountOther
             // 
@@ -186,11 +194,14 @@
             this.cmbFromOther.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmbFromOther.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbFromOther.FormattingEnabled = true;
+            this.cmbFromOther.Items.AddRange(new object[] {
+            "From"});
             this.cmbFromOther.Location = new System.Drawing.Point(519, 173);
             this.cmbFromOther.Name = "cmbFromOther";
             this.cmbFromOther.Size = new System.Drawing.Size(161, 29);
             this.cmbFromOther.TabIndex = 11;
             this.cmbFromOther.TabStop = false;
+            this.cmbFromOther.SelectedIndexChanged += new System.EventHandler(this.CmbFromOther_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -244,11 +255,47 @@
             this.txtRecipient.Size = new System.Drawing.Size(175, 41);
             this.txtRecipient.TabIndex = 19;
             // 
+            // btnConfirm1
+            // 
+            this.btnConfirm1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(39)))), ((int)(((byte)(42)))));
+            this.btnConfirm1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnConfirm1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
+            this.btnConfirm1.FlatAppearance.BorderSize = 3;
+            this.btnConfirm1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConfirm1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirm1.ForeColor = System.Drawing.Color.White;
+            this.btnConfirm1.Location = new System.Drawing.Point(26, 329);
+            this.btnConfirm1.Name = "btnConfirm1";
+            this.btnConfirm1.Size = new System.Drawing.Size(357, 57);
+            this.btnConfirm1.TabIndex = 30;
+            this.btnConfirm1.Text = "Confirm";
+            this.btnConfirm1.UseVisualStyleBackColor = false;
+            this.btnConfirm1.Click += new System.EventHandler(this.BtnConfirm1_Click);
+            // 
+            // btnConfirm2
+            // 
+            this.btnConfirm2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(39)))), ((int)(((byte)(42)))));
+            this.btnConfirm2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnConfirm2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
+            this.btnConfirm2.FlatAppearance.BorderSize = 3;
+            this.btnConfirm2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConfirm2.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirm2.ForeColor = System.Drawing.Color.White;
+            this.btnConfirm2.Location = new System.Drawing.Point(519, 329);
+            this.btnConfirm2.Name = "btnConfirm2";
+            this.btnConfirm2.Size = new System.Drawing.Size(357, 57);
+            this.btnConfirm2.TabIndex = 31;
+            this.btnConfirm2.Text = "Confirm";
+            this.btnConfirm2.UseVisualStyleBackColor = false;
+            this.btnConfirm2.Click += new System.EventHandler(this.BtnConfirm2_Click);
+            // 
             // Pay_and_TransferUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
+            this.Controls.Add(this.btnConfirm2);
+            this.Controls.Add(this.btnConfirm1);
             this.Controls.Add(this.pnlRecipient);
             this.Controls.Add(this.txtRecipient);
             this.Controls.Add(this.label4);
@@ -266,6 +313,7 @@
             this.Controls.Add(this.lblPayAndTransfer);
             this.Name = "Pay_and_TransferUC";
             this.Size = new System.Drawing.Size(900, 650);
+            this.Load += new System.EventHandler(this.Pay_and_TransferUC_Load);
             this.pnlAmountOwn.ResumeLayout(false);
             this.pnlAmountOther.ResumeLayout(false);
             this.pnlRecipient.ResumeLayout(false);
@@ -294,5 +342,7 @@
         private System.Windows.Forms.Panel pnlRecipient;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.TextBox txtRecipient;
+        private System.Windows.Forms.Button btnConfirm1;
+        private System.Windows.Forms.Button btnConfirm2;
     }
 }

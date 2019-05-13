@@ -39,7 +39,7 @@ namespace OO_Bank.User_Controls {
             foreach (Account account in user.Accounts) {
                 OverallSaldo += account.balance;
             }
-            lblOverallBalance.Text = "Overall Balance: " + String.Format("{0:c}", OverallSaldo);
+            lblOverallBalance.Text = "Overall Balance: " + Utils.BalanceFormatted(OverallSaldo);
         }
 
         private void LblName_Click(object sender, EventArgs e) {

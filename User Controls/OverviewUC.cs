@@ -101,7 +101,7 @@ namespace OO_Bank.User_Controls {
         public void UpdateAccount() {
             lblAccountName.Text = "Account Name: " + account.Name;
             lblAccountNumber.Text = "Account Number: " + account.Number;
-            lblBalance.Text = "Balance: " + String.Format("{0:n}", account.balance) + " DKK";
+            lblBalance.Text = "Balance: " + Utils.BalanceFormatted(account.balance);
 
             //Her tjekker vi om accounten har et Kredit kort
             if(account.Card != null) {
@@ -126,10 +126,10 @@ namespace OO_Bank.User_Controls {
             if (File.Exists(@TransactionPath)) {
                 var TransactionsList = File.ReadLines(@TransactionPath);
                 foreach (var TransactionLine in TransactionsList) {
-                    lstTransactions.Items.Add(TransactionLine);
+                    lstTransactions.Items.Insert(0, TransactionLine);
                 }
             } else {
-                lstTransactions.Items.Add("No transactions yet!");
+                lstTransactions.Items.Insert(0, "No transactions yet!");
             }
         }
 
@@ -156,7 +156,7 @@ namespace OO_Bank.User_Controls {
                         TAction.Transfer();
                         this.UpdateAccount();
                     } else {
-                        MessageBox.Show("Account doesn't contain enough money!");
+                        MessageBox.Show("Insufficient funding");
                     }
                 } else {
                     MessageBox.Show("Account not found");

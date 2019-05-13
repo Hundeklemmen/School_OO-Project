@@ -113,7 +113,7 @@
             // lblOverallBalance
             // 
             this.lblOverallBalance.AutoSize = true;
-            this.lblOverallBalance.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblOverallBalance.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.lblOverallBalance.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblOverallBalance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
             this.lblOverallBalance.Location = new System.Drawing.Point(32, 158);

@@ -49,7 +49,7 @@ namespace OO_Bank.Classes {
             } catch (UserException) {
                 //Idk? Nyby, lav en custom alert box til hvis der opstår en fejl?
             }
-            return FromName + " sent $" + Amount + " to " + ToName;
+            return FromName + " sent " + Utils.BalanceFormatted(Amount) + " to " + ToName;
         }
 
         public String GetFormattedAsSender() {
@@ -59,7 +59,7 @@ namespace OO_Bank.Classes {
             } catch (UserException) {
                 //Idk? Nyby, lav en custom alert box til hvis der opstår en fejl?
             }
-            return "[" + this.Time.ToString("MM/dd/yyyy HH:mm") + "] " + "You have sent $" + Amount + " to " + ToName;
+            return "[" + this.Time.ToString("MM/dd/yyyy HH:mm") + "] " + "You have sent " + Utils.BalanceFormatted(Amount) + " to " + ToName;
         }
         public String GetFormattedAsReciever() {
             String FromName = "Someone";
@@ -68,7 +68,7 @@ namespace OO_Bank.Classes {
             } catch (UserException) {
                 //Idk? Nyby, lav en custom alert box til hvis der opstår en fejl?
             }
-            return "[" + this.Time.ToString("MM/dd/yyyy HH:mm") + "] " + FromName + " have sent you $" + Amount;
+            return "[" + this.Time.ToString("MM/dd/yyyy HH:mm") + "] " + FromName + " have sent you " + Utils.BalanceFormatted(Amount);
         }
 
 
