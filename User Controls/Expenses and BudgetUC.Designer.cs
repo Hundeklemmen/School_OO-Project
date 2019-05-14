@@ -23,26 +23,26 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblExpensesAndBudget = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // label1
+            // lblExpensesAndBudget
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
-            this.label1.Location = new System.Drawing.Point(3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(704, 78);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Expenses and Budget";
+            this.lblExpensesAndBudget.AutoSize = true;
+            this.lblExpensesAndBudget.Font = new System.Drawing.Font("Century Gothic", 32.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblExpensesAndBudget.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
+            this.lblExpensesAndBudget.Location = new System.Drawing.Point(32, 30);
+            this.lblExpensesAndBudget.Name = "lblExpensesAndBudget";
+            this.lblExpensesAndBudget.Size = new System.Drawing.Size(471, 52);
+            this.lblExpensesAndBudget.TabIndex = 4;
+            this.lblExpensesAndBudget.Text = "Expenses and Budget";
             // 
             // Expenses_and_BudgetUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblExpensesAndBudget);
             this.Name = "Expenses_and_BudgetUC";
             this.Size = new System.Drawing.Size(900, 650);
             this.ResumeLayout(false);
@@ -52,6 +52,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblExpensesAndBudget;
     }
 }

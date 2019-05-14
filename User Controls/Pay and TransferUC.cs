@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using OO_Bank.Classes;
 using OO_Bank.Forms;
+using System.IO;
 
 namespace OO_Bank.User_Controls {
     public partial class Pay_and_TransferUC : UserControl {
@@ -21,21 +22,6 @@ namespace OO_Bank.User_Controls {
         private void Pay_and_TransferUC_Load(object sender, EventArgs e) {
             try {
                 UpdateLists();
-
-                //cmbFromAccount
-                //cmbToAccount
-                //txtAmountOwn
-                //txtAmountOther
-                cmbFromAccount.SelectedItem = "From";
-              
-               /*foreach (Account acc in user.Accounts) {
-                    if (acc.Name.Equals(cmbFromAccount.SelectedItem.ToString())) {
-                        account = acc;
-                        UpdateAccount();
-                        return;
-                    }
-                }*/
-
             } catch (NullReferenceException) {
 
             }
@@ -68,6 +54,20 @@ namespace OO_Bank.User_Controls {
                         lblToOwn.Text = Utils.BalanceFormatted(account.balance);
                     }
                 }
+                //Opdater cmbFromOther listen.
+                if (cmbFromOther != null) {
+                    cmbFromOther.Items.Clear();
+                    if (user.Accounts.Count != 0) {
+                        foreach (Account acc in user.Accounts) {
+                            cmbFromOther.Items.Add(acc.Name);
+                        }
+                        Account account = user.Accounts.First();
+                        cmbFromOther.SelectedIndex = cmbFromAccount.Items.IndexOf(account.Name);
+                        lblFromOther.Text = Utils.BalanceFormatted(account.balance);
+                    }
+                }
+
+
             } catch (NullReferenceException) {
 
             }
@@ -94,7 +94,13 @@ namespace OO_Bank.User_Controls {
         }
 
         private void CmbFromOther_SelectedIndexChanged(object sender, EventArgs e) {
-
+            Object selectedItem = cmbFromOther.SelectedItem;
+            foreach (Account acc in user.Accounts) {
+                if (acc.Name.Equals(selectedItem.ToString())) {
+                    lblFromOther.Text = Utils.BalanceFormatted(acc.balance);
+                    return;
+                }
+            }
         }
 
         private void BtnConfirm1_Click(object sender, EventArgs e) {
@@ -147,6 +153,54 @@ namespace OO_Bank.User_Controls {
             FormYesNo ConfirmForm = new FormYesNo("Confirm transaction");
             if (ConfirmForm.DialogResult == DialogResult.Yes) {
                 //Gennemfør transaktionen
+
+                String FromAccount = cmbFromOther.Text;
+                int ToOtherAccount = int.Parse(txtAmountOther.Text);
+                String amount = txtAmountOther.Text;
+
+                decimal amountParsed = decimal.Parse(amount);
+
+                Account fromAccount = null;
+                foreach (Account acc in Settings.CurrentUser.Accounts) {
+                    if (acc.Name.ToString().Equals(FromAccount)) {
+                        fromAccount = acc;
+                        break;
+                    }
+                }
+
+                //Loop igennem alle brugere for at se om der er en account i et user object
+                Account toAccount = null;
+                foreach(string path in Directory.GetFiles(Settings.UsersPath)) {
+                    MessageBox.Show(path);
+                    User _tempUser = Utils.GetUserByPath(path);
+                    Boolean breakUL = false;
+                    foreach(Account _tempAccount in _tempUser.Accounts) {
+                        if(_tempAccount.Number == ToOtherAccount) { 
+                            toAccount = _tempAccount;
+                            breakUL = true;
+                            break;
+                        }
+                    }
+                    if(breakUL == true) {
+                        break;
+                    }
+                }
+
+                if (toAccount != null && fromAccount != null) {
+                    Transaction TAction = new Transaction(fromAccount, toAccount, amountParsed, DateTime.Now);
+                    if (TAction.CanTransfer() == true) {
+                        TAction.Transfer();
+                        Settings.CurrentUser.Save();
+                        UpdateLists();
+                        cmbFromAccount.SelectedIndex = cmbFromAccount.Items.IndexOf(fromAccount.Name);
+                        cmbToAccount.SelectedIndex = cmbToAccount.Items.IndexOf(toAccount.Name);
+                        MessageBox.Show("Transaction has been completed");
+                    } else {
+                        MessageBox.Show("Insufficient funding");
+                    }
+                } else {
+                    MessageBox.Show("Account not found");
+                }
             }
         }
 

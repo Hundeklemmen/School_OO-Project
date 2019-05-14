@@ -33,7 +33,6 @@
             this.btnDeleteAccount = new System.Windows.Forms.Button();
             this.lblClickToUpdate = new System.Windows.Forms.Label();
             this.btnCollectAccInfo = new System.Windows.Forms.Button();
-            this.fbd = new System.Windows.Forms.FolderBrowserDialog();
             this.SuspendLayout();
             // 
             // lblID
@@ -41,7 +40,7 @@
             this.lblID.AutoSize = true;
             this.lblID.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
-            this.lblID.Location = new System.Drawing.Point(32, 115);
+            this.lblID.Location = new System.Drawing.Point(235, 111);
             this.lblID.Name = "lblID";
             this.lblID.Size = new System.Drawing.Size(48, 33);
             this.lblID.TabIndex = 3;
@@ -116,7 +115,7 @@
             this.lblOverallBalance.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.lblOverallBalance.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblOverallBalance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
-            this.lblOverallBalance.Location = new System.Drawing.Point(32, 158);
+            this.lblOverallBalance.Location = new System.Drawing.Point(49, 153);
             this.lblOverallBalance.Name = "lblOverallBalance";
             this.lblOverallBalance.Size = new System.Drawing.Size(234, 33);
             this.lblOverallBalance.TabIndex = 9;
@@ -131,7 +130,7 @@
             this.btnDeleteAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeleteAccount.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeleteAccount.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteAccount.Location = new System.Drawing.Point(31, 550);
+            this.btnDeleteAccount.Location = new System.Drawing.Point(32, 549);
             this.btnDeleteAccount.Name = "btnDeleteAccount";
             this.btnDeleteAccount.Size = new System.Drawing.Size(125, 70);
             this.btnDeleteAccount.TabIndex = 29;
@@ -159,17 +158,13 @@
             this.btnCollectAccInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCollectAccInfo.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCollectAccInfo.ForeColor = System.Drawing.Color.White;
-            this.btnCollectAccInfo.Location = new System.Drawing.Point(172, 550);
+            this.btnCollectAccInfo.Location = new System.Drawing.Point(173, 549);
             this.btnCollectAccInfo.Name = "btnCollectAccInfo";
             this.btnCollectAccInfo.Size = new System.Drawing.Size(209, 70);
             this.btnCollectAccInfo.TabIndex = 31;
             this.btnCollectAccInfo.Text = "Collect Account Information";
             this.btnCollectAccInfo.UseVisualStyleBackColor = false;
             this.btnCollectAccInfo.Click += new System.EventHandler(this.BtnCollectAccInfo_Click);
-            // 
-            // fbd
-            // 
-            this.fbd.Description = "Choose destination";
             // 
             // My_AccountUC
             // 
@@ -206,6 +201,5 @@
         private System.Windows.Forms.Button btnDeleteAccount;
         private System.Windows.Forms.Label lblClickToUpdate;
         private System.Windows.Forms.Button btnCollectAccInfo;
-        public System.Windows.Forms.FolderBrowserDialog fbd;
     }
 }

@@ -34,7 +34,6 @@
             this.pnlCard = new System.Windows.Forms.Panel();
             this.hasCard1 = new OO_Bank.User_Controls.Overview.HasCard();
             this.noCard1 = new OO_Bank.User_Controls.Overview.NoCard();
-            this.btnTestTransaction = new System.Windows.Forms.Button();
             this.pnlInfo.SuspendLayout();
             this.pnlCard.SuspendLayout();
             this.SuspendLayout();
@@ -108,7 +107,7 @@
             this.lstTransactions.ItemHeight = 17;
             this.lstTransactions.Location = new System.Drawing.Point(465, 106);
             this.lstTransactions.Name = "lstTransactions";
-            this.lstTransactions.Size = new System.Drawing.Size(421, 512);
+            this.lstTransactions.Size = new System.Drawing.Size(421, 529);
             this.lstTransactions.TabIndex = 9;
             // 
             // pnlInfo
@@ -160,22 +159,11 @@
             this.noCard1.Size = new System.Drawing.Size(405, 302);
             this.noCard1.TabIndex = 1;
             // 
-            // btnTestTransaction
-            // 
-            this.btnTestTransaction.Location = new System.Drawing.Point(796, 626);
-            this.btnTestTransaction.Name = "btnTestTransaction";
-            this.btnTestTransaction.Size = new System.Drawing.Size(101, 23);
-            this.btnTestTransaction.TabIndex = 11;
-            this.btnTestTransaction.Text = "TestTransaction";
-            this.btnTestTransaction.UseVisualStyleBackColor = true;
-            this.btnTestTransaction.Click += new System.EventHandler(this.BtnTestTransaction_Click);
-            // 
             // OverviewUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
-            this.Controls.Add(this.btnTestTransaction);
             this.Controls.Add(this.pnlInfo);
             this.Controls.Add(this.lstTransactions);
             this.Controls.Add(this.cmbChooseAccount);
@@ -202,6 +190,5 @@
         private System.Windows.Forms.Panel pnlCard;
         private Overview.NoCard noCard1;
         private Overview.HasCard hasCard1;
-        private System.Windows.Forms.Button btnTestTransaction;
     }
 }

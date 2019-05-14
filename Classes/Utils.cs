@@ -92,6 +92,15 @@ namespace OO_Bank.Classes {
             }
         }
 
+        public static User GetUserByPath(String userPath) {
+            if (File.Exists(userPath)) {
+                String userJSON = File.ReadAllText(userPath);
+                return UserFromJson(userJSON);
+            } else {
+                throw new UserException("User not found!");
+            }
+        }
+
         public static bool IsValidEmail(string email) {
             try {
                 var addr = new System.Net.Mail.MailAddress(email);

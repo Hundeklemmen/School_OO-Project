@@ -36,8 +36,8 @@ namespace OO_Bank.User_Controls {
                 }
             }
         }
-
-        public void CreateAccount(String customMSG) {
+c
+        public void CreateAcount(String customMSG) {
             FormTextInput customText;
             if (customMSG != null) {
                 customText = new FormTextInput(customMSG);
@@ -135,36 +135,6 @@ namespace OO_Bank.User_Controls {
 
         private void OverviewUC_Load(object sender, EventArgs e) {
             UpdateList();
-        }
-
-        private void BtnTestTransaction_Click(object sender, EventArgs e) {
-            FormMultiTextInput customText = new FormMultiTextInput("Transfer Money (Amount, Account)");
-            if (customText.DialogResult == DialogResult.OK) {
-                String amount = customText.Input1;
-                String Account = customText.Input2;
-                decimal amountParsed = decimal.Parse(amount);
-
-                Account toAccount = null;
-                foreach(Account acc in Settings.CurrentUser.Accounts){
-                    if (acc.Number.ToString().Equals(Account)) {
-                        toAccount = acc;
-                    }
-                }
-                if(toAccount != null) {
-                    Transaction TAction = new Transaction(account, toAccount, amountParsed, DateTime.Now);
-                    if(TAction.CanTransfer() == true) {
-                        TAction.Transfer();
-                        this.UpdateAccount();
-                    } else {
-                        MessageBox.Show("Insufficient funding");
-                    }
-                } else {
-                    MessageBox.Show("Account not found");
-                }
-                
-
-                //Transaction trans = new Transaction(this.account, )
-            }
         }
     }
 }

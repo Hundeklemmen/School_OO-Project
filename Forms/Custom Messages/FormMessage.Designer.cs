@@ -37,7 +37,7 @@
             this.lblCustomMessage.Cursor = System.Windows.Forms.Cursors.SizeAll;
             this.lblCustomMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCustomMessage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
-            this.lblCustomMessage.Location = new System.Drawing.Point(7, 5);
+            this.lblCustomMessage.Location = new System.Drawing.Point(10, 13);
             this.lblCustomMessage.Name = "lblCustomMessage";
             this.lblCustomMessage.Size = new System.Drawing.Size(225, 31);
             this.lblCustomMessage.TabIndex = 1;
