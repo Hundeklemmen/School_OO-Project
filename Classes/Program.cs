@@ -65,7 +65,9 @@ namespace OO_Bank {
         public static String UsersPath { get; set; }
         public static String TransactionsPath { get; set; }
         public static String AccountInfoPath { get; set; }
+
         public static OverviewUC OverviewUC { get; set; }
+        public static Pay_and_TransferUC PayAndTransfer { get; set; }
 
         public static void ShowMessage(String Message) {
             FormMessage InfoMessage = new FormMessage(Message);

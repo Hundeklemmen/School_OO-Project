@@ -22,6 +22,7 @@ namespace OO_Bank.User_Controls {
         private void Pay_and_TransferUC_Load(object sender, EventArgs e) {
             try {
                 UpdateLists();
+                Settings.PayAndTransfer = this;
             } catch (NullReferenceException) {
 
             }
@@ -86,7 +87,7 @@ namespace OO_Bank.User_Controls {
         private void CmbToAccount_SelectedIndexChanged(object sender, EventArgs e) {
             Object selectedItem = cmbToAccount.SelectedItem;
             foreach (Account acc in user.Accounts) {
-                if (acc.Name.Equals(selectedItem.ToString())) {
+                if (acc.Name.Equals(selectedItem)) {
                     lblToOwn.Text = Utils.BalanceFormatted(acc.balance);
                     return;
                 }
@@ -96,7 +97,7 @@ namespace OO_Bank.User_Controls {
         private void CmbFromOther_SelectedIndexChanged(object sender, EventArgs e) {
             Object selectedItem = cmbFromOther.SelectedItem;
             foreach (Account acc in user.Accounts) {
-                if (acc.Name.Equals(selectedItem.ToString())) {
+                if (acc.Name.Equals(selectedItem)) {
                     lblFromOther.Text = Utils.BalanceFormatted(acc.balance);
                     return;
                 }
@@ -155,7 +156,7 @@ namespace OO_Bank.User_Controls {
                 //Gennemfør transaktionen
 
                 String FromAccount = cmbFromOther.Text;
-                int ToOtherAccount = int.Parse(txtAmountOther.Text);
+                int ToOtherAccount = int.Parse(txtRecipient.Text);
                 String amount = txtAmountOther.Text;
 
                 decimal amountParsed = decimal.Parse(amount);
@@ -170,18 +171,21 @@ namespace OO_Bank.User_Controls {
 
                 //Loop igennem alle brugere for at se om der er en account i et user object
                 Account toAccount = null;
-                foreach(string path in Directory.GetFiles(Settings.UsersPath)) {
+  
+                foreach (string path in Directory.GetFiles(Settings.UsersPath)) {
                     MessageBox.Show(path);
                     User _tempUser = Utils.GetUserByPath(path);
                     Boolean breakUL = false;
                     foreach(Account _tempAccount in _tempUser.Accounts) {
+                        MessageBox.Show(_tempAccount.Number + " - " + ToOtherAccount);
                         if(_tempAccount.Number == ToOtherAccount) { 
                             toAccount = _tempAccount;
+   
                             breakUL = true;
                             break;
                         }
                     }
-                    if(breakUL == true) {
+                    if (breakUL == true) {
                         break;
                     }
                 }
@@ -226,6 +230,6 @@ namespace OO_Bank.User_Controls {
                 } else {
                     MessageBox.Show("Account not found");
                 }
-                */
+        */
     }
 }

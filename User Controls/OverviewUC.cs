@@ -36,8 +36,8 @@ namespace OO_Bank.User_Controls {
                 }
             }
         }
-c
-        public void CreateAcount(String customMSG) {
+
+        public void CreateAccount(String customMSG) {
             FormTextInput customText;
             if (customMSG != null) {
                 customText = new FormTextInput(customMSG);
@@ -63,6 +63,8 @@ c
                             cmbChooseAccount.SelectedIndex = cmbChooseAccount.Items.IndexOf(newAccount.Name);
                             account = newAccount;
                             UpdateAccount();
+
+                            Settings.PayAndTransfer.UpdateLists();
                         } else {
                             CreateAccount("Your account name is too long!\nPlease try again!");
                         }
@@ -71,7 +73,7 @@ c
                     }
                 } else {
                     //"\n" står for "\" = break og "n" = new line.
-                    CreateAccount("You already have a account\nwith that name!\nPlease try again!");
+                    CreateAccount("You already have an account\nwith that name!\nPlease try again!");
                 }
             } else if (customText.DialogResult == DialogResult.Cancel) {
 

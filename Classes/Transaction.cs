@@ -84,7 +84,16 @@ namespace OO_Bank.Classes {
             }
 
             Utils.GetUserByID(From.OwnerId).Save();
-            Utils.GetUserByID(To.OwnerId).Save();
+
+            //Remember to update the user object too before saving it:
+            User toUser = Utils.GetUserByID(To.OwnerId);
+            foreach(var item in ForEachHelper.WithIndex(toUser.Accounts)) {
+                Account _acc = item.Value;
+                if(_acc.Number == To.Number) {
+                    toUser.Accounts[item.Index] = To;
+                }
+            }
+            toUser.Save();
         }
 
     }
