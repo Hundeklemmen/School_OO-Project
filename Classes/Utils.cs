@@ -47,6 +47,10 @@ namespace OO_Bank.Classes {
             */
         }
 
+        public static String BalanceFormatted(decimal balance) {
+            return String.Format("{0:n}", balance) + " DKK";
+        }
+
         public static long GenerateID() {
             long randomNumber = LongRandom(100000, 1000000, random);
             return randomNumber;
@@ -80,6 +84,15 @@ namespace OO_Bank.Classes {
 
         public static User GetUserByID(long ID) {
             String userPath = Settings.UsersPath + "/" + ID + ".json";
+            if (File.Exists(userPath)) {
+                String userJSON = File.ReadAllText(userPath);
+                return UserFromJson(userJSON);
+            } else {
+                throw new UserException("User not found!");
+            }
+        }
+
+        public static User GetUserByPath(String userPath) {
             if (File.Exists(userPath)) {
                 String userJSON = File.ReadAllText(userPath);
                 return UserFromJson(userJSON);
@@ -167,6 +180,34 @@ namespace OO_Bank.Classes {
                 sb.Append(hash[i].ToString("X2"));
             }
             return sb.ToString();
+        }
+    }
+    public static class ForEachHelper {
+        public sealed class Item<T> {
+            public int Index { get; set; }
+            public T Value { get; set; }
+            public bool IsLast { get; set; }
+        }
+
+        public static IEnumerable<Item<T>> WithIndex<T>(IEnumerable<T> enumerable) {
+            Item<T> item = null;
+            foreach (T value in enumerable) {
+                Item<T> next = new Item<T>
+                {
+                    Index = 0,
+                    Value = value,
+                    IsLast = false
+                };
+                if (item != null) {
+                    next.Index = item.Index + 1;
+                    yield return item;
+                }
+                item = next;
+            }
+            if (item != null) {
+                item.IsLast = true;
+                yield return item;
+            }
         }
     }
 }

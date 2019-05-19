@@ -28,7 +28,7 @@ namespace OO_Bank.User_Controls.Overview {
                 if(acc.Number == OverviewUC.account.Number) {
                     acc.Card = card;
                     OverviewUC.user.Save();
-                    Settings.overviewUC.UpdateAccount();
+                    Settings.OverviewUC.UpdateAccount();
                     return;
                 }
             }

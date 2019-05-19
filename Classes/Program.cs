@@ -32,22 +32,27 @@ namespace OO_Bank {
             Settings.DesktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
 
             //Specificere vores OO projekt fil placering
-            Settings.OOProjekt = Settings.DesktopPath + "/OOProjekt";
+            Settings.OOProject = Settings.DesktopPath + "/OOProject";
 
             //Hvis vores projekt mappe ikke findes, så opretter vi den
-            if (!Directory.Exists(@Settings.OOProjekt)) {
+            if (!Directory.Exists(@Settings.OOProject)) {
                 //Hvis vores projekt mappe ikke findes
-                Directory.CreateDirectory(@Settings.OOProjekt);
+                Directory.CreateDirectory(@Settings.OOProject);
             }
 
-            Settings.UsersPath = Settings.OOProjekt + "/users";
+            Settings.UsersPath = Settings.OOProject + "/users";
             if (!Directory.Exists(@Settings.UsersPath)) {
                 Directory.CreateDirectory(@Settings.UsersPath);
             }
 
-            Settings.TransactionsPath = Settings.OOProjekt + "/transactions";
+            Settings.TransactionsPath = Settings.OOProject + "/transactions";
             if (!Directory.Exists(@Settings.TransactionsPath)) {
                 Directory.CreateDirectory(@Settings.TransactionsPath);
+            }
+
+            Settings.AccountInfoPath = Settings.OOProject + "/Account Info";
+            if (!Directory.Exists(@Settings.AccountInfoPath)) {
+                Directory.CreateDirectory(@Settings.AccountInfoPath);
             }
 
         }
@@ -56,10 +61,13 @@ namespace OO_Bank {
     public static class Settings {
         public static User CurrentUser { get; set; }
         public static String DesktopPath { get; set; }
-        public static String OOProjekt { get; set; }
+        public static String OOProject { get; set; }
         public static String UsersPath { get; set; }
         public static String TransactionsPath { get; set; }
-        public static OverviewUC overviewUC { get; set; }
+        public static String AccountInfoPath { get; set; }
+
+        public static OverviewUC OverviewUC { get; set; }
+        public static Pay_and_TransferUC PayAndTransfer { get; set; }
 
         public static void ShowMessage(String Message) {
             FormMessage InfoMessage = new FormMessage(Message);

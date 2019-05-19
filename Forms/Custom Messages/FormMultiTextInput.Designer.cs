@@ -66,7 +66,7 @@
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
             this.panel2.Controls.Add(this.panel3);
             this.panel2.ForeColor = System.Drawing.Color.White;
-            this.panel2.Location = new System.Drawing.Point(44, 206);
+            this.panel2.Location = new System.Drawing.Point(44, 202);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(445, 10);
             this.panel2.TabIndex = 2;
@@ -86,7 +86,7 @@
             this.txtInput2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtInput2.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtInput2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
-            this.txtInput2.Location = new System.Drawing.Point(44, 163);
+            this.txtInput2.Location = new System.Drawing.Point(44, 159);
             this.txtInput2.Name = "txtInput2";
             this.txtInput2.Size = new System.Drawing.Size(445, 34);
             this.txtInput2.TabIndex = 3;
@@ -114,7 +114,7 @@
             this.pnlPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
             this.pnlPassword.Controls.Add(this.panel1);
             this.pnlPassword.ForeColor = System.Drawing.Color.White;
-            this.pnlPassword.Location = new System.Drawing.Point(44, 140);
+            this.pnlPassword.Location = new System.Drawing.Point(44, 136);
             this.pnlPassword.Name = "pnlPassword";
             this.pnlPassword.Size = new System.Drawing.Size(445, 10);
             this.pnlPassword.TabIndex = 0;
@@ -134,7 +134,7 @@
             this.txtInput1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtInput1.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtInput1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
-            this.txtInput1.Location = new System.Drawing.Point(44, 97);
+            this.txtInput1.Location = new System.Drawing.Point(44, 93);
             this.txtInput1.Name = "txtInput1";
             this.txtInput1.Size = new System.Drawing.Size(445, 34);
             this.txtInput1.TabIndex = 1;

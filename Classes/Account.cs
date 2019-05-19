@@ -6,18 +6,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-
-
-
-
-//hellloooooo i endgame sker der ting med ting :) og ting :D
-
-
-
-
-
-
-
 namespace OO_Bank.Classes {
     public class Account {
         public int Number;
@@ -25,7 +13,6 @@ namespace OO_Bank.Classes {
         public decimal balance;
         public long OwnerId;
         public Card Card;
-
 
         public Account(int accountNumber, String accountName, decimal balance, long accountOwnerId, Card accountCard) {
             this.Number = accountNumber;
@@ -36,10 +23,10 @@ namespace OO_Bank.Classes {
         }
 
         public void AddMoney(decimal Amount) {
-            this.balance = this.balance + Amount;
+            this.balance += Amount;
         }
         public void RemoveMoney(decimal Amount) {
-            this.balance = this.balance - Amount;
+            this.balance -= Amount;
         }
 
         public JObject GetAsJson() {

@@ -9,10 +9,10 @@ using System.Threading.Tasks;
 
 namespace OO_Bank.Classes {
     class Transaction {
-        private Account From;
-        private Account To;
-        private decimal Amount;
-        private DateTime Time;
+        public Account From;
+        public Account To;
+        public decimal Amount;
+        public DateTime Time;
 
         public Transaction(Account From, Account To, decimal Amount, DateTime Time) {
             this.From = From;
@@ -49,7 +49,7 @@ namespace OO_Bank.Classes {
             } catch (UserException) {
                 //Idk? Nyby, lav en custom alert box til hvis der opstår en fejl?
             }
-            return FromName + " sent $" + Amount + " to " + ToName;
+            return FromName + " sent " + Utils.BalanceFormatted(Amount) + " to " + ToName;
         }
 
         public String GetFormattedAsSender() {
@@ -59,7 +59,7 @@ namespace OO_Bank.Classes {
             } catch (UserException) {
                 //Idk? Nyby, lav en custom alert box til hvis der opstår en fejl?
             }
-            return "[" + this.Time.ToString("MM/dd/yyyy HH:mm") + "] " + "You have sent $" + Amount + " to " + ToName;
+            return "[" + this.Time.ToString("MM/dd/yyyy HH:mm") + "] " + "You have sent " + Utils.BalanceFormatted(Amount) + " to " + ToName;
         }
         public String GetFormattedAsReciever() {
             String FromName = "Someone";
@@ -68,20 +68,13 @@ namespace OO_Bank.Classes {
             } catch (UserException) {
                 //Idk? Nyby, lav en custom alert box til hvis der opstår en fejl?
             }
-            return "[" + this.Time.ToString("MM/dd/yyyy HH:mm") + "] " + FromName + " have sent you $" + Amount;
+            return "[" + this.Time.ToString("MM/dd/yyyy HH:mm") + "] " + FromName + " have sent you " + Utils.BalanceFormatted(Amount);
         }
 
 
         public void Save() {
             String FromPath = Settings.TransactionsPath + "/" + From.Number + ".txt";
-            //if (!File.Exists(@FromPath)) {
-            //    File.Create(@FromPath);
-            //}
-            //
             String ToPath = Settings.TransactionsPath + "/" + To.Number + ".txt";
-            //if (!File.Exists(@ToPath)) {
-           //     File.Create(@ToPath);
-            //}
 
             using (StreamWriter sw = File.AppendText(@FromPath)) {
                 sw.WriteLine(this.GetFormattedAsSender());
@@ -91,7 +84,16 @@ namespace OO_Bank.Classes {
             }
 
             Utils.GetUserByID(From.OwnerId).Save();
-            Utils.GetUserByID(To.OwnerId).Save();
+
+            //Remember to update the user object too before saving it:
+            User toUser = Utils.GetUserByID(To.OwnerId);
+            foreach(var item in ForEachHelper.WithIndex(toUser.Accounts)) {
+                Account _acc = item.Value;
+                if(_acc.Number == To.Number) {
+                    toUser.Accounts[item.Index] = To;
+                }
+            }
+            toUser.Save();
         }
 
     }

@@ -19,7 +19,7 @@ namespace OO_Bank.User_Controls {
 
         public OverviewUC() {
             InitializeComponent();
-            Settings.overviewUC = this;
+            Settings.OverviewUC = this;
         }
 
         private void CmbChooseAccount_SelectedIndexChanged(object sender, EventArgs e) {
@@ -63,6 +63,8 @@ namespace OO_Bank.User_Controls {
                             cmbChooseAccount.SelectedIndex = cmbChooseAccount.Items.IndexOf(newAccount.Name);
                             account = newAccount;
                             UpdateAccount();
+
+                            Settings.PayAndTransfer.UpdateLists();
                         } else {
                             CreateAccount("Your account name is too long!\nPlease try again!");
                         }
@@ -71,7 +73,7 @@ namespace OO_Bank.User_Controls {
                     }
                 } else {
                     //"\n" står for "\" = break og "n" = new line.
-                    CreateAccount("You already have a account\nwith that name!\nPlease try again!");
+                    CreateAccount("You already have an account\nwith that name!\nPlease try again!");
                 }
             } else if (customText.DialogResult == DialogResult.Cancel) {
 
@@ -101,7 +103,7 @@ namespace OO_Bank.User_Controls {
         public void UpdateAccount() {
             lblAccountName.Text = "Account Name: " + account.Name;
             lblAccountNumber.Text = "Account Number: " + account.Number;
-            lblBalance.Text = "Balance: " + String.Format("{0:n}", account.balance) + " DKK";
+            lblBalance.Text = "Balance: " + Utils.BalanceFormatted(account.balance);
 
             //Her tjekker vi om accounten har et Kredit kort
             if(account.Card != null) {
@@ -126,45 +128,15 @@ namespace OO_Bank.User_Controls {
             if (File.Exists(@TransactionPath)) {
                 var TransactionsList = File.ReadLines(@TransactionPath);
                 foreach (var TransactionLine in TransactionsList) {
-                    lstTransactions.Items.Add(TransactionLine);
+                    lstTransactions.Items.Insert(0, TransactionLine);
                 }
             } else {
-                lstTransactions.Items.Add("No transactions yet!");
+                lstTransactions.Items.Insert(0, "No transactions yet!");
             }
         }
 
         private void OverviewUC_Load(object sender, EventArgs e) {
             UpdateList();
-        }
-
-        private void BtnTestTransaction_Click(object sender, EventArgs e) {
-            FormMultiTextInput customText = new FormMultiTextInput("Transfer Money (Amount, Account)");
-            if (customText.DialogResult == DialogResult.OK) {
-                String amount = customText.Input1;
-                String Account = customText.Input2;
-                decimal amountParsed = decimal.Parse(amount);
-
-                Account toAccount = null;
-                foreach(Account acc in Settings.CurrentUser.Accounts){
-                    if (acc.Number.ToString().Equals(Account)) {
-                        toAccount = acc;
-                    }
-                }
-                if(toAccount != null) {
-                    Transaction TAction = new Transaction(account, toAccount, amountParsed, DateTime.Now);
-                    if(TAction.CanTransfer() == true) {
-                        TAction.Transfer();
-                        this.UpdateAccount();
-                    } else {
-                        MessageBox.Show("Account doesn't contain enough money!");
-                    }
-                } else {
-                    MessageBox.Show("Account not found");
-                }
-                
-
-                //Transaction trans = new Transaction(this.account, )
-            }
         }
     }
 }
