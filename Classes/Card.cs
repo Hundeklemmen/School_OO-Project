@@ -6,22 +6,17 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace OO_Bank.Classes {
+
+    //Card = En konto's kredit kort.
     public class Card {
-        /*
-        - Card:
-            - Card Number
-            - Expiry date
-            - The 3 security numbers on the back
-            - Card holder
-            - Account Number
-        */
 
-        public long Number { get; set; }
-        public DateTime ExpireDate { get; set; }
-        public int SecurityNumber { get; set; }
-        public long Owner { get; set; }
-        public long AccountNumber { get; set; }
+        public long Number;
+        public DateTime ExpireDate;
+        public int SecurityNumber;
+        public long Owner; //Kort ejeren
+        public long AccountNumber; //Konto nummer
 
+        //Her laver vi vores Kort objekt.
         public Card(long Number, DateTime ExpireDate, int SecurityNumber, long Owner, long AccountNumber) {
             this.Number = Number;
             this.ExpireDate = ExpireDate;
@@ -30,6 +25,8 @@ namespace OO_Bank.Classes {
             this.AccountNumber = AccountNumber;
         }
 
+
+        //Få det som JSON, dette bruges til når vi skal gemme kortet i en json fil.
         public JObject GetAsJson() {
             JObject tmpCard = new JObject {
                 { "Number", this.Number },

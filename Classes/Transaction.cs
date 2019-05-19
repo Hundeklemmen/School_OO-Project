@@ -8,12 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace OO_Bank.Classes {
+
+    //Transaction = Når der sker en overførsel mellem 2 kontoer
     class Transaction {
         public Account From;
         public Account To;
         public decimal Amount;
         public DateTime Time;
 
+        //Her laver vi vores transaction objekt 
         public Transaction(Account From, Account To, decimal Amount, DateTime Time) {
             this.From = From;
             this.To = To;
@@ -21,13 +24,14 @@ namespace OO_Bank.Classes {
             this.Time = Time;
         }
 
-
+        //Fjerner og tilføjer pengene til de 2 kontoer
         public void Transfer() {
             From.RemoveMoney(this.Amount);
             To.AddMoney(this.Amount);
             this.Save();
         }
 
+        //Tjekker om "fra" kontoen har nok penge
         public Boolean CanTransfer() {
             if (From.balance - this.Amount >= 0) {
                 return true;
@@ -36,22 +40,7 @@ namespace OO_Bank.Classes {
             }
         }
 
-        public String GetFormatted() {
-            String FromName = "Someone";
-            try {
-                FromName = Utils.GetUserByID(From.OwnerId).Name;
-            } catch (UserException) {
-                //Idk? Nyby, lav en custom alert box til hvis der opstår en fejl?
-            }
-            String ToName = "Someone";
-            try {
-                ToName = Utils.GetUserByID(To.OwnerId).Name;
-            } catch (UserException) {
-                //Idk? Nyby, lav en custom alert box til hvis der opstår en fejl?
-            }
-            return FromName + " sent " + Utils.BalanceFormatted(Amount) + " to " + ToName;
-        }
-
+        //Denne bruges når vi skal gemme transactionen i læsebar form.
         public String GetFormattedAsSender() {
             String ToName = "Someone";
             try {
@@ -72,6 +61,8 @@ namespace OO_Bank.Classes {
         }
 
 
+        //Når vi gemmer transaktionen i en konto's transcations fil.
+        //Denne fil loades når man skifter konto inde i OverviewUC
         public void Save() {
             String FromPath = Settings.TransactionsPath + "/" + From.Number + ".txt";
             String ToPath = Settings.TransactionsPath + "/" + To.Number + ".txt";
@@ -83,9 +74,10 @@ namespace OO_Bank.Classes {
                 sw.WriteLine(this.GetFormattedAsReciever());
             }
 
+            //Gem fra brugeren:
             Utils.GetUserByID(From.OwnerId).Save();
 
-            //Remember to update the user object too before saving it:
+            //Her opdatere vi bruger objektet før vi gemmer det:
             User toUser = Utils.GetUserByID(To.OwnerId);
             foreach(var item in ForEachHelper.WithIndex(toUser.Accounts)) {
                 Account _acc = item.Value;
