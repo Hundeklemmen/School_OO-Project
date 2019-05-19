@@ -98,3 +98,4 @@ C:\Users\ander\OneDrive - IT Center Nord -81338807 - Tech college\Documents\GitH
 C:\Users\ander\OneDrive - IT Center Nord -81338807 - Tech college\Documents\GitHub\School_OO-Project\bin\Debug\Newtonsoft.Json.xml
 C:\Users\ander\OneDrive - IT Center Nord -81338807 - Tech college\Documents\GitHub\School_OO-Project\obj\Debug\OO Bank.csproj.CopyComplete
 C:\Users\ander\OneDrive - IT Center Nord -81338807 - Tech college\Documents\GitHub\School_OO-Project\obj\Debug\OO_Bank.Forms.Custom_Messages.FormMessage.resources
+C:\Users\xande\Documents\GitHub\School_OO-Project\obj\Debug\OO_Bank.Forms.Custom_Messages.FormMessage.resources
