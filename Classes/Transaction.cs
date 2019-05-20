@@ -80,6 +80,7 @@ namespace OO_Bank.Classes {
             }
             //Her opdatere vi bruger objektet før vi gemmer det:
             User toUser = Utils.GetUserByID(To.OwnerId);
+            List<Account> tempAccount
             foreach (var item in ForEachHelper.WithIndex(toUser.Accounts)) {
                 Account _acc = item.Value;
                 if (_acc.Number == To.Number) {
