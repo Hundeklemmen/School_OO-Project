@@ -154,12 +154,12 @@ namespace OO_Bank.Classes {
 
 
         public static string CalculateMD5Hash(string input) {
-            // step 1, calculate MD5 hash from input
+            //Step 1, udregn MD5 hash fra input
             MD5 md5 = MD5.Create();
             byte[] inputBytes = Encoding.ASCII.GetBytes(input);
             byte[] hash = md5.ComputeHash(inputBytes);
 
-            // step 2, convert byte array to hex string
+            //Step 2, konverter byte array til hex string
             StringBuilder sb = new StringBuilder();
             for (int i = 0; i < hash.Length; i++) {
                 sb.Append(hash[i].ToString("X2"));
@@ -168,6 +168,7 @@ namespace OO_Bank.Classes {
         }
     }
 
+    //En hjælper til foreach
     public static class ForEachHelper {
         public sealed class Item<T> {
             public int Index { get; set; }

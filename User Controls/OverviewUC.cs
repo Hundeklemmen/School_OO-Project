@@ -44,6 +44,7 @@ namespace OO_Bank.User_Controls {
             }
         }
 
+        //Bruges til at lave konto
         public void CreateAccount(String customMSG) {
             FormTextInput customText;
             if (customMSG != null) {
@@ -59,9 +60,12 @@ namespace OO_Bank.User_Controls {
                         exists = true;
                     }
                 }
+                //Hvis ikke
                 if (exists == false) {
+                    //Tjekker om konto navnet er "white space"
                     if (!string.IsNullOrWhiteSpace(customText.Message)) {
                         if (customText.Message.Length < 20) {
+                            //Sætter og gemmer ny konto
                             Account newAccount = new Account(Utils.GenerateAccountNumber(), customText.Message, 0.0m, user.ID, null);
                             Settings.CurrentUser.Accounts.Add(newAccount);
                             user = Settings.CurrentUser;
@@ -73,20 +77,24 @@ namespace OO_Bank.User_Controls {
 
                             Settings.PayAndTransfer.UpdateLists();
                         } else {
+                            //Hvis navnet er for langt
                             CreateAccount("Your account name is too long!\nPlease try again!");
                         }
                     } else {
+                        //Hvis navnet kun har "white space"
                         CreateAccount("Your account name can't\nonly contain whitespaces!\nPlease try again!");
                     }
                 } else {
-                    //"\n" står for "\" = break og "n" = new line.
+                    //Hvis navn allerede bruges af bruger
                     CreateAccount("You already have an account\nwith that name!\nPlease try again!");
                 }
+            //Hvis bruger fortryder, lukkes formen
             } else if (customText.DialogResult == DialogResult.Cancel) {
 
             }
         }
 
+        //Opdaterer combobox liste
         public void UpdateList() {
             try {
                 if (cmbChooseAccount != null) {
@@ -142,7 +150,9 @@ namespace OO_Bank.User_Controls {
             }
         }
 
+        //Når overviewUC loader
         private void OverviewUC_Load(object sender, EventArgs e) {
+            //Opdater list
             UpdateList();
         }
     }

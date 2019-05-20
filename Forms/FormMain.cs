@@ -15,6 +15,11 @@ using System.Windows.Forms;
 namespace OO_Bank {
     public partial class FormMain : Form {
         /*
+        
+        ===========================
+                Vores Plan
+        ===========================
+
         Get/Set our user with Settings.CurrentUser = (User object here)
         Todo:
         -Check if card number already exist
@@ -99,6 +104,7 @@ namespace OO_Bank {
             }
         }
 
+        //Hvis der trykkes på exit, spørg da om de vil exit, så exit
         private void BtnExit_Click(object sender, EventArgs e) {
             DialogResult result = MessageBox.Show("Do you want to exit the application?", "Exit application", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (result == DialogResult.Yes) {
@@ -119,21 +125,25 @@ namespace OO_Bank {
             my_AccountUC1.Visible = UC3;
         }
 
+        //Hvis bruger klikker på overview knap, så skift til den fane
         private void BtnOverview_Click(object sender, EventArgs e) {
             MoveBar(btnOverview);
             VisibleUC(true, false, false);
         }
 
+        //Hvis bruger klikker på Pay and Transfer knap, så skift til den fane
         private void BtnPayTransfer_Click(object sender, EventArgs e) {
             MoveBar(btnPayTransfer);
             VisibleUC(false, true, false);
         }
 
+        //Hvis bruger trykker på My Account knap, så skift til den fane
         private void BtnAccount_Click(object sender, EventArgs e) {
             MoveBar(btnAccount);
             VisibleUC(false, false, true);
         }
 
+        //Hvis brugeren klikker log ud, spørg om de vil, så log ud og åben ny start form.
         private void BtnLogOut_Click(object sender, EventArgs e) {
             FormYesNo customMessage = new FormYesNo("Would you like to log out?");
             if (customMessage.DialogResult == DialogResult.Yes) {

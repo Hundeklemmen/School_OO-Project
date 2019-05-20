@@ -15,7 +15,9 @@ namespace OO_Bank.User_Controls.Overview {
             InitializeComponent();
         }
 
+        //Hvis der klikkes på registrer kredit kort
         private void BtnRegisterCreditCard_Click(object sender, EventArgs e) {
+            //Opret nyt kort
             long Number = Utils.GenerateCardNumber();
             DateTime ExpireDate = DateTime.Now.AddYears(3);
             int SecurityNumber = Utils.GenerateSecurityNumber();

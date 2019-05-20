@@ -23,10 +23,12 @@ namespace OO_Bank.User_Controls.Forms {
             InitializeComponent();
         }
 
+        //Lukker formen hvis der trykkes på exit
         private void LblExit_Click(object sender, EventArgs e) {
             this.Hide();
         }
 
+        //Hvis der klikkes på tekstboks for account id fjernes teksten så der er plads til at skrive
         private void TxtAccountIDInput_MouseClick(object sender, MouseEventArgs e) {
             if (!accountIDClicked) {
                 TextBox box = sender as TextBox;
@@ -35,6 +37,7 @@ namespace OO_Bank.User_Controls.Forms {
             }
         }
 
+        //Hvis der klikkes på tekstboks for password fjernes teksten så der er plads til at skrive
         private void TxtPasswordInput_MouseClick(object sender, MouseEventArgs e) {
             if (!passwordClicked) {
                 TextBox box = sender as TextBox;
@@ -43,14 +46,16 @@ namespace OO_Bank.User_Controls.Forms {
             }
         }
 
+        //Hvis tekstboks for password bliver ændret så sæt det visne tegn lig med * for at bevare password
         private void TxtPasswordInput_TextChanged_1(object sender, EventArgs e) {
-            txtPasswordInput.MaxLength = 20;
+            txtPasswordInput.MaxLength = 20; //Maks længde = 20
             txtPasswordInput.PasswordChar = '*';
-            pnlPassword.BackColor = Color.FromArgb(114, 137, 218);
+            pnlPassword.BackColor = Color.FromArgb(114, 137, 218); //Sæt farven tilbage til normal
         }
 
+        //Hvis tekstboks for account id bliver ændret
         private void TxtAccountID_TextChanged(object sender, EventArgs e) {
-            pnlAccountID.BackColor = Color.FromArgb(114, 137, 218);
+            pnlAccountID.BackColor = Color.FromArgb(114, 137, 218); //Sæt farven tilbage til normal
         }
 
         //Variable som bruges til at rykke rundt på formen
@@ -74,18 +79,20 @@ namespace OO_Bank.User_Controls.Forms {
             }
         }
 
+        //Hvis man forlader tekstboksen for account id
         private void TxtAccountID_Leave(object sender, EventArgs e) {
-            if(txtAccountIDInput.Text.Length == 0) {
-                txtAccountIDInput.Text = "Account ID";
-                accountIDClicked = false;
+            if(txtAccountIDInput.Text.Length == 0) { //Hvis der intet er i tekstfeltet, erstat det med "Account ID", så brugeren ved hvad der skal skrives
+                txtAccountIDInput.Text = "Account ID"; 
+                accountIDClicked = false; //Sæt bool = false, så der igen kan klikkes på den for at fjerne teksten
             }
         }
 
+        //Hvis man forlader tekstboksen for password
         private void TxtPasswordInput_Leave(object sender, EventArgs e) {
-            if (txtPasswordInput.Text.Length == 0) {
+            if (txtPasswordInput.Text.Length == 0) { //Hvis der intet er i tekstfeltet, erstat det med "Password", så brugeren ved hvad der skal skrives
                 txtPasswordInput.Text = "Password";
-                txtPasswordInput.PasswordChar = '\0';
-                passwordClicked = false;
+                txtPasswordInput.PasswordChar = '\0'; //Fjerner password character så der kan stå Password uden det bliver til *
+                passwordClicked = false;  //Sæt bool = false, så der igen kan klikkes på den for at fjerne teksten
             }
         }
 
@@ -98,20 +105,24 @@ namespace OO_Bank.User_Controls.Forms {
             String Password = Utils.CalculateMD5Hash(txtPasswordInput.Text);
 
             logSuccess = true;
+            //Hvis account id ikke passer med længden eller der bare står Account ID
             if (txtAccountIDInput.Text.Length != 6 || txtAccountIDInput.Text == "Account ID") {
-                pnlAccountID.BackColor = Color.FromArgb(255, 0, 0);
-                goingToShake = true;
+                pnlAccountID.BackColor = Color.FromArgb(255, 0, 0); //Sæt panel farven for account id = rød
+                goingToShake = true; //Sørger for at formen ryster hvis fejl
             }
+            //Hvis password er mindre end 8 eller der bare står "Password"
             if (txtPasswordInput.Text.Length < 8 || txtPasswordInput.Text == "Password") {
-                pnlPassword.BackColor = Color.FromArgb(255, 0, 0);
-                goingToShake = true;
+                pnlPassword.BackColor = Color.FromArgb(255, 0, 0); //Sæt panel farven for password = rød
+                goingToShake = true; //Sørger for at formen ryster hvis fejl
             }
+            //Hvis formen skal ryste
             if (goingToShake) {
-                Utils.Shake(this);
-                goingToShake = false;
-                logSuccess = false;
+                Utils.Shake(this); //Ryst formen
+                goingToShake = false; //Reset bool
+                logSuccess = false; //Reset bool
                 return;
             }
+            //Hvis alle input møder kravene
             if (logSuccess) {
                 try {
                     User user = Utils.GetUserByID(AccountID);

@@ -28,6 +28,7 @@ namespace OO_Bank.User_Controls {
             }
         }
 
+        //Bruges til at opdatere user info
         private void UpdateInfo() {
             User user = Settings.CurrentUser;
             lblID.Text = "ID: " + user.ID;
@@ -42,29 +43,35 @@ namespace OO_Bank.User_Controls {
             lblOverallBalance.Text = "Overall Balance: " + Utils.BalanceFormatted(OverallSaldo);
         }
 
+        //Hvis der klikkes på navn for at ændre det
         private void LblName_Click(object sender, EventArgs e) {
             FormTextInput inputBox = new FormTextInput("Enter new name: ");
             if(inputBox.DialogResult == DialogResult.OK) {
                 if (inputBox.Message.Length == 0 || inputBox.Message == "Full name") {
                     Utils.Shake(Settings.FormMain);
                 } else {
+                    //Sæt og gem nye navn
                     Settings.CurrentUser.Name = inputBox.Message;
                     Settings.CurrentUser.Save();
                     UpdateInfo();
+                    new FormMessage("Your name has been changed!");
                 }
             }
         }
 
+        //Hvis der klikkes på password for at ændre det
         private void LblPassword_Click(object sender, EventArgs e) {
             ChangePassword("Enter new password: ");
         }
         private void ChangePassword(String title) {
             FormTextInput inputBox = new FormTextInput(title);
             if (inputBox.DialogResult == DialogResult.OK) {
+                //Tjekker for krav
                 if (inputBox.Message.Length < 8 || inputBox.Message == "Password") {
                     inputBox.Hide(); 
                     ChangePassword("Enter new password: Please try again");
                 } else {
+                    //Sæt og gem nye password
                     Settings.CurrentUser.Password = Utils.CalculateMD5Hash(inputBox.Message);
                     Settings.CurrentUser.Save();
                     UpdateInfo();
@@ -73,25 +80,32 @@ namespace OO_Bank.User_Controls {
             }
         }
 
+        //Hvis der klikkes på email for at ændre det
         private void LblEmail_Click(object sender, EventArgs e) {
             FormTextInput inputBox = new FormTextInput("Enter new email: ");
             if (inputBox.DialogResult == DialogResult.OK) {
+                //Tjekker for krav
                 if (!Utils.IsValidEmail(inputBox.Message)) {
                     Utils.Shake(Settings.FormMain);
                 } else {
+                    //Sæt og gem nye email
                     Settings.CurrentUser.Email = inputBox.Message;
                     Settings.CurrentUser.Save();
                     UpdateInfo();
+                    new FormMessage("Your Email has been changed!");
                 }
             }
         }
 
+        //Hvis der klikkes på mobil nummer for at ændre det
         private void LblMobile_Click(object sender, EventArgs e) {
             FormTextInput inputBox = new FormTextInput("Enter new mobile: ");
             if (inputBox.DialogResult == DialogResult.OK) {
+                //Tjekker for krav
                 if (inputBox.Message.Length != 8 || inputBox.Message == "Mobile" || !inputBox.Message.All(char.IsDigit)) {
                     Utils.Shake(Settings.FormMain);
                 } else {
+                    //Sæt og gem nye mobil nummer
                     Settings.CurrentUser.Mobile = inputBox.Message;
                     Settings.CurrentUser.Save();
                     UpdateInfo();
@@ -100,28 +114,35 @@ namespace OO_Bank.User_Controls {
             }
         }
 
+        //Hvis bruger vil fjerne konto
         private void BtnDeleteAccount_Click(object sender, EventArgs e) {
+            //Bekræft
             FormYesNo ConfirmDelete = new FormYesNo("Confirm deletion of account");
             if (ConfirmDelete.DialogResult == DialogResult.Yes) {
+                //Fjern konto
                 FormMessage InfoMessage = new FormMessage("You've successfully deleted your account!");
                 File.Delete(Settings.UsersPath + "/" + Settings.CurrentUser.ID + ".json");
+                //Start ny start form
                 var t = new Thread(() => Application.Run(new FormLogSign()));
                 t.Start();
                 Application.OpenForms["FormMain"].Close();
             }
         }
 
+        //Hvis bruger vil have alt konto info
         private void BtnCollectAccInfo_Click(object sender, EventArgs e) {
             FormYesNo confirmCollection = new FormYesNo("Would you like to save all\naccount information?");
             if(confirmCollection.DialogResult == DialogResult.Yes) {
                 try {
-                    //Checking if file exists..
+                    //Tjekker om fil eksisterer
                     if(File.Exists(@Settings.AccountInfoPath + "/Account info for ID " + Settings.CurrentUser.ID + ".json")) {
-                        //Delete if it does so we can "overwrite" it.
+                        //Fjerner fil så vi kan erstatte den
                         File.Delete(@Settings.AccountInfoPath + "/Account info for ID " + Settings.CurrentUser.ID + ".json");
                     }
+                    //Kopierer fil på personen
                     File.Copy(@Settings.UsersPath + "/" + Settings.CurrentUser.ID + ".json", @Settings.AccountInfoPath + "/Account info for ID " + Settings.CurrentUser.ID + ".json");
                     new FormMessage("File has been saved in the\nOOProject file");
+                //Hvis noget går galt
                 } catch (Exception) {
                     new FormMessage("Something went wrong whilst\ntrying to save the file");
                     Utils.Shake(Settings.FormMain);

@@ -41,16 +41,19 @@ namespace OO_Bank {
             }
         }
 
+        //Hvis der trykkes på log in knap, åben log in form
         private void BtnLogIn_Click(object sender, EventArgs e) {
             FormLogIn formLogIn = new FormLogIn();
             formLogIn.ShowDialog();
         }
 
+        //Hvis der trykkes på sign up knap, åben sign up
         private void BtnSignUp_Click(object sender, EventArgs e) {
             FormSignUp formSignUp = new FormSignUp();
             formSignUp.ShowDialog();
         }
 
+        //Luk formen hvis der bliver trykket på exit
         private void LblExit_Click(object sender, EventArgs e) {
             Application.Exit();
         }

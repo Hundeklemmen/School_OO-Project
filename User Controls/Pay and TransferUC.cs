@@ -18,8 +18,10 @@ namespace OO_Bank.User_Controls {
             InitializeComponent();
         }
 
+        //Sæt user = current user
         public User user = Settings.CurrentUser;
 
+        //Når pay and transfer loader
         private void Pay_and_TransferUC_Load(object sender, EventArgs e) {
             try {
                 UpdateLists();
@@ -29,6 +31,7 @@ namespace OO_Bank.User_Controls {
             }
         }
 
+        //Bruger til at opdatere combobox listerne
         public void UpdateLists() {
             try {
                 //Opdater cmbFromAccount listen.
@@ -75,6 +78,7 @@ namespace OO_Bank.User_Controls {
             }
         }
 
+        //Hvis valgte combobox for konto som skal sende penge til egen anden konto ændres
         private void CmbFromAccount_SelectedIndexChanged(object sender, EventArgs e) {
             Object selectedItem = cmbFromAccount.SelectedItem;
             foreach (Account acc in user.Accounts) {
@@ -85,6 +89,7 @@ namespace OO_Bank.User_Controls {
             }
         }
 
+        //Hvis valgte combobox for konto som skal modtage penge fra egen anden konto ændres
         private void CmbToAccount_SelectedIndexChanged(object sender, EventArgs e) {
             Object selectedItem = cmbToAccount.SelectedItem;
             foreach (Account acc in user.Accounts) {
@@ -95,6 +100,7 @@ namespace OO_Bank.User_Controls {
             }
         }
 
+        //Hvis valgte combobox for konto som skal sende penge til andre mennesker ændres
         private void CmbFromOther_SelectedIndexChanged(object sender, EventArgs e) {
             Object selectedItem = cmbFromOther.SelectedItem;
             foreach (Account acc in user.Accounts) {
@@ -105,6 +111,7 @@ namespace OO_Bank.User_Controls {
             }
         }
 
+        //Hvis brugeren bekræfter
         private void BtnConfirm1_Click(object sender, EventArgs e) {
             FormYesNo ConfirmForm = new FormYesNo("Confirm transaction");
             if (ConfirmForm.DialogResult == DialogResult.Yes) {
@@ -114,8 +121,8 @@ namespace OO_Bank.User_Controls {
                 String ToAccount = cmbToAccount.Text;
                 String amount = txtAmountOwn.Text;
 
-                decimal amountParsed;
-                if (decimal.TryParse(amount, out amountParsed)) {
+                //Tjekker om alt er i orden
+                if (decimal.TryParse(amount, out decimal amountParsed)) {
                     if (amountParsed > 0) {
 
                         Account fromAccount = null;
@@ -142,20 +149,25 @@ namespace OO_Bank.User_Controls {
                                 UpdateLists();
                                 cmbFromAccount.SelectedIndex = cmbFromAccount.Items.IndexOf(fromAccount.Name);
                                 cmbToAccount.SelectedIndex = cmbToAccount.Items.IndexOf(toAccount.Name);
+                                //Hvis transaktionen går igennem
                                 new FormMessage("Transaction has been completed");
                             } else {
+                                //Hvis brugeren ikke har nok penge
                                 new FormMessage("Insufficient funding");
                                 Utils.Shake(Settings.FormMain);
                             }
                         } else {
+                            //Hvis kontoen ikke findes
                             new FormMessage("Account not found");
                             Utils.Shake(Settings.FormMain);
                         }
                     } else {
+                        //Hvis man prøver at sende mindre end 0
                         new FormMessage("Du kan ikke sende et beløb under 0!");
                         Utils.Shake(Settings.FormMain);
                     }
                 } else {
+                    //Hvis man prøver at sende andet end tal
                     new FormMessage("Dit beløb kan kun indeholde et tal!");
                     Utils.Shake(Settings.FormMain);
                 }
@@ -163,6 +175,7 @@ namespace OO_Bank.User_Controls {
             }
         }
 
+        //Hvis brugeren bekræfter
         private void BtnConfirm2_Click(object sender, EventArgs e) {
             FormYesNo ConfirmForm = new FormYesNo("Confirm transaction");
             if (ConfirmForm.DialogResult == DialogResult.Yes) {
@@ -172,8 +185,8 @@ namespace OO_Bank.User_Controls {
                 int ToOtherAccount = int.Parse(txtRecipient.Text);
                 String amount = txtAmountOther.Text;
 
-                decimal amountParsed;
-                if (decimal.TryParse(amount, out amountParsed)) {
+                //TJekker om alt er i orden
+                if (decimal.TryParse(amount, out decimal amountParsed)) {
                     if (amountParsed > 0) {
 
                         Account fromAccount = null;
@@ -211,48 +224,29 @@ namespace OO_Bank.User_Controls {
                                 UpdateLists();
                                 cmbFromAccount.SelectedIndex = cmbFromAccount.Items.IndexOf(fromAccount.Name);
                                 cmbToAccount.SelectedIndex = cmbToAccount.Items.IndexOf(toAccount.Name);
+                                //Hvis transaktionen går i gennem
                                 new FormMessage("Transaction has been completed");
                             } else {
+                                //Hvis kontoen ikke har nok penge
                                 new FormMessage("Insufficient funding");
                                 Utils.Shake(Settings.FormMain);
                             }
                         } else {
+                            //Hvis kontoen ikke kan findes
                             new FormMessage("Account not found");
                             Utils.Shake(Settings.FormMain);
                         }
                     } else {
+                        //Hvis brugeren sender beløb under 0
                         new FormMessage("Du kan ikke sende et beløb under 0!");
                         Utils.Shake(Settings.FormMain);
                     }
                 } else {
+                    //Hvis bruger sender andet end tal
                     new FormMessage("Dit beløb kan kun indeholde et tal!");
                     Utils.Shake(Settings.FormMain);
                 }
             }
         }
-
-        /*
-                String amount = customText.Input1;
-                String Account = customText.Input2;
-                decimal amountParsed = decimal.Parse(amount);
-
-                Account toAccount = null;
-                foreach(Account acc in Settings.CurrentUser.Accounts){
-                    if (acc.Number.ToString().Equals(Account)) {
-                        toAccount = acc;
-                    }
-                }
-                if(toAccount != null) {
-                    Transaction TAction = new Transaction(account, toAccount, amountParsed, DateTime.Now);
-                    if(TAction.CanTransfer() == true) {
-                        TAction.Transfer();
-                        this.UpdateAccount();
-                    } else {
-                        MessageBox.Show("Account doesn't contain enough money!");
-                    }
-                } else {
-                    MessageBox.Show("Account not found");
-                }
-        */
     }
 }
