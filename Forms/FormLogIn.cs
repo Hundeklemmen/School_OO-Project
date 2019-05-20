@@ -18,8 +18,6 @@ namespace OO_Bank.User_Controls.Forms {
         bool passwordClicked = false;
         bool goingToShake = false;
         bool logSuccess;
-        private bool mouseDown;
-        private Point lastLocation;
 
         public FormLogIn() {
             InitializeComponent();
@@ -55,15 +53,19 @@ namespace OO_Bank.User_Controls.Forms {
             pnlAccountID.BackColor = Color.FromArgb(114, 137, 218);
         }
 
+        //Variable som bruges til at rykke rundt på formen
+        private bool mouseDown; //Holdes venstre-klik nede eller ej
+        private Point lastLocation; //Hvor var formen sidst
+        //Hvis der trykkes ned på musen sættes bool mouseDown til sand og fortæller lokation til Point variablen
         private void LblLogIn_MouseDown(object sender, MouseEventArgs e) {
             mouseDown = true;
             lastLocation = e.Location;
         }
-
+        //Hvis der gives slip på musen stopper det
         private void LblLogIn_MouseUp(object sender, MouseEventArgs e) {
             mouseDown = false;
         }
-
+        //Når musen rykkes opdateres lokationen
         private void LblLogIn_MouseMove(object sender, MouseEventArgs e) {
             if (mouseDown) {
                 this.Location = new Point(
@@ -87,11 +89,15 @@ namespace OO_Bank.User_Controls.Forms {
             }
         }
 
+        //Klik event til login knappen.
         private void BtnLogInConfirm_Click(object sender, EventArgs e) {
-            long AccountID = Convert.ToInt64(txtAccountIDInput.Text);
-            String Password = Utils.CalculateMD5Hash(txtPasswordInput.Text);
-            logSuccess = true;
 
+            //Parser vores txtAccountIDInput til en int samt sætter den som en variable
+            long AccountID = Convert.ToInt64(txtAccountIDInput.Text);
+            //Hasher vores txtPasswordInput til MD5 (Mindste sikkerhedskrav til hvis man skal gemme et password)
+            String Password = Utils.CalculateMD5Hash(txtPasswordInput.Text);
+
+            logSuccess = true;
             if (txtAccountIDInput.Text.Length != 6 || txtAccountIDInput.Text == "Account ID") {
                 pnlAccountID.BackColor = Color.FromArgb(255, 0, 0);
                 goingToShake = true;

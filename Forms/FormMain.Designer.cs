@@ -29,16 +29,14 @@
             this.pnlCurrentPage = new System.Windows.Forms.Panel();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnAccount = new System.Windows.Forms.Button();
-            this.btnPayTransfer = new System.Windows.Forms.Button();
-            this.btnExpenseBudget = new System.Windows.Forms.Button();
             this.btnOverview = new System.Windows.Forms.Button();
             this.pnlLogo = new System.Windows.Forms.Panel();
             this.lblOOBankLogo = new System.Windows.Forms.Label();
             this.pnlMain = new System.Windows.Forms.Panel();
             this.overviewUC1 = new OO_Bank.User_Controls.OverviewUC();
-            this.expenses_and_BudgetUC1 = new OO_Bank.User_Controls.Expenses_and_BudgetUC();
             this.pay_and_TransferUC1 = new OO_Bank.User_Controls.Pay_and_TransferUC();
             this.my_AccountUC1 = new OO_Bank.User_Controls.My_AccountUC();
+            this.btnPayTransfer = new System.Windows.Forms.Button();
             this.pnlSideBar.SuspendLayout();
             this.pnlLogo.SuspendLayout();
             this.pnlMain.SuspendLayout();
@@ -52,7 +50,6 @@
             this.pnlSideBar.Controls.Add(this.btnExit);
             this.pnlSideBar.Controls.Add(this.btnAccount);
             this.pnlSideBar.Controls.Add(this.btnPayTransfer);
-            this.pnlSideBar.Controls.Add(this.btnExpenseBudget);
             this.pnlSideBar.Controls.Add(this.btnOverview);
             this.pnlSideBar.Controls.Add(this.pnlLogo);
             this.pnlSideBar.Dock = System.Windows.Forms.DockStyle.Left;
@@ -80,7 +77,7 @@
             // pnlCurrentPage
             // 
             this.pnlCurrentPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
-            this.pnlCurrentPage.Location = new System.Drawing.Point(0, 120);
+            this.pnlCurrentPage.Location = new System.Drawing.Point(0, 136);
             this.pnlCurrentPage.Name = "pnlCurrentPage";
             this.pnlCurrentPage.Size = new System.Drawing.Size(10, 100);
             this.pnlCurrentPage.TabIndex = 2;
@@ -109,45 +106,13 @@
             this.btnAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAccount.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAccount.ForeColor = System.Drawing.Color.White;
-            this.btnAccount.Location = new System.Drawing.Point(3, 438);
+            this.btnAccount.Location = new System.Drawing.Point(3, 411);
             this.btnAccount.Name = "btnAccount";
             this.btnAccount.Size = new System.Drawing.Size(194, 100);
             this.btnAccount.TabIndex = 4;
             this.btnAccount.Text = "My Account";
             this.btnAccount.UseVisualStyleBackColor = false;
             this.btnAccount.Click += new System.EventHandler(this.BtnAccount_Click);
-            // 
-            // btnPayTransfer
-            // 
-            this.btnPayTransfer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(39)))), ((int)(((byte)(42)))));
-            this.btnPayTransfer.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPayTransfer.FlatAppearance.BorderSize = 0;
-            this.btnPayTransfer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPayTransfer.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPayTransfer.ForeColor = System.Drawing.Color.White;
-            this.btnPayTransfer.Location = new System.Drawing.Point(3, 332);
-            this.btnPayTransfer.Name = "btnPayTransfer";
-            this.btnPayTransfer.Size = new System.Drawing.Size(194, 100);
-            this.btnPayTransfer.TabIndex = 3;
-            this.btnPayTransfer.Text = "Pay and Transfer";
-            this.btnPayTransfer.UseVisualStyleBackColor = false;
-            this.btnPayTransfer.Click += new System.EventHandler(this.BtnPayTransfer_Click);
-            // 
-            // btnExpenseBudget
-            // 
-            this.btnExpenseBudget.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(39)))), ((int)(((byte)(42)))));
-            this.btnExpenseBudget.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnExpenseBudget.FlatAppearance.BorderSize = 0;
-            this.btnExpenseBudget.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExpenseBudget.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExpenseBudget.ForeColor = System.Drawing.Color.White;
-            this.btnExpenseBudget.Location = new System.Drawing.Point(3, 226);
-            this.btnExpenseBudget.Name = "btnExpenseBudget";
-            this.btnExpenseBudget.Size = new System.Drawing.Size(194, 100);
-            this.btnExpenseBudget.TabIndex = 2;
-            this.btnExpenseBudget.Text = "Expenses and Budget";
-            this.btnExpenseBudget.UseVisualStyleBackColor = false;
-            this.btnExpenseBudget.Click += new System.EventHandler(this.BtnExpenseBudget_Click);
             // 
             // btnOverview
             // 
@@ -157,7 +122,7 @@
             this.btnOverview.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOverview.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOverview.ForeColor = System.Drawing.Color.White;
-            this.btnOverview.Location = new System.Drawing.Point(3, 120);
+            this.btnOverview.Location = new System.Drawing.Point(3, 136);
             this.btnOverview.Name = "btnOverview";
             this.btnOverview.Size = new System.Drawing.Size(194, 100);
             this.btnOverview.TabIndex = 1;
@@ -197,7 +162,6 @@
             // pnlMain
             // 
             this.pnlMain.Controls.Add(this.overviewUC1);
-            this.pnlMain.Controls.Add(this.expenses_and_BudgetUC1);
             this.pnlMain.Controls.Add(this.pay_and_TransferUC1);
             this.pnlMain.Controls.Add(this.my_AccountUC1);
             this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -214,15 +178,6 @@
             this.overviewUC1.Name = "overviewUC1";
             this.overviewUC1.Size = new System.Drawing.Size(900, 650);
             this.overviewUC1.TabIndex = 3;
-            // 
-            // expenses_and_BudgetUC1
-            // 
-            this.expenses_and_BudgetUC1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
-            this.expenses_and_BudgetUC1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.expenses_and_BudgetUC1.Location = new System.Drawing.Point(0, 0);
-            this.expenses_and_BudgetUC1.Name = "expenses_and_BudgetUC1";
-            this.expenses_and_BudgetUC1.Size = new System.Drawing.Size(900, 650);
-            this.expenses_and_BudgetUC1.TabIndex = 1;
             // 
             // pay_and_TransferUC1
             // 
@@ -241,6 +196,22 @@
             this.my_AccountUC1.Name = "my_AccountUC1";
             this.my_AccountUC1.Size = new System.Drawing.Size(900, 650);
             this.my_AccountUC1.TabIndex = 3;
+            // 
+            // btnPayTransfer
+            // 
+            this.btnPayTransfer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(39)))), ((int)(((byte)(42)))));
+            this.btnPayTransfer.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPayTransfer.FlatAppearance.BorderSize = 0;
+            this.btnPayTransfer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPayTransfer.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPayTransfer.ForeColor = System.Drawing.Color.White;
+            this.btnPayTransfer.Location = new System.Drawing.Point(3, 273);
+            this.btnPayTransfer.Name = "btnPayTransfer";
+            this.btnPayTransfer.Size = new System.Drawing.Size(194, 100);
+            this.btnPayTransfer.TabIndex = 3;
+            this.btnPayTransfer.Text = "Pay and Transfer";
+            this.btnPayTransfer.UseVisualStyleBackColor = false;
+            this.btnPayTransfer.Click += new System.EventHandler(this.BtnPayTransfer_Click);
             // 
             // FormMain
             // 
@@ -274,16 +245,14 @@
         private System.Windows.Forms.Button btnOverview;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnAccount;
-        private System.Windows.Forms.Button btnPayTransfer;
-        private System.Windows.Forms.Button btnExpenseBudget;
         private System.Windows.Forms.Panel pnlCurrentPage;
         private System.Windows.Forms.Panel pnlMain;
-        private User_Controls.Expenses_and_BudgetUC expenses_and_BudgetUC1;
         private User_Controls.My_AccountUC my_AccountUC1;
         private User_Controls.Pay_and_TransferUC pay_and_TransferUC1;
         private System.Windows.Forms.Label lblOOBankLogo;
         private User_Controls.OverviewUC overviewUC1;
         private System.Windows.Forms.Button btnLogOut;
+        private System.Windows.Forms.Button btnPayTransfer;
     }
 }
 

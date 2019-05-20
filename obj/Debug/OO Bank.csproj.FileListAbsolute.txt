@@ -82,7 +82,6 @@ C:\Users\ander\OneDrive - IT Center Nord -81338807 - Tech college\Documents\GitH
 C:\Users\ander\OneDrive - IT Center Nord -81338807 - Tech college\Documents\GitHub\School_OO-Project\obj\Debug\OO_Bank.User_Controls.Forms.FormLogIn.resources
 C:\Users\ander\OneDrive - IT Center Nord -81338807 - Tech college\Documents\GitHub\School_OO-Project\obj\Debug\OO_Bank.FormLogSign.resources
 C:\Users\ander\OneDrive - IT Center Nord -81338807 - Tech college\Documents\GitHub\School_OO-Project\obj\Debug\OO_Bank.Properties.Resources.resources
-C:\Users\ander\OneDrive - IT Center Nord -81338807 - Tech college\Documents\GitHub\School_OO-Project\obj\Debug\OO_Bank.User_Controls.Expenses_and_BudgetUC.resources
 C:\Users\ander\OneDrive - IT Center Nord -81338807 - Tech college\Documents\GitHub\School_OO-Project\obj\Debug\OO_Bank.User_Controls.FormSignUp.resources
 C:\Users\ander\OneDrive - IT Center Nord -81338807 - Tech college\Documents\GitHub\School_OO-Project\obj\Debug\OO_Bank.User_Controls.My_AccountUC.resources
 C:\Users\ander\OneDrive - IT Center Nord -81338807 - Tech college\Documents\GitHub\School_OO-Project\obj\Debug\OO_Bank.User_Controls.OverviewUC.resources

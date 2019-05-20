@@ -11,10 +11,10 @@ namespace OO_Bank.Classes {
 
     //Transaction = Når der sker en overførsel mellem 2 kontoer
     class Transaction {
-        public Account From;
-        public Account To;
-        public decimal Amount;
-        public DateTime Time;
+        public Account From; //Konto som sender
+        public Account To; //Konto som modtager
+        public decimal Amount; //Beløbet der overføres
+        public DateTime Time; //Hvornår transaktionen sker
 
         //Her laver vi vores transaction objekt 
         public Transaction(Account From, Account To, decimal Amount, DateTime Time) {
@@ -31,7 +31,7 @@ namespace OO_Bank.Classes {
             this.Save();
         }
 
-        //Tjekker om "fra" kontoen har nok penge
+        //Tjekker om kontoen som sender har nok penge
         public Boolean CanTransfer() {
             if (From.balance - this.Amount >= 0) {
                 return true;
@@ -46,7 +46,7 @@ namespace OO_Bank.Classes {
             try {
                 ToName = Utils.GetUserByID(To.OwnerId).Name;
             } catch (UserException) {
-                //Idk? Nyby, lav en custom alert box til hvis der opstår en fejl?
+
             }
             return "[" + this.Time.ToString("MM/dd/yyyy HH:mm") + "] " + "You have sent " + Utils.BalanceFormatted(Amount) + " to " + ToName;
         }
@@ -55,13 +55,13 @@ namespace OO_Bank.Classes {
             try {
                 FromName = Utils.GetUserByID(From.OwnerId).Name;
             } catch (UserException) {
-                //Idk? Nyby, lav en custom alert box til hvis der opstår en fejl?
+
             }
             return "[" + this.Time.ToString("MM/dd/yyyy HH:mm") + "] " + FromName + " have sent you " + Utils.BalanceFormatted(Amount);
         }
 
 
-        //Når vi gemmer transaktionen i en konto's transcations fil.
+        //Når vi gemmer transaktionen i en konto's transactions fil.
         //Denne fil loades når man skifter konto inde i OverviewUC
         public void Save() {
             String FromPath = Settings.TransactionsPath + "/" + From.Number + ".txt";
@@ -75,18 +75,23 @@ namespace OO_Bank.Classes {
             }
 
             //Gem fra brugeren:
-            Utils.GetUserByID(From.OwnerId).Save();
-
+            if (From.OwnerId != To.OwnerId) {
+                Utils.GetUserByID(From.OwnerId).Save();
+            }
             //Her opdatere vi bruger objektet før vi gemmer det:
             User toUser = Utils.GetUserByID(To.OwnerId);
-            foreach(var item in ForEachHelper.WithIndex(toUser.Accounts)) {
+            foreach (var item in ForEachHelper.WithIndex(toUser.Accounts)) {
                 Account _acc = item.Value;
-                if(_acc.Number == To.Number) {
+                if (_acc.Number == To.Number) {
                     toUser.Accounts[item.Index] = To;
                 }
+                if (From.OwnerId == To.OwnerId) {
+                    if (_acc.Number == From.Number) {
+                        toUser.Accounts[item.Index] = From;
+                    }
+                }
+                toUser.Save();
             }
-            toUser.Save();
         }
-
     }
 }

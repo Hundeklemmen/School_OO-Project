@@ -10,19 +10,18 @@ using System.Windows.Forms;
 
 namespace OO_Bank {
     static class Program {
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
+
         public static FormLogSign formLogSign;
 
         [STAThread]
         static void Main() {
+            //Aktiverer visual styiles til at hjælpe med udseende af programmet
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Generate our files..
+            //Generer vores filer
             GenerateFiles();
 
-            //Create new Log in/Sign up form and Run it
+            //Opret ny start-form og kør den
             formLogSign = new FormLogSign();
             Application.Run(formLogSign);
         }
@@ -66,28 +65,27 @@ namespace OO_Bank {
                 //Hvis ikke, så laver vi den nye mappe
                 Directory.CreateDirectory(@Settings.AccountInfoPath);
             }
-
         }
-
     }
+
     //Settings class som er public og static, så alle vores andre classes kan tilgå vores indstillinger eller globale variabler.
     public static class Settings {
-        //Vores nuværende logged ind bruger.
+        //Vores nuværende logget ind bruger.
         public static User CurrentUser { get; set; }
 
-        //Skrivebords path
+        //Skrivebords sti
         public static String DesktopPath { get; set; }
 
-        //Vores projekt mappe path
+        //Vores projekt mappe sti
         public static String OOProject { get; set; }
 
-        //Vores bruger mappe path
+        //Vores bruger mappe sti
         public static String UsersPath { get; set; }
 
-        //Vores transactions mappe path
+        //Vores transactions mappe sti
         public static String TransactionsPath { get; set; }
 
-        //Vores account info mappe path
+        //Vores account info mappe sti
         public static String AccountInfoPath { get; set; }
 
         //Vores overview UC, så vi kan tilgå den fra flere steder og opdater den.
@@ -95,6 +93,5 @@ namespace OO_Bank {
 
         //Vores Pay and Transfer UC, så vi kan tilgå den fra flere steder og opdater den.
         public static Pay_and_TransferUC PayAndTransfer { get; set; }
-
     }
 }

@@ -10,9 +10,9 @@ namespace OO_Bank.Classes {
     //Card = En konto's kredit kort.
     public class Card {
 
-        public long Number;
-        public DateTime ExpireDate;
-        public int SecurityNumber;
+        public long Number; //Kort nummer
+        public DateTime ExpireDate; //Udløbsdato
+        public int SecurityNumber; //De tre numre bagpå
         public long Owner; //Kort ejeren
         public long AccountNumber; //Konto nummer
 
@@ -24,7 +24,6 @@ namespace OO_Bank.Classes {
             this.Owner = Owner;
             this.AccountNumber = AccountNumber;
         }
-
 
         //Få det som JSON, dette bruges til når vi skal gemme kortet i en json fil.
         public JObject GetAsJson() {
