@@ -76,12 +76,12 @@ namespace OO_Bank.Classes {
 
             //Gem fra brugeren:
             if (From.OwnerId != To.OwnerId) {
-                Utils.GetUserByID(From.OwnerId).Save();
+                //fromUser.Save();
             }
             //Her opdatere vi bruger objektet før vi gemmer det:
             User toUser = Utils.GetUserByID(To.OwnerId);
-            List<Account> tempAccount
-            foreach (var item in ForEachHelper.WithIndex(toUser.Accounts)) {
+            List<Account> tempAccounts = new List<Account>(toUser.Accounts); //Denne bruges til at loop igennem eftersom at den brokker sig over at ændre ting imens man looper.
+            foreach (var item in ForEachHelper.WithIndex(tempAccounts)) {
                 Account _acc = item.Value;
                 if (_acc.Number == To.Number) {
                     toUser.Accounts[item.Index] = To;
@@ -91,8 +91,8 @@ namespace OO_Bank.Classes {
                         toUser.Accounts[item.Index] = From;
                     }
                 }
-                toUser.Save();
             }
+            toUser.Save();
         }
     }
 }

@@ -93,5 +93,9 @@ namespace OO_Bank {
 
         //Vores Pay and Transfer UC, så vi kan tilgå den fra flere steder og opdater den.
         public static Pay_and_TransferUC PayAndTransfer { get; set; }
+
+
+        //Vores FormMain, så vi kan tilgå den fra flere steder og opdater den.
+        public static FormMain FormMain { get; set; }
     }
 }

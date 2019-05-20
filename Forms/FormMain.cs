@@ -70,6 +70,12 @@ namespace OO_Bank {
         public FormMain() {
             InitializeComponent();
 
+            try {
+                Settings.FormMain = this;
+            } catch (NullReferenceException) {
+
+            }
+
         }
 
         //Variable som bruges til at rykke rundt på formen
