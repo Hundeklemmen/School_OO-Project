@@ -20,8 +20,6 @@ namespace OO_Bank.User_Controls {
         bool mobileClicked = false;
         bool goingToShake = false;
         bool signSuccess;
-        private bool mouseDown;
-        private Point lastLocation;
 
         public FormSignUp() {
             InitializeComponent();
@@ -85,15 +83,19 @@ namespace OO_Bank.User_Controls {
             pnlMobile.BackColor = Color.FromArgb(114, 137, 218);
         }
 
+        //Variable som bruges til at rykke rundt på formen
+        private bool mouseDown; //Holdes venstre-klik nede eller ej
+        private Point lastLocation; //Hvor var formen sidst
+        //Hvis der trykkes ned på musen sættes bool mouseDown til sand og fortæller lokation til Point variablen
         private void LblSignUp_MouseDown(object sender, MouseEventArgs e) {
             mouseDown = true;
             lastLocation = e.Location;
         }
-
+        //Hvis der gives slip på musen stopper det
         private void LblSignUp_MouseUp(object sender, MouseEventArgs e) {
             mouseDown = false;
         }
-
+        //Når musen rykkes opdateres lokationen
         private void LblSignUp_MouseMove(object sender, MouseEventArgs e) {
             if (mouseDown) {
                 this.Location = new Point(

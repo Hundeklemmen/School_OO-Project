@@ -22,14 +22,21 @@ namespace OO_Bank.User_Controls {
             Settings.OverviewUC = this;
         }
 
+      
         private void CmbChooseAccount_SelectedIndexChanged(object sender, EventArgs e) {
+            //Sætter SelectedItem variablen til det brugeren har valgt.
             Object selectedItem = cmbChooseAccount.SelectedItem;
+            //Ser om selectedItem er "Create cccount"
             if (selectedItem.ToString().Equals("Create account")) {
+                //Hvis ja, så kaldet vi Create account functionen
                 CreateAccount(null);
                 return;
             }
+            //Ellers så loop vi igennem alle vores kontoeer
             foreach (Account acc in user.Accounts) {
+                //tjekker om vores loop konto er SelectedItem
                 if (acc.Name.Equals(selectedItem.ToString())) {
+                    //Hvis ja, så opdatere vi konto og kaldet updateAccount funktionen
                     account = acc;
                     UpdateAccount();
                     return;

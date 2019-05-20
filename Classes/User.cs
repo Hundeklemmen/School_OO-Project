@@ -14,14 +14,14 @@ namespace OO_Bank.Classes {
     //User = Brugeren med alle kontoer.
     public class User {
 
-        public long ID;
-        public String Name;
-        public String Password;
-        public String Email;
-        public String Mobile;
-        public Boolean Suspended;
-        public Boolean Admin;
-        public List<Account> Accounts;
+        public long ID; //ID på brugeren
+        public String Name; //Navnet på brugeren
+        public String Password; //Kodeordet for brugeren
+        public String Email; //Email for brugeren
+        public String Mobile; //Mobil nummer på brugeren
+        public Boolean Suspended; //Er brugeren suspenderet eller ej
+        public Boolean Admin; //Er brugeren en admin-konto eller ej
+        public List<Account> Accounts; //Brugerens kontoer
 
         public User(long ID, String Name, String Password, String Email, String Mobile, Boolean Suspended, Boolean Admin, List<Account> Accounts) {
             this.ID = ID;
@@ -63,7 +63,7 @@ namespace OO_Bank.Classes {
             String userPath = Settings.UsersPath + "/" + this.ID + ".json";
             using (StreamWriter file = File.CreateText(@userPath)) {
                 JsonSerializer serializer = new JsonSerializer();
-                //Serialize object directly into file stream
+                //Serializerer objektet direkte ind i fil
                 serializer.Serialize(file, this.GetAsJson());
             }
         }

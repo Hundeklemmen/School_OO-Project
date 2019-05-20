@@ -72,15 +72,19 @@ namespace OO_Bank {
 
         }
 
-        private bool mouseDown;
-        private Point lastLocation;
+        //Variable som bruges til at rykke rundt på formen
+        private bool mouseDown; //Holdes venstre-klik nede eller ej
+        private Point lastLocation; //Hvor var formen sidst
+        //Hvis der trykkes ned på musen sættes bool mouseDown til sand og fortæller lokation til Point variablen
         private void PnlLogo_MouseDown(object sender, MouseEventArgs e) {
             mouseDown = true;
             lastLocation = e.Location;
         }
+        //Hvis der gives slip på musen stopper det
         private void PnlLogo_MouseUp(object sender, MouseEventArgs e) {
             mouseDown = false;
         }
+        //Når musen rykkes opdateres lokationen
         private void PnlLogo_MouseMove(object sender, MouseEventArgs e) {
             if (mouseDown) {
                 this.Location = new Point(
@@ -103,31 +107,25 @@ namespace OO_Bank {
         }
 
         //Set user controls visible or invisible by assigning them true or false
-        public void VisibleUC(bool UC1, bool UC2, bool UC3, bool UC4) {
+        public void VisibleUC(bool UC1, bool UC2, bool UC3) {
             overviewUC1.Visible = UC1;
-            expenses_and_BudgetUC1.Visible = UC2;
-            pay_and_TransferUC1.Visible = UC3;
-            my_AccountUC1.Visible = UC4;
+            pay_and_TransferUC1.Visible = UC2;
+            my_AccountUC1.Visible = UC3;
         }
 
         private void BtnOverview_Click(object sender, EventArgs e) {
             MoveBar(btnOverview);
-            VisibleUC(true, false, false, false);
-        }
-
-        private void BtnExpenseBudget_Click(object sender, EventArgs e) {
-            MoveBar(btnExpenseBudget);
-            VisibleUC(false, true, false, false);
+            VisibleUC(true, false, false);
         }
 
         private void BtnPayTransfer_Click(object sender, EventArgs e) {
             MoveBar(btnPayTransfer);
-            VisibleUC(false, false, true, false);
+            VisibleUC(false, true, false);
         }
 
         private void BtnAccount_Click(object sender, EventArgs e) {
             MoveBar(btnAccount);
-            VisibleUC(false, false, false, true);
+            VisibleUC(false, false, true);
         }
 
         private void BtnLogOut_Click(object sender, EventArgs e) {

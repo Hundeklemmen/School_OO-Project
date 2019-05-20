@@ -10,11 +10,11 @@ namespace OO_Bank.Classes {
 
     //Account = Konto (Bank konto og ikke bruger)
     public class Account {
-        public int Number;
-        public String Name;
-        public decimal balance;
-        public long OwnerId; //Bruges så vi kan sporer tilbage hvem der ejer kontoen.
-        public Card Card;
+        public int Number; //Kontoens nummer
+        public String Name; //Navnet på ejeren af kontoen
+        public decimal balance; //Saldoen på kontoen
+        public long OwnerId; //Bruges så vi kan sporer tilbage hvem der ejer kontoen
+        public Card Card; //Kortnummeret til kontoen
 
         //Her laver vi vores Account objekt
         public Account(int accountNumber, String accountName, decimal balance, long accountOwnerId, Card accountCard) {
@@ -29,6 +29,7 @@ namespace OO_Bank.Classes {
         public void AddMoney(decimal Amount) {
             this.balance += Amount;
         }
+
         //Fjern penge:
         public void RemoveMoney(decimal Amount) {
             this.balance -= Amount;

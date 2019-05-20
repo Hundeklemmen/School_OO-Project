@@ -16,22 +16,23 @@ using System.Windows.Forms;
 namespace OO_Bank {
     public partial class FormLogSign : Form {
 
-        private bool mouseDown;
-        private Point lastLocation;
-
         public FormLogSign() {
             InitializeComponent();
         }
 
+        //Variable som bruges til at rykke rundt på formen
+        private bool mouseDown; //Holdes venstre-klik nede eller ej
+        private Point lastLocation; //Hvor var formen sidst
+        //Hvis der trykkes ned på musen sættes bool mouseDown til sand og fortæller lokation til Point variablen
         private void LblWelcome_MouseDown(object sender, MouseEventArgs e) {
             mouseDown = true;
             lastLocation = e.Location;
         }
-
+        //Hvis der gives slip på musen stopper det
         private void LblWelcome_MouseUp(object sender, MouseEventArgs e) {
             mouseDown = false;
         }
-
+        //Når musen rykkes opdateres lokationen
         private void LblWelcome_MouseMove(object sender, MouseEventArgs e) {
             if (mouseDown) {
                 this.Location = new Point(
@@ -54,27 +55,30 @@ namespace OO_Bank {
             Application.Exit();
         }
 
-        //For testing the main form, without having to log in or sign up all the time.
+        //Til at teste main-form uden at skulle log in eller sign up hele tiden
         private void BtnTesting_Click(object sender, EventArgs e) {
-                try {
-                    User user = Utils.GetUserByID(111111);
-                    Settings.CurrentUser = user;
-                    var t = new Thread(() => Application.Run(new FormMain()));
-                    t.Start();
-                    Application.OpenForms["FormLogSign"].Close();
-                } catch (UserException) {
-                //If user 111111 (test account) doesn't exist, create new 111111
-                MessageBox.Show("Test user 111111 doesn't exist, creating new test user.");
-                List<Account> accounts = new List<Account>();
-                Card testCard = new Card(9352192417248172, DateTime.Now, 421, 111111, 133125312);
-                accounts.Add(new Account(1331253125, "Macd penge", 20.0m, 111111, testCard));
-                accounts.Add(new Account(1725712525, "Opsparing", 2582858.2952m, 111111, null));
-                accounts.Add(new Account(1125221525, "mienkraft", 0.0m, 111111, null));
-                accounts.Add(new Account(1125235224, "test 1", 12521.24m, 111111, null));
-                accounts.Add(new Account(1121411522, "test 2", 12345m, 111111, null));
-                User user = new User(111111, "Skrome", "12345678", "skrome@gmail.com", "12345678", false, true, accounts);
-                user.Save();
+            try {
+                User user = Utils.GetUserByID(111111);
                 Settings.CurrentUser = user;
+                var t = new Thread(() => Application.Run(new FormMain()));
+                t.Start();
+                Application.OpenForms["FormLogSign"].Close();
+            } catch (UserException) {
+                //Hvis bruger 111111 (test bruger) ikke eksisterer, lav ny test bruger
+                MessageBox.Show("Test user 111111 doesn't exist, creating new test user.");
+                //Alle test-kontoerne laves her
+                List<Account> accounts = new List<Account>
+                {
+                    new Account(1331253125, "Mad", 2007.98m, 111111, new Card(9352192417248172, DateTime.Now, 421, 111111, 133125312)),
+                    new Account(1725712525, "Opsparing", 2582858.2952m, 111111, null),
+                    new Account(1125221525, "Hobby", 1272.23m, 111111, null),
+                    new Account(1717281472, "SU", 0.0m, 111111, null)
+                };
+                User user = new User(111111, "Michael", Utils.CalculateMD5Hash("MichaelElskerKatte8716VroomVroom"), "AalborgHTX@gmail.com", "72505800", false, true, accounts);
+                user.Save();
+                //Gemmer brugeren i settings / Globale variabler, så resten af programmet kan tilgå den.
+                Settings.CurrentUser = user;
+                //Åben main bank form og luk start formen
                 var t = new Thread(() => Application.Run(new FormMain()));
                 t.Start();
                 Application.OpenForms["FormLogSign"].Close();
