@@ -43,8 +43,9 @@ namespace OO_Bank.Classes {
                 { "balance", this.balance },
                 { "OwnerId", this.OwnerId },
             };
+
             //Tjekker om kontoen har et kort
-            if(this.Card != null) {
+            if (this.Card != null) {
                 //Hvis den har
                 tmpAccount.Add("Card", this.Card.GetAsJson()); //Ligesom alle vores andre objekter, så har den "GetAsJson()" så vi kan gemme det i en fil.
             }

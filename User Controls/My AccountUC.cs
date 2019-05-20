@@ -46,7 +46,7 @@ namespace OO_Bank.User_Controls {
             FormTextInput inputBox = new FormTextInput("Enter new name: ");
             if(inputBox.DialogResult == DialogResult.OK) {
                 if (inputBox.Message.Length == 0 || inputBox.Message == "Full name") {
-
+                    Utils.Shake(Settings.FormMain);
                 } else {
                     Settings.CurrentUser.Name = inputBox.Message;
                     Settings.CurrentUser.Save();
@@ -68,7 +68,7 @@ namespace OO_Bank.User_Controls {
                     Settings.CurrentUser.Password = Utils.CalculateMD5Hash(inputBox.Message);
                     Settings.CurrentUser.Save();
                     UpdateInfo();
-                    _ = new FormMessage("Your password has been changed!");
+                    new FormMessage("Your password has been changed!");
                 }
             }
         }
@@ -77,7 +77,7 @@ namespace OO_Bank.User_Controls {
             FormTextInput inputBox = new FormTextInput("Enter new email: ");
             if (inputBox.DialogResult == DialogResult.OK) {
                 if (!Utils.IsValidEmail(inputBox.Message)) {
-
+                    Utils.Shake(Settings.FormMain);
                 } else {
                     Settings.CurrentUser.Email = inputBox.Message;
                     Settings.CurrentUser.Save();
@@ -90,7 +90,7 @@ namespace OO_Bank.User_Controls {
             FormTextInput inputBox = new FormTextInput("Enter new mobile: ");
             if (inputBox.DialogResult == DialogResult.OK) {
                 if (inputBox.Message.Length != 8 || inputBox.Message == "Mobile" || !inputBox.Message.All(char.IsDigit)) {
-
+                    Utils.Shake(Settings.FormMain);
                 } else {
                     Settings.CurrentUser.Mobile = inputBox.Message;
                     Settings.CurrentUser.Save();
@@ -124,6 +124,7 @@ namespace OO_Bank.User_Controls {
                     new FormMessage("File has been saved in the\nOOProject file");
                 } catch (Exception) {
                     new FormMessage("Something went wrong whilst\ntrying to save the file");
+                    Utils.Shake(Settings.FormMain);
                 }
             }
         }

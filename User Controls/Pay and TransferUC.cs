@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using OO_Bank.Classes;
 using OO_Bank.Forms;
 using System.IO;
+using OO_Bank.Forms.Custom_Messages;
 
 namespace OO_Bank.User_Controls {
     public partial class Pay_and_TransferUC : UserControl {
@@ -113,38 +114,50 @@ namespace OO_Bank.User_Controls {
                 String ToAccount = cmbToAccount.Text;
                 String amount = txtAmountOwn.Text;
 
-                decimal amountParsed = decimal.Parse(amount);
+                decimal amountParsed;
+                if (decimal.TryParse(amount, out amountParsed)) {
+                    if (amountParsed > 0) {
 
-                Account fromAccount = null;
-                foreach (Account acc in Settings.CurrentUser.Accounts) {
-                    if (acc.Name.ToString().Equals(FromAccount)) {
-                        fromAccount = acc;
-                        break;
-                    }
-                }
+                        Account fromAccount = null;
+                        foreach (Account acc in Settings.CurrentUser.Accounts) {
+                            if (acc.Name.ToString().Equals(FromAccount)) {
+                                fromAccount = acc;
+                                break;
+                            }
+                        }
 
-                Account toAccount = null;
-                foreach (Account acc in Settings.CurrentUser.Accounts) {
-                    if (acc.Name.ToString().Equals(ToAccount)) {
-                        toAccount = acc;
-                        break;
-                    }
-                }
+                        Account toAccount = null;
+                        foreach (Account acc in Settings.CurrentUser.Accounts) {
+                            if (acc.Name.ToString().Equals(ToAccount)) {
+                                toAccount = acc;
+                                break;
+                            }
+                        }
 
-                if (toAccount != null && fromAccount != null) {
-                    Transaction TAction = new Transaction(fromAccount, toAccount, amountParsed, DateTime.Now);
-                    if (TAction.CanTransfer() == true) {
-                        TAction.Transfer();
-                        Settings.CurrentUser.Save();
-                        UpdateLists();
-                        cmbFromAccount.SelectedIndex = cmbFromAccount.Items.IndexOf(fromAccount.Name);
-                        cmbToAccount.SelectedIndex = cmbToAccount.Items.IndexOf(toAccount.Name);
-                        MessageBox.Show("Transaction has been completed");
+                        if (toAccount != null && fromAccount != null) {
+                            Transaction TAction = new Transaction(fromAccount, toAccount, amountParsed, DateTime.Now);
+                            if (TAction.CanTransfer() == true) {
+                                TAction.Transfer();
+                                Settings.CurrentUser.Save();
+                                UpdateLists();
+                                cmbFromAccount.SelectedIndex = cmbFromAccount.Items.IndexOf(fromAccount.Name);
+                                cmbToAccount.SelectedIndex = cmbToAccount.Items.IndexOf(toAccount.Name);
+                                new FormMessage("Transaction has been completed");
+                            } else {
+                                new FormMessage("Insufficient funding");
+                                Utils.Shake(Settings.FormMain);
+                            }
+                        } else {
+                            new FormMessage("Account not found");
+                            Utils.Shake(Settings.FormMain);
+                        }
                     } else {
-                        MessageBox.Show("Insufficient funding");
+                        new FormMessage("Du kan ikke sende et beløb under 0!");
+                        Utils.Shake(Settings.FormMain);
                     }
                 } else {
-                    MessageBox.Show("Account not found");
+                    new FormMessage("Dit beløb kan kun indeholde et tal!");
+                    Utils.Shake(Settings.FormMain);
                 }
 
             }
@@ -159,51 +172,61 @@ namespace OO_Bank.User_Controls {
                 int ToOtherAccount = int.Parse(txtRecipient.Text);
                 String amount = txtAmountOther.Text;
 
-                decimal amountParsed = decimal.Parse(amount);
+                decimal amountParsed;
+                if (decimal.TryParse(amount, out amountParsed)) {
+                    if (amountParsed > 0) {
 
-                Account fromAccount = null;
-                foreach (Account acc in Settings.CurrentUser.Accounts) {
-                    if (acc.Name.ToString().Equals(FromAccount)) {
-                        fromAccount = acc;
-                        break;
-                    }
-                }
-
-                //Loop igennem alle brugere for at se om der er en account i et user object
-                Account toAccount = null;
-  
-                foreach (string path in Directory.GetFiles(Settings.UsersPath)) {
-                    MessageBox.Show(path);
-                    User _tempUser = Utils.GetUserByPath(path);
-                    Boolean breakUL = false;
-                    foreach(Account _tempAccount in _tempUser.Accounts) {
-                        MessageBox.Show(_tempAccount.Number + " - " + ToOtherAccount);
-                        if(_tempAccount.Number == ToOtherAccount) { 
-                            toAccount = _tempAccount;
-   
-                            breakUL = true;
-                            break;
+                        Account fromAccount = null;
+                        foreach (Account acc in Settings.CurrentUser.Accounts) {
+                            if (acc.Name.ToString().Equals(FromAccount)) {
+                                fromAccount = acc;
+                                break;
+                            }
                         }
-                    }
-                    if (breakUL == true) {
-                        break;
-                    }
-                }
 
-                if (toAccount != null && fromAccount != null) {
-                    Transaction TAction = new Transaction(fromAccount, toAccount, amountParsed, DateTime.Now);
-                    if (TAction.CanTransfer() == true) {
-                        TAction.Transfer();
-                        Settings.CurrentUser.Save();
-                        UpdateLists();
-                        cmbFromAccount.SelectedIndex = cmbFromAccount.Items.IndexOf(fromAccount.Name);
-                        cmbToAccount.SelectedIndex = cmbToAccount.Items.IndexOf(toAccount.Name);
-                        MessageBox.Show("Transaction has been completed");
+                        //Loop igennem alle brugere for at se om der er en account i et user object
+                        Account toAccount = null;
+
+                        foreach (string path in Directory.GetFiles(Settings.UsersPath)) {
+                            User _tempUser = Utils.GetUserByPath(path);
+                            Boolean breakUL = false;
+                            foreach (Account _tempAccount in _tempUser.Accounts) {
+                                if (_tempAccount.Number == ToOtherAccount) {
+                                    toAccount = _tempAccount;
+
+                                    breakUL = true;
+                                    break;
+                                }
+                            }
+                            if (breakUL == true) {
+                                break;
+                            }
+                        }
+
+                        if (toAccount != null && fromAccount != null) {
+                            Transaction TAction = new Transaction(fromAccount, toAccount, amountParsed, DateTime.Now);
+                            if (TAction.CanTransfer() == true) {
+                                TAction.Transfer();
+                                Settings.CurrentUser.Save();
+                                UpdateLists();
+                                cmbFromAccount.SelectedIndex = cmbFromAccount.Items.IndexOf(fromAccount.Name);
+                                cmbToAccount.SelectedIndex = cmbToAccount.Items.IndexOf(toAccount.Name);
+                                new FormMessage("Transaction has been completed");
+                            } else {
+                                new FormMessage("Insufficient funding");
+                                Utils.Shake(Settings.FormMain);
+                            }
+                        } else {
+                            new FormMessage("Account not found");
+                            Utils.Shake(Settings.FormMain);
+                        }
                     } else {
-                        MessageBox.Show("Insufficient funding");
+                        new FormMessage("Du kan ikke sende et beløb under 0!");
+                        Utils.Shake(Settings.FormMain);
                     }
                 } else {
-                    MessageBox.Show("Account not found");
+                    new FormMessage("Dit beløb kan kun indeholde et tal!");
+                    Utils.Shake(Settings.FormMain);
                 }
             }
         }
